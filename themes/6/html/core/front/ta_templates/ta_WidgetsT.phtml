@@ -1,0 +1,34 @@
+<ips:template parameters="" />
+{{if theme.enable_widget_top == '1' && theme.g_whocansee_top =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.g_whocansee_top ) )}}
+	{{if theme.g_widget_position_top == '*'}}
+		<article class="ta-customBlock">
+			<div class="ta-blockContainer">
+				{{if theme.g_widget_title_top}}
+					<h3 class="ipsType_reset ipsWidget_title">
+						{theme="g_widget_title_top"}
+					</h3>
+				{{endif}}
+				<div class="ipsWidget_inner ipsPad_half ipsType_normal ipsType_richText" data-controller="core.front.core.lightboxedImages">
+					{theme="g_widget_content_top"}
+				</div>
+			</div>
+		</article>
+	{{else}}
+		{{foreach explode(',', theme.g_widget_position_top) as $val}}
+			{{if $val == 'forums' && request.module == 'forums' || $val == 'store' && request.module == 'store' || $val == 'pages' && request.module == 'pages' || $val == 'downloads' && request.module == 'downloads' || $val == 'leaderboard' && request.module == 'discover' && request.controller == 'popular' || $val == 'gallery' && request.module == 'gallery' || $val == 'blogs' && request.module == 'blogs' || $val == 'calendar' && request.module == 'calendar' || $val == 'activity' && request.module == 'discover' && request.controller == 'streams' || $val == 'staffdirectory' && request.module == 'staffdirectory' && request.controller == 'directory' || $val == 'search' && request.module == 'search' || $val == 'support' && request.module == 'support' || $val == 'members' && request.module == 'members' || $val == 'online' && request.module == 'online'}}
+				<article class="ta-customBlock">
+                  	<div class="ta-blockContainer">
+						{{if theme.g_widget_title_top}}
+							<h3 class="ipsType_reset ipsWidget_title">
+								{theme="g_widget_title_top"}
+							</h3>
+						{{endif}}
+						<div class="ipsWidget_inner ipsPad_half ipsType_normal ipsType_richText" data-controller="core.front.core.lightboxedImages">
+							{theme="g_widget_content_top"}
+						</div>
+                  	</div>
+				</article>
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}

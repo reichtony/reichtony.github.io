@@ -1,0 +1,15 @@
+<ips:template parameters="" />
+
+{{if !\IPS\CIC AND $days = \IPS\Output::i()->licenseKeyDaysRemaining() AND $days <= 15 AND \IPS\Member::loggedIn()->hasAcpRestriction( 'core', 'settings', 'licensekey_manage' ) AND !isset( \IPS\Request::i()->cookie['licenseRenewDismiss'] )}}
+	<div class="ipsMessage ipsMessage_general" id='elLicenseRenewal' data-controller='core.admin.core.licenseRenewal' data-surveyUrl="{url="renewal_survey" ips="true"}">
+		{lang="license_renewal_soon" pluralize="$days"}
+		<ul class='ipsList_inline'>
+			<li>
+				<a href='{url="renew_my_license" ips="true"}' class='ipsButton ipsButton_verySmall ipsButton_veryLight elRenewLink' target="_blank">{lang="license_renew_now"}</a>
+			</li>
+			<li>
+				<a href='#' class='ipsButton ipsButton_verySmall ipsButton_veryLight'>{lang="license_renewal_not_now"}</a>
+			</li>
+		</ul>
+	</div>
+{{endif}}

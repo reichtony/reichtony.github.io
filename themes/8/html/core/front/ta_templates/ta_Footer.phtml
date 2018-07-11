@@ -1,0 +1,31 @@
+<ips:template parameters="" />
+<div class="ta-Footer {{if theme.footer_showonmobile == 0}}ipsResponsive_hidePhone ipsResponsive_hideTablet{{endif}}" {{if theme.footer_bgimage || theme.footer_custombackground}}style="background-image: url({theme="footer_bgimage"});"{{endif}}>
+  	<div class="ipsLayout_container">
+		<div class='ipsColumns ipsColumns_collapseTablet'>
+     		{{if theme.footer_quicklinks}}
+				<div class='ipsColumn ipsColumn_veryWide'>
+					<div class="quicklinks ipsClearfix">
+						{theme="footer_quicklinks"}
+					</div>
+				</div>
+			{{endif}}
+			{{if theme.footer_articles == '1'}}
+			<div class='ipsColumn ipsColumn_veryWide '>
+				<div class="mArticles">
+					{block="Pages_Footer_Articles"}
+				</div>
+			</div>
+			{{endif}}
+			{{if theme.footer_about}}
+				<div class='ipsColumn ipsColumn_fluid'>
+             		<div class="about">
+						<h3>{theme="footer_aboutheader"}</h3>
+						<section class='ipsType_normal ipsType_richText ipsType_break' {{if theme.truncate_about == '1'}}data-ipsTruncate data-ipsTruncate-size='{theme="truncate_lines"} lines' data-ipsTruncate-type='hide'{{endif}}>
+							{theme="footer_about"}
+						</section>
+               	 	</div>
+				</div>
+			{{endif}}
+		</div>
+	</div>
+</div>

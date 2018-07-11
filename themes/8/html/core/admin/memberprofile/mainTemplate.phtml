@@ -1,0 +1,38 @@
+<ips:template parameters="$member, $extensions, $activeTab, $activeTabContent, $history" />
+<div class='acpMemberView'>
+	
+	{{if count( $extensions ) > 1}}
+		<div class='ipsTabs acpMemberView_tabBar ipsClearfix ipsJS_show' id='tabs_member' data-ipsTabBar data-ipsTabBar-contentArea='#ipsTabs_content_member' data-ipsTabBar-panelClass="acpMemberView_tabBarPanel">
+			<a href='#tabs_member' data-action='expandTabs'><i class='fa fa-caret-down'></i></a>
+			<ul role='tablist'>
+				{{foreach $extensions as $key => $classname}}
+					<li>
+						<a href='{$member->acpUrl()->setQueryString( 'tab', $key )}' id='member_tab_{$key}' class="ipsTabs_item {{if $key == $activeTab}}ipsTabs_activeItem{{endif}}" role="tab">
+							{$classname::title()}
+						</a>
+					</li>
+				{{endforeach}}
+			</ul>
+		</div>
+	{{endif}}
+	
+	{{if $history}}
+		<div class="acpMemberView_layoutWrap">
+			<div class="acpMemberView_layoutMain">
+	{{endif}}
+	
+	<div id='ipsTabs_content_member'>
+		<div id="ipsTabs_tabs_member_member_tab_{$activeTab}_panel" class="ipsTabs_panel acpMemberView_tabBarPanel" aria-labelledby="member_tab_{$activeTab}" aria-hidden="false">
+			{$activeTabContent|raw}
+		</div>
+	</div>
+	
+	
+	{{if $history}}
+			</div>
+			<div class="acpMemberView_layoutHistory">
+				{$history|raw}
+			</div>
+		</div>
+	{{endif}}
+</div>

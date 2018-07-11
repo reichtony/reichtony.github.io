@@ -1,0 +1,58 @@
+<ips:template parameters="" />
+<script type="text/javascript" src="{resource="custom/ta.library.js" app="core" location="front"}"></script>
+{{if theme.navbar_position == 'fixed'}}
+<script type="text/javascript">
+function getDistance() {
+    var e = navBar.offsetTop;
+    return e
+}
+if (window.innerWidth > 979) {
+    var navBar = document.querySelector(".ta_navBar"),
+        ta_Header = document.querySelector(".ta_Header"),
+        navHeight = navBar.offsetHeight,
+        Header = document.querySelector("#ipsLayout_header"),
+        stuck = !1,
+        stickPoint = getDistance();
+    window.onscroll = function(e) {
+        var t = getDistance() - window.pageYOffset,
+            a = window.pageYOffset;
+        0 >= t && !stuck ? (ta_Header.classList.add("ta_fixedBar"), Header.style.marginTop = navHeight + "px", stuck = !0) : stuck && stickPoint >= a && (ta_Header.classList.remove("ta_fixedBar"), Header.style.marginTop = "0px", stuck = !1)
+    }
+}
+</script>
+{{endif}}
+{{if theme.enable_slider == '1'}}
+<script type="text/javascript">
+var swiper = new Swiper('.swiper-container', {
+  	{{if theme.slider_enable_pagination == 1}}pagination: '.swiper-pagination',paginationClickable: true,{{endif}}
+	{{if theme.slider_effect == 'fade'}}parallax: true,{{endif}}
+	{{if theme.slider_loop == '1'}} loop: true,{{endif}}
+	centeredSlides: true,
+	{{if theme.slider_navigation_buttons}}nextButton: '.swiper-next', prevButton: '.swiper-prev',{{endif}}
+    effect: {{if theme.slider_effect == 'slide'}}'slide'{{elseif theme.slider_effect == 'fade'}}'fade'{{elseif theme.slider_effect == 'cube'}}'cube'{{elseif theme.slider_effect == 'coverflow'}}'coverflow'{{elseif theme.slider_effect == 'flip'}}'flip'{{endif}},
+    {{if theme.slider_enable_autoplay == '1'}}autoplay: {theme="slider_autoplay_delay"},{{endif}}
+    grabCursor: true,
+    lazyPreloaderClass: 'lazyPreloader',
+    preloadImages: false,
+    lazyLoading: true,
+    lazyLoadingInPrevNext: true
+});
+{{if theme.slider_full_screen}}
+var slidevh = function() {
+var bheight = $(window).height();
+	$(".swiper-container").css('height', bheight);
+};
+$(document).ready(slidevh);
+$(window).resize(slidevh);
+{{endif}}
+</script>
+{{endif}}
+{{if theme.nt_toggle == 1}}
+<script type="text/javascript">
+$('#webTicker').webTicker({
+		height: '35px',
+	 	speed: {theme="nt_speed"},
+	}
+);
+</script>
+{{endif}}

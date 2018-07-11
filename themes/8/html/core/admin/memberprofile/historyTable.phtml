@@ -1,0 +1,17 @@
+<ips:template parameters="$table, $headers, $rows, $quickSearch" />
+{{if count( $rows )}}
+	<ol class='ipsClear ipsList_reset cMemberHistory {{foreach $table->classes as $class}}{$class} {{endforeach}}' id='elTable_{$table->uniqueId}' data-role="tableRows">
+		{template="$table->rowsTemplate[1]" params="$table, $headers, $rows" object="$table->rowsTemplate[0]"}
+	</ol>
+{{else}}
+	<div class='ipsType_center ipsFaded'>
+		<p class='ipsSpacer_top ipsSpacer_double'>{lang="customer_no_history"}</p>
+	</div>
+{{endif}}
+<div class='ipsClearfix'>
+	{{if $table->pages > 1}}
+		<div class="ipsType_center">
+			<a href="{$table->baseUrl}" class="ipsButton ipsButton_verySmall ipsButton_fullWidth ipsButton_normal">{lang="see_all_history"}</a>
+		</div>
+	{{endif}}
+</div>

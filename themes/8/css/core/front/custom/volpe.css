@@ -1,0 +1,1853 @@
+/******************
+* Global Settings *
+******************/
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	{{if theme.volpe_body_bg_gradient_turn == '1' and theme.volpe_body_bg_gradient}}
+	{theme="theme.volpe_body_bg_gradient"}
+	{{elseif theme.volpe_body_bg_image_turn}}
+	background-image: url('{theme="volpe_body_bg_image"}');
+	background-attachment: {theme="volpe_body_bg_attachment"};
+	background-position: {theme="volpe_body_bg_position"};
+	background-size: {theme="volpe_body_bg_size"};
+	background-repeat: {theme="volpe_body_bg_repeat"};
+	{{endif}}
+}
+hr.ipsHr {
+	border-top-width: 1px;
+}
+
+
+{{if !theme.enable_fluid_width}}
+.ipsLayout_container {
+	max-width: {theme="volpe_container_width"}px;
+}
+{{endif}}
+#ipsLayout_sidebar {
+	min-width: calc({theme="volpe_sidebar_width"}px + 20px);
+	max-width: calc({theme="volpe_sidebar_width"}px + 20px);
+}
+
+@media screen and (max-width: 979px){
+	html[dir] #ipsLayout_sidebar.ipsLayout_sidebarleft,
+	html[dir] #ipsLayout_sidebar.ipsLayout_sidebarright {
+		padding: 0 15px 15px 15px;
+	}
+}
+/*
+ * IPS Box
+ */
+.ipsBox {
+	{{if theme.volpe_ipsbox_border_turn == '1'}}
+	border-color: {theme="volpe_ipsbox_border"};
+	{{else}}
+	border:0;
+	{{endif}}
+}
+.ipsBox:not( .ipsBox_transparent ):not( .ipsModerated ) { background-color: {theme="volpe_ipsbox_bg"}; }
+.ipsBox.ipsModerated { border-color: {theme="volpe_post_border_color_moderated"}; }
+
+.ipsAreaBackground_positive {
+	background: {theme="volpe_area_background_positive"};
+	color: {theme="volpe_area_background_positive_font"};
+}
+.ipsAreaBackground_negative {
+	background: {theme="volpe_area_background_negative"};
+	color: {theme="volpe_area_background_negative_font"};
+}
+	
+.ipsAreaBackground_positive .ipsType_sectionHead,
+.ipsAreaBackground_positive .ipsType_sectionTitle,
+.ipsAreaBackground_negative .ipsType_sectionHead,
+.ipsAreaBackground_negative .ipsType_sectionTitle {
+	color: inherit;
+}
+
+
+
+/*************
+* Typography *
+*************/
+.ipsType_pageTitle [data-role="editableTitle"]:hover,
+.ipsType_pageTitle[data-role="editableTitle"]:hover {
+	background: #FFFFDD;
+}
+.ipsType_pageTitle {
+	font-size: {theme="volpe_typo_pagetitle_size"}px; /*28 default*/
+	color: {theme="volpe_typo_pagetitle_color"};
+}
+.ipsType_pageTitle.ipsType_largeTitle {	font-size: {theme="volpe_typo_pagetitlelarge_size"}px; }/*27 default*/
+.ipsType_pageTitle > .fa { font-size: 1.5; } /*18 default*/
+
+.ipsType_sectionTitle {
+	font-size: {theme="volpe_typo_sectiontitle_size"}px; /*13 default*/
+}
+.ipsType_secondaryTitle { 
+	font-size: {theme="volpe_typo_secondarytitle_size"}px; /*14 default*/
+}
+.ipsType_sectionHead {
+	font-size: {theme="volpe_typo_section_head_size"}px; /*20 default*/
+	line-height: 1.2; /*24 default*/
+	color: {theme="volpe_typo_section_head"};
+}
+.ipsType_minorHeading {
+	font-size: {theme="volpe_typo_minor_heading_size"}px; /*11 default*/
+	color: {theme="volpe_typo_minor_heading"};
+}
+
+.ipsType_small { font-size: {theme="volpe_typo_text_small"}px; } /*11 default*/
+.ipsType_small:not( .ipsType_richText ){ line-height: 1.5; } /*16 default*/
+
+.ipsType_medium { font-size: {theme="volpe_typo_text_medium"}px; } /*13 default*/
+.ipsType_medium:not( .ipsType_richText ){ line-height: 1.5; } /*20 default*/
+
+.ipsType_normal { font-size: {theme="volpe_typo_text_normal"}px; } /*14 default*/
+.ipsType_normal:not( .ipsType_richText ){ line-height: 1.5; } /*21 default*/
+
+.ipsType_large { font-size: {theme="volpe_typo_text_large"}px; } /*16 default*/
+.ipsType_large:not( .ipsType_richText ){ line-height: 1.25; } /*20 default*/
+
+.ipsType_veryLarge {
+	font-size: {theme="volpe_typo_text_verylarge"}px; /*44 default*/
+	line-height: 1.25; /*52 default*/
+}
+
+.ipsType_huge {
+	font-size: {theme="volpe_typo_text_huge"}px; /*72 default*/
+	line-height: 1.1; /*80 default*/
+}
+
+@media screen and (max-width: 767px) {
+	.ipsType_pageTitle {
+		font-size: {theme="volpe_typomobile_pagetitle_size"}px; /*20 default*/
+	}
+	.ipsType_pageTitle.ipsType_largeTitle {
+		font-size: {theme="volpe_typomobile_pagetitlelarge_size"}px; /*28 default*/
+		letter-spacing: 0;
+	}
+	.ipsType_normal {
+		font-size: {theme="volpe_typomobile_text_normal"}px; /*13 default*/
+	}
+	.ipsType_veryLarge {
+		font-size: {theme="volpe_typomobile_text_verylarge"}px; /*34 default*/
+		line-height: 1.3; /*42 default*/
+	}
+}
+
+.ipsDataItem_title {
+	margin-bottom: 0;
+}
+
+/*
+ * Selection
+ */
+::-moz-selection {
+    color: {theme="volpe_selection_font"};
+    background: {theme="volpe_selection_bg"};
+}
+::selection {
+    color: {theme="volpe_selection_font"}; 
+    background: {theme="volpe_selection_bg"};
+}
+
+/*******************
+* Front-End Colors *
+*******************/
+
+/*
+ * IPS Data Item
+ */
+.ipsApp .ipsDataItem_new, .ipsApp .ipsDataItem_success { background-color: {theme="volpe_di_new_success"} }
+.ipsApp .ipsDataItem_info { background-color: {theme="volpe_di_info"} }
+.ipsApp .ipsDataItem_status { background-color: {theme="volpe_di_status"} }
+.ipsApp .ipsDataItem_warning { background-color: {theme="volpe_di_warning"} }
+.ipsApp .ipsDataItem_error { background-color: {theme="volpe_di_error"} }
+.ipsDataList.ipsDataList_zebra .ipsDataItem:not( .ipsDataItem_selected ):not( .ipsModerated ):not( .ipsDataItem_new ):not( .ipsDataItem_success ):not( .ipsDataItem_warning ):not( .ipsDataItem_error ):not( .ipsDataItem_info ):not( .ipsDataItem_status ):nth-child(even) { background-color: {theme="volpe_di_zebra"} }
+
+/*
+ * Messages and Flash Messages
+ */
+.ipsMessage { color: {theme="volpe_msg_font"} }
+.ipsMessage.ipsMessage_error, #elSiteOffline { background-color: {theme="volpe_msg_error"} }
+.ipsMessage.ipsMessage_success { background-color: {theme="volpe_msg_success"} }
+.ipsMessage.ipsMessage_warning { background-color: {theme="volpe_msg_warning"} }
+.ipsMessage.ipsMessage_info, .ipsMessage_information { background-color: {theme="volpe_msg_info"} }
+.ipsMessage.ipsMessage_general { background-color: {theme="volpe_msg_general"} }
+
+#elFlashMessage {
+	background: {theme="volpe_fmsg_bg"};
+	color: {theme="volpe_fmsg_font"};
+}
+#elFlashMessage .ipsType_veryLarge {
+	color: inherit;
+}
+#elFlashMessage a {
+	color: {theme="volpe_fmsg_font"};
+}
+
+/*
+ * Item Status
+ */
+
+.ipsItemStatus:not( .ipsItemStatus_large ) {	
+	color: {theme="item_status"};
+}
+.ipsItemStatus.ipsItemStatus_read:not( .ipsItemStatus_large ) {
+	color: {theme="volpe_item_status_read"};
+}
+.ipsItemStatus.ipsItemStatus_large {
+	color: {theme="item_status"};
+	background: {theme="volpe_status_unread_color"};
+}
+.ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read {
+	color: {theme="volpe_item_status_read"};
+	background: {theme="volpe_status_read_color"};
+}
+
+/*
+ * Notifications
+ */
+#elFullNotifications_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ),
+#elFullInbox_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ),
+#elFullReports_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ),
+[data-pagecontroller="notifications"] .cForumTopicTable .ipsDataItem{
+	background: {theme="volpe_nfc_readbg"};
+}
+#elFullNotifications_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) a,
+#elFullInbox_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) a,
+#elFullReports_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) a,
+[data-pagecontroller="notifications"] .cForumTopicTable .ipsDataItem a{
+	color: {theme="volpe_nfc_read_font"};
+}
+#elFullNotifications_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) .ipsType_light,
+#elFullInbox_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) .ipsType_light,
+#elFullInbox_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) .ipsDataItem_meta,
+#elFullReports_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) .ipsDataItem_icon i,
+#elFullReports_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) .ipsDataItem_meta li.ipsType_light,
+[data-pagecontroller="notifications"] .cForumTopicTable .ipsDataItem .ipsType_light{
+	color: {hextorgb="volpe_nfc_read_font" opacity="0.7"};
+}
+#elFullReports_menu .ipsDataItem:not( .ipsDataItem_unread ):not( .ipsDataItem_selected ):not( .ipsModerated ) .ipsDataItem_meta li{
+	color: {hextorgb="volpe_nfc_read_font" opacity="0.5"};
+}
+#elFullNotifications_menu .ipsDataItem.ipsDataItem_unread,
+#elFullInbox_menu .ipsDataItem.ipsDataItem_unread,
+#elFullReports_menu .ipsDataItem.ipsDataItem_unread,
+[data-pagecontroller="notifications"] .cForumTopicTable .ipsDataItem.ipsDataItem_unread{
+	background: {theme="volpe_nfc_unread_bg"};
+}
+#elFullNotifications_menu .ipsDataItem_unread a,
+#elFullInbox_menu .ipsDataItem_unread a,
+#elFullReports_menu .ipsDataItem_unread a,
+[data-pagecontroller="notifications"] .cForumTopicTable .ipsDataItem.ipsDataItem_unread a{
+	color: {theme="volpe_nfc_unread_font"};
+}
+#elFullNotifications_menu .ipsDataItem_unread .ipsType_light,
+#elFullInbox_menu .ipsDataItem_unread .ipsType_light,
+#elFullInbox_menu .ipsDataItem_unread .ipsDataItem_meta,
+#elFullReports_menu .ipsDataItem_unread .ipsDataItem_icon i,
+#elFullReports_menu .ipsDataItem_unread .ipsDataItem_meta li.ipsType_light,
+[data-pagecontroller="notifications"] .cForumTopicTable .ipsDataItem.ipsDataItem_unread .ipsType_light{
+	color: {hextorgb="volpe_nfc_unread_font" opacity="0.7"};
+}
+#elFullReports_menu .ipsDataItem_unread .ipsDataItem_meta li{
+	color: {hextorgb="volpe_nfc_unread_font" opacity="0.5"};
+}
+#elFullNotifications_menu.ipsMenu.ipsMenu_topRight:after,
+#elFullNotifications_menu.ipsMenu.ipsMenu_topLeft:after,
+#elFullNotifications_menu.ipsMenu.ipsMenu_topCenter:after,
+#elFullInbox_menu.ipsMenu.ipsMenu_topRight:after,
+#elFullInbox_menu.ipsMenu.ipsMenu_topLeft:after,
+#elFullInbox_menu.ipsMenu.ipsMenu_topCenter:after,
+#elFullReports_menu.ipsMenu.ipsMenu_topRight:after,
+#elFullReports_menu.ipsMenu.ipsMenu_topLeft:after,
+#elFullReports_menu.ipsMenu.ipsMenu_topCenter:after{
+	border-top-color: {theme="volpe_ipsmenu_header_bg"};
+}
+#elFullNotifications_menu.ipsMenu.ipsMenu_bottomRight:after,
+#elFullNotifications_menu.ipsMenu.ipsMenu_bottomLeft:after,
+#elFullNotifications_menu.ipsMenu.ipsMenu_bottomCenter:after,
+#elFullInbox_menu.ipsMenu.ipsMenu_bottomRight:after,
+#elFullInbox_menu.ipsMenu.ipsMenu_bottomLeft:after,
+#elFullInbox_menu.ipsMenu.ipsMenu_bottomCenter:after,
+#elFullReports_menu.ipsMenu.ipsMenu_bottomRight:after,
+#elFullReports_menu.ipsMenu.ipsMenu_bottomLeft:after,
+#elFullReports_menu.ipsMenu.ipsMenu_bottomCenter:after{
+	border-bottom-color: {theme="volpe_ipsmenu_header_bg"};
+}
+
+/*
+ * Profiles and reputation
+ */
+{{if theme.volpe_profile_header_image_turn == '1'}}
+#elProfileHeader {
+	background-image: url('{theme="volpe_profile_header_image"}');
+}
+{{endif}}
+.cProfileRepScore_neutral {
+	background: {theme="volpe_profile_reputation_bg_neutral"};
+	color: {theme="volpe_profile_reputation_font_neutral"};
+}
+.cProfileRepScore_positive {
+	background: {theme="volpe_profile_reputation_bg_positive"};
+	color: {theme="volpe_profile_reputation_font_positive"};
+}
+.cProfileRepScore_negative {
+	background: {theme="volpe_profile_reputation_bg_negative"};
+	color: {theme="volpe_profile_reputation_font_negative"};
+}
+/*.ipsRepBadge {
+	clear code
+}*/
+.ipsRepBadge_positive,
+.ipsRepBadge_positive:hover {
+	color: {theme="volpe_reputation_positive"}!important;
+}
+.ipsRepBadge_negative,
+.ipsRepBadge_negative:hover {
+	color: {theme="volpe_reputation_negative"}!important;
+}
+.ipsRepBadge_neutral,
+.ipsRepBadge_neutral:hover {
+	color: {theme="volpe_reputation_neutral"}!important;
+}
+/*
+ * Mentions
+ */
+a[data-mentionid] {
+	color: {theme="volpe_mentions_font"};
+	{{if theme.volpe_mentions_transparent == '1'}}
+	background: transparent;
+	font-weight: bold;
+	font-size: inherit;
+	padding: 0;
+	display: inline;
+	{{else}}
+	padding: 0 6px;
+	border-radius: 100px;
+	{{endif}}
+}
+
+/*
+ * IPS Menu
+ */
+#elSearchExpanded,
+#elSearchExpanded .ipsSideMenu_list,
+#elSearchExpanded .ipsMenu_title,
+.ipsMenu {
+	background: {theme="volpe_ipsmenu_bg"};
+	border-color: {theme="volpe_ipsmenu_border"};
+}
+.ipsMenu_headerBar {
+	background: {theme="volpe_ipsmenu_header_bg"};
+	color: {theme="volpe_ipsmenu_header_font"};
+	border-bottom: 0;
+}
+.ipsMenu_footerBar > a {
+	color: {theme="volpe_ipsmenu_header_font"};
+}
+.ipsMenu_footerBar {
+	background: {theme="volpe_ipsmenu_footer_bg"};
+	color: {theme="volpe_ipsmenu_footer_font"};
+	border-top: 0;
+}
+.ipsMenu_footerBar > a {
+	color: {theme="volpe_ipsmenu_footer_font"};
+}
+#elUserSignIn_menu .ipsType_sectionHead,
+#elUserSignIn_menu .ipsType_right.ipsType_small a,
+#elUserSignIn_menu .ipsFieldRow_label,
+#elUserSignIn_menu .ipsFieldRow_desc,
+.ipsMenu_headerBar .ipsType_sectionHead,
+.ipsMenu_headerBar > a,
+.ipsSideMenu_title,
+.ipsMenu .cStreamForm_title,
+.ipsMenu_title{
+	color: {theme="volpe_ipsmenu_title_font"};
+}
+#elSearchExpanded .ipsMenu_title,
+.ipsMenu_title {
+	background: {theme="volpe_ipsmenu_title_bg"};
+	color: {theme="volpe_ipsmenu_title_font"};
+}
+.ipsMenu_sep {
+	border-color: {theme="volpe_ipsmenu_seperator"};
+	margin: 2px 0;
+}
+.ipsMenu .ipsSideMenu_item.ipsSideMenu_itemActive{
+	background-color: transparent;
+	color: {theme="main_nav_tab_activefont"};
+}
+.ipsMenu_item > a,
+.ipsMenu_item > span,
+.ipsMenu_item > a:not( .ipsMenu_itemInline ),
+.ipsMenu_item > span:not( .ipsMenu_itemInline ){
+	color: {theme="volpe_ipsmenu_item_font"};
+}
+.ipsMenu_item.ipsMenu_itemDisabled > a, .ipsMenu_item.ipsMenu_itemDisabled > span {
+	color: {hextorgb="volpe_ipsmenu_item_font" opacity="0.6"};
+}
+.ipsMenu .ipsSideMenu_item,
+.ipsSideMenu_withChecks .ipsSideMenu_item > input[type="checkbox"]:checked ~ a,
+.ipsSideMenu_withRadios .ipsSideMenu_item > input[type="radio"]:checked ~ a,
+.cStreamForm_list li a.ipsSideMenu_item.ipsSideMenu_itemActive + .cStreamForm_menu,
+.cStreamForm_list li a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover + .cStreamForm_menu{
+	background-color: transparent;
+	color: {theme="volpe_ipsmenu_item_font"};
+}
+.ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:hover, a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover, span.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
+	background-color: {theme="volpe_ipsmenu_item_bg_hover"};
+	color: {theme="volpe_ipsmenu_item_font_hover"};
+}
+.ipsApp .ipsMenu_selectable .ipsMenu_item .ipsButton_link {
+	color: {theme="volpe_ipsmenu_item_font"};
+	border-radius: 0;
+}
+.ipsMenu_selectable .ipsMenu_item:not( .ipsMenu_itemNonSelect ) button:before,
+.ipsMenu_selectable .ipsMenu_item:not( .ipsMenu_itemNonSelect ) a:before,
+.ipsMenu_selectable .ipsMenu_item:not( .ipsMenu_itemNonSelect ) > span:before,
+.ipsMenu_selectable > li > h3,
+.ipsMenu_selectable > h3 {
+	color: inherit;
+}
+ul:not( .ipsMenu_keyNav ) .ipsMenu_item:not( .ipsMenu_itemClicked ):not( .ipsMenu_itemDisabled ) a:not( .ipsMenu_itemInline ):hover, .ipsMenu_item[data-selected] a, .ipsMenu_item[data-selected] span, .ipsMenu_item.ipsMenu_hover,
+ul:not( .ipsMenu_keyNav ) .ipsMenu_item:not( .ipsMenu_itemClicked ):not( .ipsMenu_itemDisabled ) a:hover,
+.ipsApp .ipsMenu_selectable .ipsMenu_item .ipsButton:not( .ipsButton_noHover ):hover,
+.ipsMenu_item[data-selected] a,
+.ipsMenu_item[data-selected] span,
+.ipsMenu_item.ipsMenu_hover {
+	background-color: {theme="volpe_ipsmenu_item_bg_hover"};
+	color: {theme="volpe_ipsmenu_item_font_hover"};
+}
+.ipsMenu.ipsMenu_bottomLeft:before,
+.ipsMenu.ipsMenu_bottomCenter:before,
+.ipsMenu.ipsMenu_bottomRight:before {
+	border-bottom-color: {theme="volpe_ipsmenu_border"};
+}
+
+.ipsMenu.ipsMenu_bottomLeft:after,
+.ipsMenu.ipsMenu_bottomCenter:after,
+.ipsMenu.ipsMenu_bottomRight:after {
+	border-bottom-color: {theme="volpe_ipsmenu_bg"};
+}
+.ipsMenu.ipsMenu_topLeft:before,
+.ipsMenu.ipsMenu_topCenter:before,
+.ipsMenu.ipsMenu_topRight:before {
+	border-top-color: {theme="volpe_ipsmenu_border"};
+}
+
+.ipsMenu.ipsMenu_topLeft:after,
+.ipsMenu.ipsMenu_topCenter:after,
+.ipsMenu.ipsMenu_topRight:after {
+	border-top-color: {theme="volpe_ipsmenu_bg"};
+}
+
+/*
+ * Action Toolbar
+ */
+.ipsPageAction {
+	border-color: rgba(128,128,128,0.2);
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+	background: {theme="volpe_atool_bg"};
+	color: {theme="volpe_atool_icon"};
+	border-radius: 0;
+}
+.ipsPageAction > ul[data-role='actionItems'] > li:first-child {
+	background: transparent;
+}
+.ipsPageAction > ul[data-role='actionItems'] > li {
+	border:0;
+	padding: 0 15px;
+	line-height: 50px;
+	background: {theme="volpe_atool_bg"};
+	color: {theme="volpe_atool_icon"};
+}
+.ipsPageAction .ipsPageAction_icon {
+	color: {theme="volpe_atool_icon"};
+	text-shadow:none;
+}
+.ipsPageAction > ul[data-role='actionItems'] > li:not(:first-child):hover,
+.ipsPageAction > ul > li.ipsPageAction_active {
+	background: {theme="volpe_atool_item_bg_hover"};
+	color: {theme="volpe_atool_item_font_hover"};
+}
+.ipsPageAction [data-role="actionMenu"]:hover .ipsPageAction_icon,
+.ipsPageAction [data-role="actionButton"]:hover .ipsPageAction_icon {
+	color: {theme="volpe_atool_item_font_hover"};
+}
+
+/*
+ * Pop-ups
+ */
+.ipsDialog_title,
+.ipsDialog_close{
+	color: {theme="volpe_popup_title"};
+}
+.ipsDialog .ipsDialog_title ~ .ipsHr {
+    margin: 15px 0;
+}
+.ipsHovercard {
+  	background: {theme="volpe_popup_bg"};
+  	border: 1px solid {theme="volpe_popup_bg"};
+  	overflow:hidden;
+}
+.ipsHovercard[data-role="advicePopup"].cStem_ltr .ipsHovercard_stem {
+	border-color: transparent {theme="volpe_popup_bg"} transparent transparent;
+}
+.ipsHovercard[data-role="advicePopup"].cStem_rtl .ipsHovercard_stem {
+	border-color: transparent transparent transparent {theme="volpe_popup_bg"};
+}
+.ipsHovercard[data-role="advicePopup"].cStem_above .ipsHovercard_stem {
+	border-color: {theme="volpe_popup_bg"} transparent transparent transparent;
+}
+.ipsApp.ipsApp_front .ipsDialog .ipsDialog_loading,
+.ipsApp.ipsApp_front .ipsDialog > div,
+.ipsApp.ipsApp_front .ipsAlert{
+	background-color: {theme="volpe_popup_bg"};
+}
+.ipsHovercard_stemTop .ipsHovercard_stem {
+	border-color: {theme="volpe_popup_bg"} transparent transparent transparent;
+}
+.ipsHovercard_stemTop .ipsHovercard_stem:before {
+	border-color: {theme="volpe_popup_bg"} transparent transparent transparent;
+}
+.ipsHovercard_stemBottom .ipsHovercard_stem {
+	border-color: transparent transparent {theme="volpe_popup_bg"} transparent;
+}
+.ipsHovercard_stemBottom .ipsHovercard_stem:before {
+	border-color: transparent transparent {theme="volpe_popup_bg"} transparent;
+}
+
+/*
+ * Comment Count
+ */
+.ipsCommentCount.ipsFaded,
+.cNexusActionBadge_off,
+.ipsAutocompleteMenu_item[data-selected],
+.ipsApp.ipsApp_front .ipsAutocompleteMenu,
+.ipsMenu_itemCount,
+.ipsSideMenu_itemCount,
+.ipsMenu_item:not( .ipsMenu_itemClicked ) a:hover .ipsMenu_itemCount,
+.ipsMenu_item:not( .ipsMenu_itemClicked ) button:hover .ipsMenu_itemCount,
+.ipsFollow .ipsCommentCount{
+	background: {theme="comment_count"};
+	color: {theme="comment_count_font"};
+}
+html[dir="ltr"] .ipsFollow .ipsCommentCount:after,
+html[dir="ltr"] .ipsCommentCount:after,
+html[dir="ltr"] .ipsCommentCount.ipsFaded:after {
+	border-right-color: {theme="comment_count"}
+}
+html[dir="rtl"] .ipsCommentCount:after,
+html[dir="rtl"] .ipsCommentCount.ipsFaded:after {
+	border-left-color: {theme="comment_count"}
+}
+
+/*
+ * Tags
+ */
+.ipsTags .ipsTag:before,
+.ipsTag_prefix:before,
+.ipsTags .ipsTag:after,
+.ipsTag_prefix:after {
+	display: none;
+}
+.ipsTags .ipsTag,
+.ipsTag_prefix {
+	margin: 0 1px;
+	padding: 0 9px;
+}
+.ipsTags .ipsTag,
+.ipsTag_prefix,
+.ipsTag_remove {
+	font-size: 12px;
+	border-radius: 9px;
+}
+.ipsTags .ipsTag,
+.ipsTag_remove {
+	color: {theme="volpe_tag_font"}!important
+}
+.ipsTag_remove{
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	background: {theme="tag"};
+}
+.ipsTags .ipsTag:hover,
+.ipsTag_remove:hover {
+	background: {theme="tag"}
+}
+html[dir="rtl"] .ipsTag_remove,
+html[dir="ltr"] .ipsTag_remove {
+	border-radius: 9px
+}
+html[dir="rtl"] .ipsTags_deletable .ipsTag { padding-left: 18px }
+html[dir="rtl"] .ipsTag_remove{	left: 0 }
+html[dir="ltr"] .ipsTags_deletable .ipsTag { padding-right: 18px }
+html[dir="ltr"] .ipsTag_remove{	right: 0 }
+html[dir="ltr"] .ipsTags .ipsTag:hover:before {	border-color: transparent transparent {theme="tag"} {theme="tag"} }
+html[dir="rtl"] .ipsTags .ipsTag:hover:before {	border-color: {theme="tag"} {theme="tag"} transparent transparent }
+html[dir="ltr"] .ipsTags li:first-child .ipsTag,
+html[dir="ltr"] .ipsTag_prefix {
+	margin-left: 0
+}
+html[dir="rtl"] .ipsTags li:first-child .ipsTag,
+html[dir="rtl"] .ipsTag_prefix {
+	margin-right: 0
+}
+html[dir="ltr"] .ipsTags li.ipsTags_edit:not( :only-child ) a {	margin-left: 1px }
+html[dir="rtl"] .ipsTags li.ipsTags_edit:not( :only-child ) a {	margin-right: 1px }
+.ipsTags_edit .ipsButton_veryVerySmall {
+	height: 18px;
+	line-height: 16px;
+	background: {theme="tag"};
+	color: {theme="volpe_tag_font"};
+	border-radius: 9px;
+	margin-top:-1px;
+}
+.ipsTags_edit .ipsButton_veryVerySmall a { height: 18px; }
+
+/*
+ * Reactions
+ */
+.ipsReact_types ul { background: {theme="volpe_reactions_bg"} }
+
+/*
+ * Embed
+ */
+iframe[data-embedContent].ipsEmbed_finishedLoading {
+	background: {theme="volpe_embed_background"};
+	border-color: {theme="volpe_embed_border"};
+}
+body[data-role="internalEmbed"] { 
+	background: {theme="volpe_embed_background"} 
+}
+.ipsRichEmbed_header { 
+	border-bottom: 0;
+	padding: 10px 45px 10px 10px;
+	background: {theme="volpe_embed_header_bg"};
+	color: {theme="volpe_embed_header_font"};
+}
+.ipsRichEmbed_openItem {
+	color: inherit;
+}
+.ipsApp .ipsRichEmbed_stats.ipsSpacer_top {
+	border-color: {theme="volpe_embed_border"};
+}
+.ipsRichEmbed .ipsRichEmbed_itemTitle,
+.ipsRichEmbed .ipsType_richText {
+	color: {theme="volpe_embed_font"};
+}
+/*
+ * Footer
+ */
+footer {
+    background: {theme="volpe_footer_background"};
+    padding-bottom: 20px;
+    color: {theme="volpe_footer_text"};
+}
+#ipsLayout_footer a { color: {theme="footer_text"} }
+#ipsLayout_footer a:hover { color: {theme="volpe_footer_link_hover"} }
+#ipsLayout_footer {
+    margin: 0;
+}
+#ipsLayout_footer p {
+    padding: 6px 0;
+    line-height: 1.7;
+}
+
+#footerup {
+	padding-top: 20px;
+    margin-bottom: 20px;
+}
+#footerup .ipsGrid {
+	padding-bottom: 40px;
+	border-bottom: 1px solid #333;
+}
+
+#footerup h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    color: #828e99;
+    padding: 12px 0;
+}
+
+#footerup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footerup ul li{ padding: 4px 0; }
+
+@media screen and (min-width: 980px)
+{
+	#footerdown {
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	}
+	#ipsLayout_footer #elCopyright {
+	    text-align: right;
+	    float: right;
+	}
+}
+@media screen and (max-width: 979px)
+{
+	#footerup ul li{
+    	text-align: left;
+	}
+}
+#elFooterLinks {
+    display: inline-block;
+    margin: 0;
+}
+/*******************************
+* Header & Navigation & Userbar*
+*******************************/
+
+/*
+ * Header
+ */
+#elSiteTitle { 
+	line-height: 60px;
+	color: {theme="volpe_navbar_sitename_font"};
+}
+#elLogo {
+	max-height: 60px;
+	width: auto;
+}
+
+/*
+ * Mobile Navigation
+ */
+#elUserNav_mobile .cUserNav_icon a { color: inherit }
+.ipsDrawer_menfu,
+.ipsDrawer_close {
+	background: {theme="volpe_mobilenav_bg"};
+	color: {theme="volpe_mobilenav_font"};
+}
+.ipsDrawer_list > li > a:not( .ipsButton ),
+.ipsDrawer_list > li:not( .ipsDrawer_itemParent ) > a:not( .ipsButton ) {
+	color: inherit;
+	border: 0;
+	background: transparent;
+}
+.ipsDrawer_section {
+	color: inherit;
+	font-weight: bold;
+	font-size: 13px;
+}
+.ipsDrawer_itemParent > h4 {
+	color: inherit;
+	border:0;
+}
+.ipsDrawer_list > li.ipsDrawer_itemParent:hover > a,
+.ipsDrawer_list > li.ipsDrawer_itemParent:hover > .ipsDrawer_title,
+.ipsDrawer_list > li:hover > a:not( .ipsButton ),
+.ipsDrawer_list > li:not( .ipsDrawer_itemParent ):hover > a:not( .ipsButton ) {
+	background: {theme="volpe_mobilenav_item_bg_hover"};
+	color: {theme="volpe_mobilenav_item_font_hover"};
+}
+
+/*
+ * Userbar
+ */
+{{if theme.volpe_userbar_seperators == '0' }}
+#elUserNav .elUserNav_sep { display: none; }
+{{endif}}
+#elUserLink_menu a:before {
+	font-family:"FontAwesome";
+	font-weight:normal;
+	display:inline-block;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	content:"";
+}
+#elUserLink_menu a:before {
+	display:inline-block;
+	width:21px;
+}
+#elUserLink_menu li[data-menuItem='admincp'] i {
+	display:none; 
+}
+#elUserLink_menu a:hover:before, #elCreateNew_menu a:hover:before {
+	opacity:1;
+}
+#elUserLink_menu li[data-menuItem='profile'] a:before {
+	content:"\f007";
+}
+#elUserLink_menu li[data-menuItem='messages'] a:before {
+	content:"\f01c";
+}
+#elUserLink_menu li[data-menuItem='manageFollowed'] a:before {
+	content:"\f1d8";
+}
+#elUserLink_menu li[data-menuItem='attachments'] a:before {
+	content:"\f0c6";
+}
+#elUserLink_menu li[data-menuItem='settings'] a:before {
+	content:"\f013";
+}
+#elUserLink_menu li[data-menuItem='ignoredUsers'] a:before {
+	content:"\f05e";
+}
+#elUserLink_menu li[data-menuItem='modcp'] a:before {
+	content:"\f046";
+}
+#elUserLink_menu li[data-menuItem='admincp'] a:before {
+	content:"\f023";
+}
+#elUserLink_menu li[data-menuItem='signout'] a:before {
+	content:"\f08b";
+}
+
+/**********
+* Content *
+***********/
+
+.ipsDataItem {
+	border-color: #2d2d35;
+}
+.ipsDataItem_stats dl > dt,
+.ipsDataItem_stats dl > dd {
+	display: inline;
+}
+
+/*
+ * Flex mode
+ */
+{{if theme.volpe_forum_flex_turn == '1'}}
+@supports (display: flex) {
+	@media screen and (min-width: 980px){
+		.cForumRow.ipsDataItem {
+			display: flex;
+			align-items: center;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_icon {
+			padding: 0!important;
+			margin: 15px;
+			min-width: inherit;
+			width: 40px;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_main,
+		.cForumRow.ipsDataItem .ipsDataItem_stats,
+		.cForumRow.ipsDataItem .ipsDataItem_lastPoster {
+			padding: 12px 0;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_stats dl {
+			margin: 0;
+		}
+	}
+	@media screen and (max-width: 979px){
+		.cForumRow.ipsDataItem {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_icon {
+			padding: 0!important;
+			margin: 0;
+			min-width: inherit;
+			width: 30px;
+			flex: 0 0 30px;
+			align-self: flex-start;
+			order: 1;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_main {
+			padding: 0;
+			flex: 1;
+			order: 2;
+			margin: 0 35px 0 10px!important;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_stats {
+			padding: 0;
+			order: 4;
+			flex: 0 0 100%;
+		}
+		html[dir="ltr"] .cForumRow.ipsDataItem .ipsDataItem_icon:not( .ipsResponsive_hidePhone ):not( .ipsResponsive_hideTablet ) + .ipsDataItem_main + .ipsDataItem_stats {
+			margin-left: 0px!important;
+			margin-top: 0;
+			padding: 0 40px 0 40px;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_stats dl {
+			margin: 0;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_lastPoster {
+			padding: 0;
+			order: 3;
+		}
+		.cForumRow.ipsDataItem .ipsDataItem_lastPoster.ipsDataItem_withPhoto li:last-child time:after {
+			right: auto;
+			left: auto;
+			top: 36px;
+			width: 34px;
+		}
+	}
+}
+{{endif}}
+
+.cForumRow .ipsDataItem_title {	font-size: {theme="volpe_fn_forum_title_size"}px; }
+.cForumRow .ipsDataItem_subList { font-size: {theme="volpe_fn_forum_sub_size"}px; }
+.cForumRow .ipsDataItem_meta { font-size: {theme="volpe_fn_forum_desc_size"}px; }
+
+
+/*
+ * Subforums
+ */
+.cForumRow .ipsItemStatus.ipsItemStatus_large {
+	color: {theme="volpe_fn_icon_unread"};
+	background: {{if theme.volpe_fn_icon_bg_transparent == '1'}}transparent{{else}}{theme="volpe_fn_icon_bg_unread"}{{endif}};
+	border-radius: {{if theme.volpe_fn_icon_bg_corner == 'circle'}}50%;{{elseif theme.volpe_fn_icon_bg_corner == 'rounded'}}10%{{else}}0{{endif}};
+}
+.cForumRow .ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read {
+	color: {theme="volpe_fn_icon_read"};
+	background: {{if theme.volpe_fn_icon_bg_transparent == '1'}}transparent{{else}}{theme="volpe_fn_icon_bg"}{{endif}};
+}
+
+{{if theme.volpe_fn_hovereffect_type == "bg" and theme.volpe_fn_zebra_forums == '0'}}
+.cForumList .ipsDataList:not(.ipsDataList_zebra) .cForumRow.ipsDataItem {
+	transition: background .5s ease;
+}
+.cForumList .ipsDataList:not(.ipsDataList_zebra) .cForumRow.ipsDataItem:hover {
+	background: {hextorgb="volpe_fn_hovereffect_color" opacity="1"};
+}
+{{endif}}
+
+html[dir="ltr"] .ipsDataItem_subList,
+html[dir="rtl"] .ipsDataItem_subList {
+	background-image: none;
+	padding: 0!important;
+}
+
+.ipsDataItem_subList li {
+	margin-right: 20px
+}
+.ipsDataItem_subList li a {
+	display: flex;
+	align-items: center;
+}
+
+.ipsDataItem_subList li a:before {
+	content: "";
+	display: block;
+	width:5px;
+	height: 5px;
+	margin-right: 5px;
+	border-radius: 50%;
+	background: {theme="volpe_fn_icon_subforum_read"};
+}
+.ipsDataItem_subList li.ipsDataItem_unread a:before {
+	background: {theme="volpe_fn_icon_subforum_unread"};
+}
+.ipsDataItem_subList li a:after {
+	display: none;
+}
+
+{{if theme.volpe_fn_subforum_type == 'vertical'}}
+.ipsDataItem_subList li {
+    display: block;
+}
+{{elseif theme.volpe_fn_subforum_type == 'twocolumns'}}
+@media screen and (min-width: 768px){
+	.ipsDataItem_subList:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.ipsDataItem_subList > li:first-of-type:last-of-type {
+		width: 100%;
+	}
+	.ipsDataItem_subList li {
+	    float: left;
+	    width: 50%;
+	    margin-right: 0!important;
+	}
+}
+{{endif}}
+
+
+
+/*
+ * Topic
+ */
+@media screen and (min-width: 768px){
+	.cPost .cAuthorPane {
+   		width: {theme="volpe_post_author_width"}px;
+	}
+	.cPost .ipsComment_content:before {
+	  	content: '';
+		top: 15px;
+		left: -20px;
+		width: 0;
+		height: 0;
+		border: 10px solid transparent;
+		position: absolute;
+	}
+	html[dir] .cPost .ipsComment_content {
+		border: none;
+	    box-shadow: none;
+		padding-left: 15px;
+		padding-right: 0;
+	}
+}
+.ipsComment.ipsBox,
+.ipsComment .ipsComment_content:before {
+	transition: 0.2s all linear;
+}
+
+.ipsComment .ipsComment_content,
+.ipsComment .ipsComment_author,
+.ipsComment.ipsModerated .ipsComment_content,
+.ipsComment.ipsModerated .ipsComment_author,
+.ipsComment.ipsComment_selected .ipsComment_content,
+.ipsComment.ipsComment_selected .ipsComment_author{
+	background: transparent;
+}
+.ipsComment .cAuthorPane {
+	transition: 0.2s background linear;
+	border-radius: 2px 0 0 2px;
+}
+.ipsComment:not( .ipsModerated ) .ipsComment_header {
+border-top:0;
+}
+
+.cNexusSupportMessage.ipsBox:not( .ipsBox_transparent ):not( .ipsModerated ),
+.ipsComment.ipsComment:not( .ipsModerated ):not( .ipsComment_selected ) {
+	background: {theme="volpe_post_background"};
+    border: 1px solid {theme="volpe_post_border_color"};
+}
+.cPost.ipsComment:not( .ipsModerated ):not( .ipsComment_selected ) .ipsComment_content:before {
+	border-color: transparent {theme="volpe_post_background"} transparent transparent;
+}
+.cNexusSupportMessage_m .cNexusSupportMessage_author, .cNexusSupportMessage_a .cNexusSupportMessage_author,
+.ipsComment.ipsComment:not( .ipsModerated ):not( .ipsComment_selected ) .cAuthorPane {
+	background: {theme="volpe_post_author_background"};
+}
+
+.ipsComment.ipsComment_highlighted:not( .ipsModerated ):not( .ipsComment_selected ) {
+	background: {theme="post_highlight"};
+	border-color: {theme="post_highlight_border"};
+	box-shadow: 0px 2px 10px {hextorgb="post_highlight_border" opacity="0.4"};
+}
+.ipsComment.ipsComment_highlighted:not( .ipsModerated ):not( .ipsComment_selected ) .ipsComment_content:before {
+	border-color: transparent {theme="post_highlight"} transparent transparent;
+}
+.ipsComment.ipsComment_highlighted:not( .ipsModerated ):not( .ipsComment_selected ) .cAuthorPane {
+	background: {theme="volpe_post_highlight_author_background"};
+}
+
+.ipsApp .ipsDataItem_selected {
+	background: {theme="volpe_post_background_selected"};
+}
+.ipsComment.ipsComment_selected {
+	background: {theme="volpe_post_background_selected"}!important;
+	border-color: {theme="volpe_post_border_color_selected"};
+	box-shadow: 0px 2px 10px {hextorgb="volpe_post_border_color_selected" opacity="0.4"};
+}
+.ipsComment.ipsComment_selected .ipsComment_content:before {
+	border-color: transparent {theme="volpe_post_background_selected"} transparent transparent;
+}
+.ipsComment.ipsComment_selected .cAuthorPane {
+	background: {theme="volpe_post_author_background_selected"};
+}
+
+.ipsModerated {
+	background: {theme="volpe_post_background_moderated"};
+}
+.ipsComment.ipsModerated:not( .ipsComment_selected ) {
+	background: {theme="volpe_post_background_moderated"};
+	border-color: {theme="volpe_post_border_color_moderated"};
+	box-shadow: 0px 2px 10px {hextorgb="volpe_post_border_color_moderated" opacity="0.4"};
+}
+.ipsComment.ipsModerated:not( .ipsComment_selected ) .ipsComment_content:before {
+	border-color: transparent {theme="volpe_post_background_moderated"} transparent transparent;
+}
+.ipsComment.ipsModerated:not( .ipsComment_selected ) .cAuthorPane {
+	background: {theme="volpe_post_author_background_moderated"};
+}
+
+.ipsComment:not( .ipsModerated ):not( .ipsComment_selected ).ipsBox.ipsComment_popular {
+	border-color: {hextorgb="volpe_post_popular" opacity="0.4"};
+	box-shadow: 0px 2px 10px {hextorgb="volpe_post_popular" opacity="0.2"};
+}
+.ipsComment.ipsComment_popular .ipsComment_popularFlag{
+	background: {theme="volpe_post_popular"};
+}
+.ipsComment.ipsComment_popular .ipsComment_popularFlag:after {
+	border-top-color: {theme="volpe_post_popular"};
+}
+
+.ipsImage_thumbnailed,
+.cBlogView_entry {
+	border: 0;
+	padding: 0;
+}
+.ipsComment .ipsImage_thumbnailed {
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.ipsCommentUnreadSeperator {
+	border-color: {theme="volpe_post_unread_sep_color"};
+}
+
+
+/*
+ * Quotes & Codes
+ */
+
+.ipsCode {
+	border-width: 0 0 0 3px!important;
+	background: {theme="volpe_code_quote_background"};
+	border-color: {theme="volpe_quote_header_bg"}!important;
+}
+.ipsQuote,
+.ipsSpoiler{
+	background: {theme="volpe_code_quote_background"};
+	border-width: 1px;
+	border-color: {theme="volpe_quote_header_bg"};
+	color: {theme="volpe_quote_text_color"};
+}
+.ipsQuote_citation,
+.ipsSpoiler_header {
+	background: {theme="volpe_quote_header_bg"};
+}
+
+.ipsSpoiler_header.ipsSpoiler_closed [data-action='toggleSpoiler']:before,
+.ipsSpoiler_header.ipsSpoiler_open [data-action='toggleSpoiler']:before,
+.ipsQuote_citation.ipsQuote_closed [data-action='toggleQuote']:before,
+.ipsQuote_citation.ipsQuote_open [data-action='toggleQuote']:before,
+.ipsQuote .ipsQuote_citation a,
+.ipsQuote_citation,
+.ipsSpoiler_header,
+.ipsSpoiler_header a {
+	color: {theme="volpe_quote_header_font_color"};
+}
+
+
+/*
+ * Poll
+ */
+.cPollList_choices .ipsGrid > [class*="ipsGrid_span"] {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.cPollVoteBar {
+	height: 10px;
+	width: 100%;
+	border-radius: 6px;
+	position: relative;
+	background: {theme="volpe_poll_bar_bg"};
+}
+.cPollVoteBar > span {
+	height: 10px;
+	border-radius: 6px;
+	background: {theme="poll_bar"};
+}
+{{if theme.volpe_poll_show_percent == '1'}}
+.cPollVoteBar > span:after {
+	line-height: 10px;
+	color: {theme="volpe_poll_bar_bg_font"};
+}
+html[dir="ltr"] .cPollVoteBar > span.cPollVoteBar_inside:after {
+	color: {theme="volpe_poll_bar_font"};
+}
+{{else}}
+.cPollVoteBar > span:after {
+	display: none;
+}
+{{endif}}
+
+
+
+/***********
+* Features *
+***********/
+
+/*
+ * News Ticker
+ */
+#newsticker {
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 26px;
+}
+
+#newsticker .swiper-wrapper {
+}
+#newsticker .news {
+	font-weight: bold;
+	color: #ff0000;
+	margin-right: 7px;
+}
+#newsticker .swiper-slide {	
+	opacity: 0!important;
+	display: flex;
+	align-items: center;
+}
+#newsticker .swiper-slide.swiper-slide-active {	opacity: 1!important; }
+
+
+/*
+ * Notices
+ */
+
+#notices {margin-top: 15px;}
+#notices .ipsMessage p { margin:0; }
+
+
+
+/*
+ *Forms and Toggles
+ */
+.ipsApp .ipsField_autocomplete,
+.ipsApp textarea,
+.ipsApp input[type="text"],
+.ipsApp input[type="password"],
+.ipsApp input[type="datetime"],
+.ipsApp input[type="datetime-local"],
+.ipsApp input[type="date"],
+.ipsApp input[type="month"],
+.ipsApp input[type="time"],
+.ipsApp input[type="week"],
+.ipsApp input[type="number"],
+.ipsApp input[type="email"],
+.ipsApp input[type="url"],
+.ipsApp input[type="search"],
+.ipsApp input[type="tel"] {
+	background-color: {theme="volpe_input_background"};
+ 	border: 1px solid {theme="volpe_input_border_color"};
+ 	color: {theme="volpe_input_text_color"};
+}
+.ipsApp textarea:focus,
+.ipsApp input[type="text"]:focus,
+.ipsApp input[type="password"]:focus,
+.ipsApp input[type="datetime"]:focus,
+.ipsApp input[type="datetime-local"]:focus,
+.ipsApp input[type="date"]:focus,
+.ipsApp input[type="month"]:focus,
+.ipsApp input[type="time"]:focus,
+.ipsApp input[type="week"]:focus,
+.ipsApp input[type="number"]:focus,
+.ipsApp input[type="email"]:focus,
+.ipsApp input[type="url"]:focus,
+.ipsApp input[type="search"]:focus,
+.ipsApp input[type="tel"]:focus,
+.ipsApp input[type="color"]:focus {
+	background-color: {theme="volpe_input_background_focus"};
+	border-color: {theme="volpe_input_border_color_focus"};
+	box-shadow: 0px 0px 5px {hextorgb="volpe_input_border_color_focus" opacity="0.6"};
+}
+.ipsApp .ipsField_autocomplete input[type="text"] {	
+	border: 0; background: transparent; 
+}
+.ipsApp input{color: {theme="volpe_input_text_color"}; }
+.cCreateTopic_date i {
+	color: {hextorgb="volpe_input_text_color" opacity="0.4"};
+}
+
+/*
+ *Toggle
+ */
+.ipsToggle {
+	box-shadow: none;
+	border:0;
+	padding: 2px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: {{if theme.volpe_toggle_type == 'rounded'}}12px{{elseif theme.volpe_toggle_type == 'rectanglerounded'}}3px{{else}}0{{endif}};
+}
+.ipsToggle span {
+	border-radius: {{if theme.volpe_toggle_type == 'rounded'}}12px{{elseif theme.volpe_toggle_type == 'rectanglerounded'}}2px{{else}}0{{endif}};
+	background: {theme="volpe_toggle_button"};
+	box-shadow:none;
+	color: rgba(0,0,0,0);
+	top: 3px;
+}
+html[dir="ltr"] .ipsToggle.ipsToggle_on span, html[dir="ltr"] .ipsToggle.ipsToggle_off:active span {
+	right: 3px;
+}
+.ipsToggle span:after,
+.ipsToggle span:before,
+.ipsToggle.ipsToggle_off span:after {
+	display: none;
+}
+.ipsToggle.ipsToggle_off {
+	background: {theme="volpe_toggle_bg_off"};
+	outline: 0;
+}
+.ipsToggle.ipsToggle_on {
+	background: {theme="volpe_toggle_bg_on"};
+	outline: 0;
+}
+.ipsApp .ipsToggle:focus, .ipsApp .ipsCustomInput input:focus + span {
+	box-shadow: none;
+}
+
+/*
+ * Tabs
+ */
+.ipsTabs {
+	border-color: {theme="volpe_tabs_border"};
+}
+.ipsTabs_item {
+	background: transparent;
+	color: {theme="volpe_tabs_button_text"}
+}
+.ipsTabs_activeItem {
+	background: {theme="volpe_tabs_button_active"};
+	color: {theme="volpe_tabs_button_text_active"};
+}
+.ipsTabs_panels.ipsTabs_contained {
+	border-color: {theme="volpe_tabs_border"};
+}
+.ipsTabs_panel,
+.ipsTabs_panels .ipsTabs_panel,
+.cPastLeaders_title span  {
+	background: {theme="volpe_tabs_panel_background"};
+}
+
+.ipsTabs.ipsTabs_small .ipsTabs_activeItem {
+	background: transparent;
+	border: 0;
+	color: {theme="volpe_tabs_small_font"};
+}
+/*
+ * Checkbox and Radio
+ */
+.ipsCustomInput,
+.ipsCustomInput > span,
+.ipsCustomInput input {
+	width: 17px;
+	height: 17px;
+}
+.ipsCustomInput input[type="checkbox"] + span {
+	border-radius: 2px;
+}
+.ipsCustomInput > span {
+	background: {theme="volpe_checkbox_background"};
+	border-color: {theme="volpe_checkbox_border_color"};
+}
+.ipsCustomInput input:checked + span,
+.ipsApp .ipsCustomInput input:focus + span,
+.ipsCustomInput input:hover:not( :disabled ) + span {
+	border-color: {theme="volpe_checkbox_border_checked"};
+}
+.ipsCustomInput input[type="checkbox"]:checked + span:after {
+	top: 50%;
+	left: 50%;
+	bottom: auto;
+	right: auto;
+	transform: translate(-50%, -50%);
+	color: {theme="volpe_checkbox_icon_color"};
+}
+
+.ipsCustomInput input[type="radio"]:checked + span:after {
+	left: 50%;
+	top: 50%;
+	transform: translate(-55%, -55%);
+	background: {theme="volpe_checkbox_icon_color"};
+}
+
+/*
+ *Select 
+ */
+select:not( [multiple] ),
+html[dir="ltr"] select:not( [multiple] ),
+html[dir="rtl"] select:not( [multiple] ){
+	background-color: {theme="volpe_input_background_focus"};
+	border-color: {theme="volpe_input_border_color_focus"};
+	background-image: none;
+	outline: 0;
+}
+html[dir="ltr"] .cStreamForm_nodes,
+html[dir="rtl"] .cStreamForm_nodes {
+	border-left-color: {theme="volpe_stree_border_color"};
+}
+.ipsSelectTree,
+.ipsSelectTree_nodes{
+	background: {theme="volpe_stree_background"};
+}
+.ipsSelectTree_placeholder,
+.ipsSelectTree_expand,
+.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_toggle,
+.ipsSelectTree_itemDisabled > [data-role="nodeTitle"] {
+	color: inherit;
+}
+.ipsSelectTree_placeholder,
+.ipsSelectTree_expand,
+.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_toggle,
+.ipsSelectTree_itemDisabled > [data-role="nodeTitle"]{
+	color: {theme="volpe_stree_font_color"};
+}
+.ipsSelectTree_itemDisabled > [data-role="nodeTitle"]{
+	color: {hextorgb="volpe_stree_font_color" opacity="0.6"};
+}
+.ipsSelectTree_selected,
+.ipsSelectTree [data-role="tokenList"] .cToken,
+.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:not( .ipsSelectTree_itemDisabled ).ipsSelectTree_selected:hover{
+	background: {theme="volpe_stree_bg_active"};
+	color: {theme="volpe_stree_font_active"};
+}
+.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:not( .ipsSelectTree_itemDisabled ):hover{
+	background: {hextorgb="volpe_stree_bg_hover"};
+	color: {theme="volpe_stree_font_hover"};
+}
+.ipsSelectTree,
+.ipsSelectTree_nodes,
+.ipsSelectTree_active {
+	border-color: {theme="volpe_stree_border_color"};
+}
+.ipsSelectTree_nodes [data-role="nodeList"] {
+	background: {theme="volpe_stree_background"};
+	border-color: {theme="volpe_stree_border_color"};
+}
+.ipsSelectTree_nodes [data-role="nodeList"] li [data-role="childWrapper"],
+html[dir="ltr"] .ipsSelectTree_nodes [data-role="nodeList"] li [data-role="childWrapper"],
+html[dir="rtl"] .ipsSelectTree_nodes [data-role="nodeList"] li [data-role="childWrapper"]
+{
+	border-color: {theme="volpe_stree_border_color"};
+}
+select {
+	background-color: {theme="volpe_input_background"};
+ 	border-color: {theme="volpe_input_border_color"};
+}
+select:focus {
+	outline: 0;
+	background-color: {theme="volpe_input_background_focus"};
+	border-color: {theme="volpe_input_border_color_focus"};
+}
+
+/*
+ *Editor
+ */
+{{if theme.volpe_editor_custom_colors}}
+.ipsComposeArea_editor,
+.ipsComposeArea_unavailable .ipsComposeArea_editor,
+[data-role="attachmentArea"] {
+	background: {theme="volpe_editor_compose_area_border"};
+}
+html[dir="ltr"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before{
+	border-right-color: {theme="volpe_editor_compose_area_border"};
+}
+.ipsComposeArea_dummy,
+.cke textarea.cke_source,
+.cke .cke_wysiwyg_frame,
+.cke .cke_wysiwyg_div,
+.cke .cke_inner,
+.cke textarea.cke_source { 
+	background: {theme="volpe_editor_area_background"};
+}
+.ipsComposeArea_dummy,
+.cke .cke_wysiwyg_div,
+.cke .cke_source {
+	color: {theme="volpe_editor_text"};
+}
+.ipsComposeArea_editor [data-role="attachmentArea"] {
+	color: {theme="volpe_editor_uploadtext"};
+}
+.cke .cke_top {	
+	background: {theme="volpe_editor_toolbar_background"};
+}
+.cke_toolgroup span.cke_button_icon[style*="icons.png"]{
+{{if theme.volpe_editor_toolbar_icon_color == 'dark'}}
+	background-image: url('{resource="editor_icons_dark.png" app="core" location="front"}')!important;
+	color: #484848;
+{{else}}
+	background-image: url('{resource="editor_icons_light.png" app="core" location="front"}')!important;
+	color: #bbbbbb;
+{{endif}}
+}
+.cke a.cke_button_off:hover,
+.cke a.cke_button_disabled:hover,
+.cke .cke_combo_off a.cke_combo_button:hover {
+	background: {theme="volpe_editor_toolbar_tabs_hover"};
+}
+.cke a.cke_button_on,
+.cke .cke_combo_off a.cke_combo_button:active,
+.cke .cke_combo_on a.cke_combo_button {
+	background: {theme="volpe_editor_toolbar_tabs_active"};
+	border: 0;
+}
+
+a.cke_combo_button {
+	background: transparent!important;
+	border: 1px solid transparent!important;
+	box-shadow: none!important;
+}
+.cke .cke_combo_on a.cke_combo_button,
+.cke .cke_combo_text,
+.cke .cke_button_label {
+	text-shadow: none;
+	color:{{if theme.volpe_editor_toolbar_icon_color == 'dark'}}#484848{{else}}#bbbbbb{{endif}};
+}
+.cke .cke_combo_arrow,
+.cke .cke_button_arrow{
+	border-top-color: {{if theme.volpe_editor_toolbar_icon_color == 'dark'}}#484848{{else}}#bbbbbb;{{endif}};
+}
+.ipsApp .cke_widget_wrapper:hover > .cke_widget_element,
+.ipsApp .cke_widget_wrapper:hover .cke_widget_editable {
+	outline-width: 1px;
+	outline-style: solid;
+	outline-color: {theme="volpe_editor_toolbar_background"};
+}
+.ipsApp .cke_widget_wrapper:hover .cke_widget_editable.cke_widget_editable_focused {
+	box-shadow: none;
+}
+.cke_widget_wrapper .cke_widget_editable.cke_widget_editable_focused,
+.cke_widget_wrapper.cke_widget_focused > .cke_widget_element {
+	outline: none!important;
+}
+{{endif}}
+
+
+.ipsWidget.ipsBox:not( .ipsBox_transparent ):not( .ipsModerated ) {
+	background: {theme="volpe_widget_bg"};
+	border-color: {theme="volpe_widget_border"};
+	box-shadow: 0px 1px 0px {theme="volpe_widget_border"};
+}
+
+/*
+ * Buttons 
+ */
+.ipsFollow .ipsCommentCount {
+	color: inherit;
+	background: transparent;
+}
+.ipsFollow .ipsCommentCount:after {
+	display: none;
+}
+html[dir="ltr"] .ipsCommentCount,
+html[dir="rtl"] .ipsCommentCount {
+	margin: 0;
+}
+
+/* 
+ * Pagination
+ */
+.ipsPagination.ipsPagination_mini a,
+.ipsButtonBar .ipsButtonRow li > button,
+.ipsApp .ipsButtonBar .ipsButtonRow li > a,
+.ipsApp .ipsButtonBar .ipsButtonRow li > span,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_page a,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_pageJump a,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_next a,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_prev a,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_first a,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_last a,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_page a,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_next a,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_prev a,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_first a,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_last a,
+.ipsButtonBar .ipsPagination .ipsPagination_pageJump a,
+.ipsPagination .ipsPagination_pageJump a,
+.cForumTopicTable.cTopicList:before,
+.cForumTopicTable.cTopicList:after{
+	background: {theme="volpe_pagination_background"};
+	color: {theme="volpe_pagination_font"};
+	font-weight: bold;
+}
+.ipsButtonBar .ipsButtonRow li > button:hover,
+.ipsApp .ipsButtonBar .ipsButtonRow li > a:hover,
+.ipsApp .ipsButtonBar .ipsButtonRow li > span:hover,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_page a:hover,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_pageJump a:hover,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_next a:hover,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_prev a:hover,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_first a:hover,
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_last a:hover,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_page a:hover,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_next a:hover,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_prev a:hover,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_first a:hover,
+.ipsPagination:not( .ipsPagination_mini ) .ipsPagination_last a:hover,
+.ipsButtonBar .ipsPagination .ipsPagination_pageJump a:hover,
+.ipsPagination .ipsPagination_pageJump a:hover{
+	background: {theme="volpe_pagination_background_hover"};
+	color: {theme="volpe_pagination_font_hover"};
+}
+
+.ipsApp .ipsButtonBar .ipsPagination .ipsPagination_page.ipsPagination_active a,
+.ipsApp .ipsButtonBar .ipsButtonRow li > a.ipsButtonRow_active,
+.ipsPagination .ipsPagination_page.ipsPagination_active a{
+	background: {theme="pagination_active"};
+	color: {theme="volpe_pagination_font_active"};
+}
+
+
+
+/*
+ * Navigation
+ */
+
+
+
+
+
+
+
+#ipsLayout_header {
+	border-bottom: 0;
+}
+#ipsLayout_header header {
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#ipsLayout_header nav {
+	height: auto;
+	background: {theme="volpe_main_nav_bg"};
+}
+#ipsLayout_header header > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+#elUserNav {
+	position: static;
+}
+.ipsNavBar_primary {
+	position: static;
+	padding: 0 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.ipsNavBar_primary > ul > li > a {
+	color: inherit;
+}
+html[dir="ltr"] .ipsNavBar_primary > ul > li,
+html[dir="rtl"] .ipsNavBar_primary > ul > li {
+	position: relative;
+}
+.ipsNavBar_primary > ul > li > a {
+	padding: 0 20px;
+	transition-property: background, color;
+	transition-duration: .25s;
+	transition-timing-function: ease;
+	line-height: {theme="volpe_navbar_height"}px;
+}
+html[dir="ltr"] .ipsNavBar_primary > ul > li:hover > a {
+	background: {theme="main_nav_tab"};
+	color: {theme="main_nav_tab_font"};
+}
+html[dir="ltr"] .ipsNavBar_primary > ul > li > a { margin-right: 0; }
+html[dir="rtl"] .ipsNavBar_primary > ul > li > a { margin-left: 0; }
+.ipsNavBar_primary > ul > li > .ipsNavBar_secondary {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition-property: visibility, opacity, transform;
+	transition-timing-function: ease;
+	transition-delay: 0 .25s .25s;
+	transition-duration: .25s;
+	min-width: 130px;
+}
+.ipsNavBar_primary > ul > li:hover > .ipsNavBar_secondary {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+}
+.ipsNavBar_primary:not( .ipsNavBar_noSubBars ) > ul:before { content: none; }
+html[dir="ltr"] .ipsNavBar_primary > ul > li:hover > .ipsNavBar_secondary,
+html[dir="rtl"] .ipsNavBar_primary > ul > li:hover > .ipsNavBar_secondary {
+	display: block;
+}
+.ipsNavBar_secondary {
+	height: auto;
+	bottom: auto;
+	right: auto;
+	left: 0;
+	background: {theme="main_nav_tab"};
+	top: {theme="volpe_navbar_height"};
+}
+html[dir="ltr"] .ipsNavBar_secondary > li,
+html[dir="rtl"] .ipsNavBar_secondary > li {
+	clear:both;
+	display: block;
+	width: 100%;
+	height: 40px;
+	position: relative;
+}
+.ipsNavBar_secondary > li > a {
+	text-align: left;
+	display: block;
+	white-space: nowrap;
+	width: 100%;
+	line-height: 40px;
+	padding: 0 20px;
+	background: transparent;
+	z-index: 5055;
+	color: {theme="main_nav_tab_font"};
+}
+html[dir="rtl"] .ipsNavBar_secondary > li > a {
+	text-align: right;
+}
+html[dir="ltr"] .ipsNavBar_secondary > li:hover > a,
+html[dir="rtl"] .ipsNavBar_secondary > li:hover > a,
+.ipsNavBar_third > li:hover > a {
+	background: {theme="volpe_main_nav_tab_hover"};
+	color: {theme="volpe_main_nav_tab_font_hover"};
+}
+
+.ipsNavBar_secondary,
+.ipsNavBar_third {
+	box-shadow: 0px 5px 5px rgba(0,0,0,0.1)
+}
+
+.ipsNavBar_secondary > li > .ipsNavBar_third {
+	display: block;
+	visibility: hidden;
+	left: 100%;
+	top: 0;
+	padding: 0;
+	position: absolute;
+	list-style-type: none;
+	white-space: nowrap;
+	opacity: 0;
+	transform: translateX(-10px);
+	transition-property: visibility, opacity, transform;
+	transition-timing-function: ease;
+	transition-delay: 0 .25s .25s;
+	transition-duration: .25s;
+	background: {theme="main_nav_tab"};
+}
+.ipsNavBar_secondary > li:hover > .ipsNavBar_third {
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(0px);
+}
+
+.ipsNavBar_third > li {
+	clear:both;
+	display: block;
+	width: 100%;
+	height: 40px;
+	position: relative;
+}
+.ipsNavBar_third > li > a {
+	line-height: 40px;
+	padding: 0 20px;
+	display: block;
+	color: {theme="main_nav_tab_font"};
+}
+.ipsNavBar_third > li.navthird_sep {
+	height: inherit;
+}
+.ipsNavBar_third > li.navthird_sep hr {
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: {theme="volpe_ipsmenu_seperator"};
+	margin: 2px 0;
+}
+.navthird_title {
+	line-height: 40px;
+	padding: 0 20px;
+	font-weight: bold;
+}
+
+
+{{if theme.volpe_navbar_icons_turn == '1'}}
+.ipsNavBar_primary > ul > li > a:before {
+	font-family:"FontAwesome", sans-serif;
+	font-weight:normal;
+	display:inline-block;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	color: inherit;
+	transition: color .25s ease;
+}
+.ipsNavBar_primary > ul > li.ipsNavBar_active > a {
+	background: transparent;
+}
+.ipsNavBar_primary > ul > li.ipsNavBar_active > a:before, 
+.ipsNavBar_primary > ul > li:hover > a:before { 
+	color: {theme="volpe_navbar_icon_hover"};
+}
+{{$icons=array("fa-adjust"=>"\\f042","fa-adn"=>"\\f170","fa-align-center"=>"\\f037","fa-align-justify"=>"\\f039","fa-align-left"=>"\\f036","fa-align-right"=>"\\f038","fa-ambulance"=>"\\f0f9","fa-anchor"=>"\\f13d","fa-android"=>"\\f17b","fa-angellist"=>"\\f209","fa-angle-double-down"=>"\\f103","fa-angle-double-left"=>"\\f100","fa-angle-double-right"=>"\\f101","fa-angle-double-up"=>"\\f102","fa-angle-down"=>"\\f107","fa-angle-left"=>"\\f104","fa-angle-right"=>"\\f105","fa-angle-up"=>"\\f106","fa-apple"=>"\\f179","fa-archive"=>"\\f187","fa-area-chart"=>"\\f1fe","fa-arrow-circle-down"=>"\\f0ab","fa-arrow-circle-left"=>"\\f0a8","fa-arrow-circle-o-down"=>"\\f01a","fa-arrow-circle-o-left"=>"\\f190","fa-arrow-circle-o-right"=>"\\f18e","fa-arrow-circle-o-up"=>"\\f01b","fa-arrow-circle-right"=>"\\f0a9","fa-arrow-circle-up"=>"\\f0aa","fa-arrow-down"=>"\\f063","fa-arrow-left"=>"\\f060","fa-arrow-right"=>"\\f061","fa-arrow-up"=>"\\f062","fa-arrows"=>"\\f047","fa-arrows-alt"=>"\\f0b2","fa-arrows-h"=>"\\f07e","fa-arrows-v"=>"\\f07d","fa-asterisk"=>"\\f069","fa-at"=>"\\f1fa","fa-backward"=>"\\f04a","fa-ban"=>"\\f05e","fa-bar-chart"=>"\\f080","fa-barcode"=>"\\f02a","fa-bars"=>"\\f0c9","fa-beer"=>"\\f0fc","fa-behance"=>"\\f1b4","fa-behance-square"=>"\\f1b5","fa-bell"=>"\\f0f3","fa-bell-o"=>"\\f0a2","fa-bell-slash"=>"\\f1f6","fa-bell-slash-o"=>"\\f1f7","fa-bicycle"=>"\\f206","fa-binoculars"=>"\\f1e5","fa-birthday-cake"=>"\\f1fd","fa-bitbucket"=>"\\f171","fa-bitbucket-square"=>"\\f172","fa-bold"=>"\\f032","fa-bolt"=>"\\f0e7","fa-bomb"=>"\\f1e2","fa-book"=>"\\f02d","fa-bookmark"=>"\\f02e","fa-bookmark-o"=>"\\f097","fa-briefcase"=>"\\f0b1","fa-btc"=>"\\f15a","fa-bug"=>"\\f188","fa-building"=>"\\f1ad","fa-building-o"=>"\\f0f7","fa-bullhorn"=>"\\f0a1","fa-bullseye"=>"\\f140","fa-bus"=>"\\f207","fa-calculator"=>"\\f1ec","fa-calendar"=>"\\f073","fa-calendar-o"=>"\\f133","fa-camera"=>"\\f030","fa-camera-retro"=>"\\f083","fa-car"=>"\\f1b9","fa-caret-down"=>"\\f0d7","fa-caret-left"=>"\\f0d9","fa-caret-right"=>"\\f0da","fa-caret-square-o-down"=>"\\f150","fa-caret-square-o-left"=>"\\f191","fa-caret-square-o-right"=>"\\f152","fa-caret-square-o-up"=>"\\f151","fa-caret-up"=>"\\f0d8","fa-cc"=>"\\f20a","fa-cc-amex"=>"\\f1f3","fa-cc-discover"=>"\\f1f2","fa-cc-mastercard"=>"\\f1f1","fa-cc-paypal"=>"\\f1f4","fa-cc-stripe"=>"\\f1f5","fa-cc-visa"=>"\\f1f0","fa-certificate"=>"\\f0a3","fa-chain-broken"=>"\\f127","fa-check"=>"\\f00c","fa-check-circle"=>"\\f058","fa-check-circle-o"=>"\\f05d","fa-check-square"=>"\\f14a","fa-check-square-o"=>"\\f046","fa-chevron-circle-down"=>"\\f13a","fa-chevron-circle-left"=>"\\f137","fa-chevron-circle-right"=>"\\f138","fa-chevron-circle-up"=>"\\f139","fa-chevron-down"=>"\\f078","fa-chevron-left"=>"\\f053","fa-chevron-right"=>"\\f054","fa-chevron-up"=>"\\f077","fa-child"=>"\\f1ae","fa-circle"=>"\\f111","fa-circle-o"=>"\\f10c","fa-circle-o-notch"=>"\\f1ce","fa-circle-thin"=>"\\f1db","fa-clipboard"=>"\\f0ea","fa-clock-o"=>"\\f017","fa-cloud"=>"\\f0c2","fa-cloud-download"=>"\\f0ed","fa-cloud-upload"=>"\\f0ee","fa-code"=>"\\f121","fa-code-fork"=>"\\f126","fa-codepen"=>"\\f1cb","fa-coffee"=>"\\f0f4","fa-cog"=>"\\f013","fa-cogs"=>"\\f085","fa-columns"=>"\\f0db","fa-comment"=>"\\f075","fa-comment-o"=>"\\f0e5","fa-comments"=>"\\f086","fa-comments-o"=>"\\f0e6","fa-compass"=>"\\f14e","fa-compress"=>"\\f066","fa-copyright"=>"\\f1f9","fa-credit-card"=>"\\f09d","fa-crop"=>"\\f125","fa-crosshairs"=>"\\f05b","fa-css3"=>"\\f13c","fa-cube"=>"\\f1b2","fa-cubes"=>"\\f1b3","fa-cutlery"=>"\\f0f5","fa-database"=>"\\f1c0","fa-delicious"=>"\\f1a5","fa-desktop"=>"\\f108","fa-deviantart"=>"\\f1bd","fa-digg"=>"\\f1a6","fa-dot-circle-o"=>"\\f192","fa-download"=>"\\f019","fa-dribbble"=>"\\f17d","fa-dropbox"=>"\\f16b","fa-drupal"=>"\\f1a9","fa-eject"=>"\\f052","fa-ellipsis-h"=>"\\f141","fa-ellipsis-v"=>"\\f142","fa-empire"=>"\\f1d1","fa-envelope"=>"\\f0e0","fa-envelope-o"=>"\\f003","fa-envelope-square"=>"\\f199","fa-eraser"=>"\\f12d","fa-eur"=>"\\f153","fa-exchange"=>"\\f0ec","fa-exclamation"=>"\\f12a","fa-exclamation-circle"=>"\\f06a","fa-exclamation-triangle"=>"\\f071","fa-expand"=>"\\f065","fa-external-link"=>"\\f08e","fa-external-link-square"=>"\\f14c","fa-eye"=>"\\f06e","fa-eye-slash"=>"\\f070","fa-eyedropper"=>"\\f1fb","fa-facebook"=>"\\f09a","fa-facebook-square"=>"\\f082","fa-fast-backward"=>"\\f049","fa-fast-forward"=>"\\f050","fa-fax"=>"\\f1ac","fa-female"=>"\\f182","fa-fighter-jet"=>"\\f0fb","fa-file"=>"\\f15b","fa-file-archive-o"=>"\\f1c6","fa-file-audio-o"=>"\\f1c7","fa-file-code-o"=>"\\f1c9","fa-file-excel-o"=>"\\f1c3","fa-file-image-o"=>"\\f1c5","fa-file-o"=>"\\f016","fa-file-pdf-o"=>"\\f1c1","fa-file-powerpoint-o"=>"\\f1c4","fa-file-text"=>"\\f15c","fa-file-text-o"=>"\\f0f6","fa-file-video-o"=>"\\f1c8","fa-file-word-o"=>"\\f1c2","fa-files-o"=>"\\f0c5","fa-film"=>"\\f008","fa-filter"=>"\\f0b0","fa-fire"=>"\\f06d","fa-fire-extinguisher"=>"\\f134","fa-flag"=>"\\f024","fa-flag-checkered"=>"\\f11e","fa-flag-o"=>"\\f11d","fa-flask"=>"\\f0c3","fa-flickr"=>"\\f16e","fa-floppy-o"=>"\\f0c7","fa-folder"=>"\\f07b","fa-folder-o"=>"\\f114","fa-folder-open"=>"\\f07c","fa-folder-open-o"=>"\\f115","fa-font"=>"\\f031","fa-forward"=>"\\f04e","fa-foursquare"=>"\\f180","fa-frown-o"=>"\\f119","fa-futbol-o"=>"\\f1e3","fa-gamepad"=>"\\f11b","fa-gavel"=>"\\f0e3","fa-gbp"=>"\\f154","fa-gift"=>"\\f06b","fa-git"=>"\\f1d3","fa-git-square"=>"\\f1d2","fa-github"=>"\\f09b","fa-github-alt"=>"\\f113","fa-github-square"=>"\\f092","fa-gittip"=>"\\f184","fa-glass"=>"\\f000","fa-globe"=>"\\f0ac","fa-google"=>"\\f1a0","fa-google-plus"=>"\\f0d5","fa-google-plus-square"=>"\\f0d4","fa-google-wallet"=>"\\f1ee","fa-graduation-cap"=>"\\f19d","fa-h-square"=>"\\f0fd","fa-hacker-news"=>"\\f1d4","fa-hand-o-down"=>"\\f0a7","fa-hand-o-left"=>"\\f0a5","fa-hand-o-right"=>"\\f0a4","fa-hand-o-up"=>"\\f0a6","fa-hdd-o"=>"\\f0a0","fa-header"=>"\\f1dc","fa-headphones"=>"\\f025","fa-heart"=>"\\f004","fa-heart-o"=>"\\f08a","fa-history"=>"\\f1da","fa-home"=>"\\f015","fa-hospital-o"=>"\\f0f8","fa-html5"=>"\\f13b","fa-ils"=>"\\f20b","fa-inbox"=>"\\f01c","fa-indent"=>"\\f03c","fa-info"=>"\\f129","fa-info-circle"=>"\\f05a","fa-inr"=>"\\f156","fa-instagram"=>"\\f16d","fa-ioxhost"=>"\\f208","fa-italic"=>"\\f033","fa-joomla"=>"\\f1aa","fa-jpy"=>"\\f157","fa-jsfiddle"=>"\\f1cc","fa-key"=>"\\f084","fa-keyboard-o"=>"\\f11c","fa-krw"=>"\\f159","fa-language"=>"\\f1ab","fa-laptop"=>"\\f109","fa-lastfm"=>"\\f202","fa-lastfm-square"=>"\\f203","fa-leaf"=>"\\f06c","fa-lemon-o"=>"\\f094","fa-level-down"=>"\\f149","fa-level-up"=>"\\f148","fa-life-ring"=>"\\f1cd","fa-lightbulb-o"=>"\\f0eb","fa-line-chart"=>"\\f201","fa-link"=>"\\f0c1","fa-linkedin"=>"\\f0e1","fa-linkedin-square"=>"\\f08c","fa-linux"=>"\\f17c","fa-list"=>"\\f03a","fa-list-alt"=>"\\f022","fa-list-ol"=>"\\f0cb","fa-list-ul"=>"\\f0ca","fa-location-arrow"=>"\\f124","fa-lock"=>"\\f023","fa-long-arrow-down"=>"\\f175","fa-long-arrow-left"=>"\\f177","fa-long-arrow-right"=>"\\f178","fa-long-arrow-up"=>"\\f176","fa-magic"=>"\\f0d0","fa-magnet"=>"\\f076","fa-male"=>"\\f183","fa-map-marker"=>"\\f041","fa-maxcdn"=>"\\f136","fa-meanpath"=>"\\f20c","fa-medkit"=>"\\f0fa","fa-meh-o"=>"\\f11a","fa-microphone"=>"\\f130","fa-microphone-slash"=>"\\f131","fa-minus"=>"\\f068","fa-minus-circle"=>"\\f056","fa-minus-square"=>"\\f146","fa-minus-square-o"=>"\\f147","fa-mobile"=>"\\f10b","fa-money"=>"\\f0d6","fa-moon-o"=>"\\f186","fa-music"=>"\\f001","fa-newspaper-o"=>"\\f1ea","fa-openid"=>"\\f19b","fa-outdent"=>"\\f03b","fa-pagelines"=>"\\f18c","fa-paint-brush"=>"\\f1fc","fa-paper-plane"=>"\\f1d8","fa-paper-plane-o"=>"\\f1d9","fa-paperclip"=>"\\f0c6","fa-paragraph"=>"\\f1dd","fa-pause"=>"\\f04c","fa-paw"=>"\\f1b0","fa-paypal"=>"\\f1ed","fa-pencil"=>"\\f040","fa-pencil-square"=>"\\f14b","fa-pencil-square-o"=>"\\f044","fa-phone"=>"\\f095","fa-phone-square"=>"\\f098","fa-picture-o"=>"\\f03e","fa-pie-chart"=>"\\f200","fa-pied-piper"=>"\\f1a7","fa-pied-piper-alt"=>"\\f1a8","fa-pinterest"=>"\\f0d2","fa-pinterest-square"=>"\\f0d3","fa-plane"=>"\\f072","fa-play"=>"\\f04b","fa-play-circle"=>"\\f144","fa-play-circle-o"=>"\\f01d","fa-plug"=>"\\f1e6","fa-plus"=>"\\f067","fa-plus-circle"=>"\\f055","fa-plus-square"=>"\\f0fe","fa-plus-square-o"=>"\\f196","fa-power-off"=>"\\f011","fa-print"=>"\\f02f","fa-puzzle-piece"=>"\\f12e","fa-qq"=>"\\f1d6","fa-qrcode"=>"\\f029","fa-question"=>"\\f128","fa-question-circle"=>"\\f059","fa-quote-left"=>"\\f10d","fa-quote-right"=>"\\f10e","fa-random"=>"\\f074","fa-rebel"=>"\\f1d0","fa-recycle"=>"\\f1b8","fa-reddit"=>"\\f1a1","fa-reddit-square"=>"\\f1a2","fa-refresh"=>"\\f021","fa-renren"=>"\\f18b","fa-repeat"=>"\\f01e","fa-reply"=>"\\f112","fa-reply-all"=>"\\f122","fa-retweet"=>"\\f079","fa-road"=>"\\f018","fa-rocket"=>"\\f135","fa-rss"=>"\\f09e","fa-rss-square"=>"\\f143","fa-rub"=>"\\f158","fa-scissors"=>"\\f0c4","fa-search"=>"\\f002","fa-search-minus"=>"\\f010","fa-search-plus"=>"\\f00e","fa-share"=>"\\f064","fa-share-alt"=>"\\f1e0","fa-share-alt-square"=>"\\f1e1","fa-share-square"=>"\\f14d","fa-share-square-o"=>"\\f045","fa-shield"=>"\\f132","fa-shopping-cart"=>"\\f071a","fa-sign-in"=>"\\f090","fa-sign-out"=>"\\f08b","fa-signal"=>"\\f012","fa-sitemap"=>"\\f0e8","fa-skype"=>"\\f17e","fa-slack"=>"\\f198","fa-sliders"=>"\\f1de","fa-slideshare"=>"\\f1e7","fa-smile-o"=>"\\f118","fa-sort"=>"\\f0dc","fa-sort-alpha-asc"=>"\\f15d","fa-sort-alpha-desc"=>"\\f15e","fa-sort-amount-asc"=>"\\f160","fa-sort-amount-desc"=>"\\f161","fa-sort-asc"=>"\\f0de","fa-sort-desc"=>"\\f0dd","fa-sort-numeric-asc"=>"\\f162","fa-sort-numeric-desc"=>"\\f163","fa-soundcloud"=>"\\f1be","fa-space-shuttle"=>"\\f197","fa-spinner"=>"\\f110","fa-spoon"=>"\\f1b1","fa-spotify"=>"\\f1bc","fa-square"=>"\\f0c8","fa-square-o"=>"\\f096","fa-stack-exchange"=>"\\f18d","fa-stack-overflow"=>"\\f16c","fa-star"=>"\\f005","fa-star-half"=>"\\f089","fa-star-half-o"=>"\\f123","fa-star-o"=>"\\f006","fa-steam"=>"\\f1b6","fa-steam-square"=>"\\f1b7","fa-step-backward"=>"\\f048","fa-step-forward"=>"\\f051","fa-stethoscope"=>"\\f0f1","fa-stop"=>"\\f04d","fa-strikethrough"=>"\\f0cc","fa-stumbleupon"=>"\\f1a4","fa-stumbleupon-circle"=>"\\f1a3","fa-subscript"=>"\\f12c","fa-suitcase"=>"\\f0f2","fa-sun-o"=>"\\f185","fa-superscript"=>"\\f12b","fa-table"=>"\\f0ce","fa-tablet"=>"\\f10a","fa-tachometer"=>"\\f0e4","fa-tag"=>"\\f02b","fa-tags"=>"\\f02c","fa-tasks"=>"\\f0ae","fa-taxi"=>"\\f1ba","fa-tencent-weibo"=>"\\f1d5","fa-terminal"=>"\\f120","fa-text-height"=>"\\f034","fa-text-width"=>"\\f035","fa-th"=>"\\f00a","fa-th-large"=>"\\f009","fa-th-list"=>"\\f00b","fa-thumb-tack"=>"\\f08d","fa-thumbs-down"=>"\\f165","fa-thumbs-o-down"=>"\\f088","fa-thumbs-o-up"=>"\\f087","fa-thumbs-up"=>"\\f164","fa-ticket"=>"\\f145","fa-times"=>"\\f00d","fa-times-circle"=>"\\f057","fa-times-circle-o"=>"\\f05c","fa-tint"=>"\\f043","fa-toggle-off"=>"\\f204","fa-toggle-on"=>"\\f205","fa-trash"=>"\\f1f8","fa-trash-o"=>"\\f014","fa-tree"=>"\\f1bb","fa-trello"=>"\\f181","fa-trophy"=>"\\f091","fa-truck"=>"\\f0d1","fa-try"=>"\\f195","fa-tty"=>"\\f1e4","fa-tumblr"=>"\\f173","fa-tumblr-square"=>"\\f174","fa-twitch"=>"\\f1e8","fa-twitter"=>"\\f099","fa-twitter-square"=>"\\f081","fa-umbrella"=>"\\f0e9","fa-underline"=>"\\f0cd","fa-undo"=>"\\f0e2","fa-university"=>"\\f19c","fa-unlock"=>"\\f09c","fa-unlock-alt"=>"\\f13e","fa-upload"=>"\\f093","fa-usd"=>"\\f155","fa-user"=>"\\f007","fa-user-md"=>"\\f0f0","fa-users"=>"\\f0c0","fa-video-camera"=>"\\f03d","fa-vimeo-square"=>"\\f194","fa-vine"=>"\\f1ca","fa-vk"=>"\\f189","fa-volume-down"=>"\\f027","fa-volume-off"=>"\\f026","fa-volume-up"=>"\\f028","fa-weibo"=>"\\f18a","fa-weixin"=>"\\f1d7","fa-wheelchair"=>"\\f193","fa-wifi"=>"\\f1eb","fa-windows"=>"\\f17a","fa-wordpress"=>"\\f19a","fa-wrench"=>"\\f0ad","fa-xing"=>"\\f168","fa-xing-square"=>"\\f169","fa-yahoo"=>"\\f19e","fa-yelp"=>"\\f1e9","fa-youtube"=>"\\f167","fa-youtube-play"=>"\\f16a","fa-youtube-square"=>"\\f166");}}
+{{foreach explode(',',theme.volpe_navbar_icons ) as $key => $icon}}
+	{{$icon = $icons['fa-'.$icon];}}
+	.ipsNavBar_primary > ul > li:nth-child({expression="$key+1"}) > a:before { content: "{$icon}"; }
+{{endforeach}}
+{{endif}}
+
+
+html[dir="ltr"] #elSearch {	margin-right: 0; }
+html[dir="rtl"] #elSearch {	margin-left: 0; }
+#elSearch {
+	border: 1px solid rgba(0,0,0,0.1);
+	height: 28px;
+	background: {theme="volpe_search_background"};
+}
+#elSearch input[type="search"] {
+	background: transparent;
+	color: {theme="volpe_search_font_color"};
+	height: 26px;
+  	z-index: 4000;
+}
+#elSearch #elSearchFilter, #elSearch #elSearchFilter:hover {
+	background: {theme="volpe_search_background_button"};
+	color: {theme="volpe_search_font_button"};
+}
+html[dir="ltr"] #elSearch #elSearchFilter {	border-right: 0; }
+.search_container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+/*
+ * Social Links
+ */
+
+#elHeaderSocialLinks {
+	margin-left: 15px;
+}
+#elHeaderSocialLinks.ipsList_inline > li,
+#elFooterSocialLinks.ipsList_inline > li {
+	margin-right: 5px;
+}
+#elHeaderSocialLinks > li > a,
+#elFooterSocialLinks > li > a {
+	width: {theme="volpe_social_icons_bg_size"}px;
+	height: {theme="volpe_social_icons_bg_size"}px;
+	line-height: {theme="volpe_social_icons_bg_size"}px;
+	border-radius: {theme="volpe_social_icons_radius"}%;
+	background: {theme="volpe_social_icons_custom_bg"};
+	color: {theme="volpe_social_icons_custom_font"}!important;
+}
+#elHeaderSocialLinks > li > a:hover,
+#elFooterSocialLinks > li > a:hover {
+	background: {theme="volpe_social_icons_custom_bg_hover"};
+	color: {theme="volpe_social_icons_custom_font_hover"}!important;
+}
+#elHeaderSocialLinks > li > a .fa, #elUserNav_mobile > li > a .fa,
+#elFooterSocialLinks > li > a .fa {
+	font-size: {theme="volpe_social_icons_size"}px;
+}
+.cUserNav_icon .cShareLink {
+	padding: 0;
+}
+
+.blok {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

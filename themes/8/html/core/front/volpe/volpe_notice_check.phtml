@@ -1,0 +1,98 @@
+<ips:template parameters="" />
+<div id="notices" class="ipsLayout_container">
+{{if theme.volpe_notice1_turn == '1' and theme.volpe_notice1_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_notice1_wcs)) }}
+	{{if theme.volpe_notice1_content}}
+		{{if theme.volpe_notice1_ws == '*' }}
+			{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or 	request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and 	request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' 	or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' 	and request.controller == 'profile'}}
+				<div class='ipsMessage ipsMessage_{theme="volpe_notice1_type"}'>
+					{theme="volpe_notice1_content"}
+				</div>
+			{{endif}}
+		{{else}}
+			{{foreach explode(',', theme.volpe_notice1_ws) as $val}}
+				{{if $val == 'forums' and request.module == 'forums' or $val == 'forumsfront' and 	request.module == 'forums' and request.controller == 'index' or $val == 'blogs' and 	request.module == 'blogs' or $val == 'calendar' and request.module == 'calendar' or $val == 	'downloads' and request.module == 'downloads' or $val == 'gallery' and request.module == 	'gallery' or $val == 'pages' and request.module == 'pages' or $val == 'store' and 	request.module == 'store' and request.controller == 'store' or $val == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $val == 'clubs' and 	request.module == 'clubs' and 	request.controller == 'directory' or $val == 'profile' and 	request.module == 'members' and request.controller == 'profile'}}
+					<div class='ipsMessage ipsMessage_{theme="volpe_notice1_type"}'>
+						{theme="volpe_notice1_content"}
+					</div>
+				{{endif}}
+			{{endforeach}}
+		{{endif}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_notice2_turn == '1' and theme.volpe_notice2_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_notice2_wcs)) }}
+	{{if theme.volpe_notice2_content}}
+		{{if theme.volpe_notice2_ws == '*' }}
+			{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' 	or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or 	request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and 	request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' 	or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' 	and request.controller == 'profile'}}
+				<div class='ipsMessage ipsMessage_{theme="volpe_notice2_type"}'>
+					{theme="volpe_notice2_content"}
+				</div>
+			{{endif}}
+		{{else}}
+			{{foreach explode(',', theme.volpe_notice2_ws) as $val}}
+				{{if $val == 'forums' and request.module == 'forums' or $val == 'forumsfront' and 	request.module == 'forums' and request.controller == 'index' or $val == 'blogs' and 	request.module == 'blogs' or $val == 'calendar' and request.module == 'calendar' or $val == 	'downloads' and request.module == 'downloads' or $val == 'gallery' and request.module == 	'gallery' or $val == 'pages' and request.module == 'pages' or $val == 'store' and 	request.module == 'store' and request.controller == 'store' or $val == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $val == 'clubs' and 	request.module == 'clubs' and 	request.controller == 'directory' or $val == 'profile' and 	request.module == 'members' and request.controller == 'profile'}}
+					<div class='ipsMessage ipsMessage_{theme="volpe_notice2_type"}'>
+						{theme="volpe_notice2_content"}
+					</div>
+				{{endif}}
+			{{endforeach}}
+		{{endif}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_notice3_turn == '1' and theme.volpe_notice3_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_notice3_wcs)) }}
+	{{if theme.volpe_notice3_content}}
+		{{if theme.volpe_notice3_ws == '*' }}
+			{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' 	or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or 	request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and 	request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' 	or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' 	and request.controller == 'profile'}}
+				<div class='ipsMessage ipsMessage_{theme="volpe_notice3_type"}'>
+					{theme="volpe_notice3_content"}
+				</div>
+			{{endif}}
+		{{else}}
+			{{foreach explode(',', theme.volpe_notice3_ws) as $val}}
+				{{if $val == 'forums' and request.module == 'forums' or $val == 'forumsfront' and 	request.module == 'forums' and request.controller == 'index' or $val == 'blogs' and 	request.module == 'blogs' or $val == 'calendar' and request.module == 'calendar' or $val == 	'downloads' and request.module == 'downloads' or $val == 'gallery' and request.module == 	'gallery' or $val == 'pages' and request.module == 'pages' or $val == 'store' and 	request.module == 'store' and request.controller == 'store' or $val == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $val == 'clubs' and 	request.module == 'clubs' and 	request.controller == 'directory' or $val == 'profile' and 	request.module == 'members' and request.controller == 'profile'}}
+					<div class='ipsMessage ipsMessage_{theme="volpe_notice3_type"}'>
+						{theme="volpe_notice3_content"}
+					</div>
+				{{endif}}
+			{{endforeach}}
+		{{endif}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_notice4_turn == '1' and theme.volpe_notice4_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_notice4_wcs)) }}
+	{{if theme.volpe_notice4_content}}
+		{{if theme.volpe_notice4_ws == '*' }}
+			{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' 	or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or 	request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and 	request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' 	or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' 	and request.controller == 'profile'}}
+				<div class='ipsMessage ipsMessage_{theme="volpe_notice4_type"}'>
+					{theme="volpe_notice4_content"}
+				</div>
+			{{endif}}
+		{{else}}
+			{{foreach explode(',', theme.volpe_notice4_ws) as $val}}
+				{{if $val == 'forums' and request.module == 'forums' or $val == 'forumsfront' and 	request.module == 'forums' and request.controller == 'index' or $val == 'blogs' and 	request.module == 'blogs' or $val == 'calendar' and request.module == 'calendar' or $val == 	'downloads' and request.module == 'downloads' or $val == 'gallery' and request.module == 	'gallery' or $val == 'pages' and request.module == 'pages' or $val == 'store' and 	request.module == 'store' and request.controller == 'store' or $val == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $val == 'clubs' and 	request.module == 'clubs' and 	request.controller == 'directory' or $val == 'profile' and 	request.module == 'members' and request.controller == 'profile'}}
+					<div class='ipsMessage ipsMessage_{theme="volpe_notice4_type"}'>
+						{theme="volpe_notice4_content"}
+					</div>
+				{{endif}}
+			{{endforeach}}
+		{{endif}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_notice5_turn == '1' and theme.volpe_notice5_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_notice5_wcs)) }}
+	{{if theme.volpe_notice5_content}}
+		{{if theme.volpe_notice5_ws == '*' }}
+			{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' 	or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or 	request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and 	request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' 	or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' 	and request.controller == 'profile'}}
+				<div class='ipsMessage ipsMessage_{theme="volpe_notice5_type"}'>
+					{theme="volpe_notice5_content"}
+				</div>
+			{{endif}}
+		{{else}}
+			{{foreach explode(',', theme.volpe_notice5_ws) as $val}}
+				{{if $val == 'forums' and request.module == 'forums' or $val == 'forumsfront' and 	request.module == 'forums' and request.controller == 'index' or $val == 'blogs' and 	request.module == 'blogs' or $val == 'calendar' and request.module == 'calendar' or $val == 	'downloads' and request.module == 'downloads' or $val == 'gallery' and request.module == 	'gallery' or $val == 'pages' and request.module == 'pages' or $val == 'store' and 	request.module == 'store' and request.controller == 'store' or $val == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $val == 'clubs' and 	request.module == 'clubs' and 	request.controller == 'directory' or $val == 'profile' and 	request.module == 'members' and request.controller == 'profile'}}
+					<div class='ipsMessage ipsMessage_{theme="volpe_notice5_type"}'>
+						{theme="volpe_notice5_content"}
+					</div>
+				{{endif}}
+			{{endforeach}}
+		{{endif}}
+	{{endif}}
+{{endif}}
+</div>

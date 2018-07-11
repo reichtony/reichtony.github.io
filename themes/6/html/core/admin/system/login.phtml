@@ -1,0 +1,47 @@
+<ips:template parameters="$login, $error" />
+<!DOCTYPE html>
+<html lang="{expression="\IPS\Member::loggedIn()->language()->bcp47()"}" dir="{{if member.language()->isrtl}}rtl{{else}}ltr{{endif}}">
+	<head>
+		<meta charset="utf-8">
+		<title>{lang="login"}</title>
+		{template="includeCSS" app="core" group="global" location="global" params=""}
+		{template="includeJS" app="core" group="global" location="global" params=""}
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	</head>
+	<body class='ipsApp ipsApp_admin' id='elLogin' data-controller="core.admin.core.app">
+		<div id='elLogin_box' data-controller="core.admin.system.login">
+			<form accept-charset='utf-8' method='post' action='{$login->url}' data-controller="core.global.core.login">
+				<input type="hidden" name="csrfKey" value="{expression="\IPS\Session::i()->csrfKey"}">
+				<div class='ipsColumns' data-role="loginForms">
+					<div class='cAcpLoginBox ipsColumn ipsColumn_fluid'>
+						<div class='cAcpLoginBox_logo'>
+							<img src='{resource="logo_dark_full.png" app="core" location="admin"}' alt=''>
+						</div>
+						<div class="ipsPad">
+							{{if $error}}
+								<div class='ipsMessage ipsMessage_error'>{lang="$error"}</div>
+							{{endif}}
+							{{$usernamePasswordMethods = $login->usernamePasswordMethods();}}
+							{{$buttonMethods = $login->buttonMethods();}}
+							{{if $usernamePasswordMethods}}
+								{template="loginForm" app="core" group="system" params="$login"}
+								{{if $buttonMethods}}
+									<hr class="ipsHr">
+								{{endif}}
+							{{endif}}
+							{{if $buttonMethods}}
+								<ul class='ipsForm ipsForm_vertical'>
+									{{foreach $buttonMethods as $method}}
+										<li class='ipsFieldRow_fullWidth ipsSpacer_top ipsSpacer_half'>
+											{$method->button()|raw}
+										</li>
+									{{endforeach}}
+								</ul>
+							{{endif}}
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

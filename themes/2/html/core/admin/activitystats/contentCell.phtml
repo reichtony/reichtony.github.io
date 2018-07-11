@@ -1,0 +1,20 @@
+<ips:template parameters="$comment" />
+<div clsas='ipsContained_container'>
+	{{if $comment instanceof \IPS\Content\Comment}}
+		<h3 class='ipsContained ipsType_break'><a href='{$comment->url()}' target='_blank'>{$comment->item()->mapped('title')}</a></h2>
+		<p class='ipsComment_meta ipsSpacer_bottom ipsSpacer_half ipsType_light'>
+			{template="icon" app="core" location="front" group="tables" params="get_class($comment), $comment->item()->containerWrapper()"}
+		</p>
+		<p class='ipsComment_meta ipsSpacer_bottom ipsSpacer_half ipsType_light'>
+			{lang="posted_by_x" htmlsprintf="$comment->author()->link(), \IPS\DateTime::ts( $comment->mapped('date') )->html(FALSE)"}
+		</p>
+	{{else}}
+		<h3 class='ipsContained ipsType_break'><a href='{$comment->url()}' target='_blank'>{$comment->mapped('title')}</a></h2>
+		<p class='ipsComment_meta ipsSpacer_bottom ipsSpacer_half ipsType_light'>
+			{template="icon" app="core" location="front" group="tables" params="get_class($comment), $comment->containerWrapper()"}
+		</p>
+		<p class='ipsComment_meta ipsSpacer_bottom ipsSpacer_half ipsType_light'>
+			{lang="posted_by_x" htmlsprintf="$comment->author()->link(), \IPS\DateTime::ts( $comment->mapped('date') )->html(FALSE)"}
+		</p>
+	{{endif}}
+</div>

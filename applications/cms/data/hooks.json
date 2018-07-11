@@ -1,0 +1,54 @@
+{
+    "FriendlyUrl": {
+        "type": "C",
+        "class": "\\IPS\\Http\\Url\\Friendly"
+    },
+    "Database": {
+        "type": "C",
+        "class": "\\IPS\\Data\\Store\\Database"
+    },
+    "Lang": {
+        "type": "C",
+        "class": "\\IPS\\Lang"
+    },
+    "Topic": {
+        "type": "C",
+        "class": "\\IPS\\forums\\Topic"
+    },
+    "Output": {
+        "type": "C",
+        "class": "\\IPS\\Output"
+    },
+    "Widget": {
+        "type": "C",
+        "class": "\\IPS\\Widget"
+    },
+    "topics": {
+        "type": "S",
+        "class": "\\IPS\\Theme\\class_forums_front_topics"
+    },
+    "Post": {
+        "type": "C",
+        "class": "\\IPS\\forums\\Topic\\Post"
+    },
+    "Parser": {
+        "type": "C",
+        "class": "\\IPS\\Text\\Parser"
+    },
+    "Url": {
+        "type": "C",
+        "class": "\\IPS\\Http\\Url"
+    },
+    "forums": {
+        "type": "C",
+        "class": "\\IPS\\forums\\modules\\admin\\forums\\forums"
+    },
+    "InternalUrl": {
+        "type": "C",
+        "class": "\\IPS\\Http\\Url\\Internal"
+    },
+    "Forum": {
+        "type": "C",
+        "class": "\\IPS\\forums\\Forum"
+    }
+}

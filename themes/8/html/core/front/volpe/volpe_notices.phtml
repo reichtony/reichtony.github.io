@@ -1,0 +1,25 @@
+<ips:template parameters="" />
+{{if theme.volpe_notice1_type != 'off' or theme.volpe_notice2_type != 'off' or theme.volpe_notice3_type != 'off' or theme.volpe_notice4_type != 'off'}}
+	<div id="notices" class="ipsLayout_container ipsSpacer_both">
+    	{{if theme.volpe_notice1_type != 'off' and theme.volpe_notice1_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.volpe_notice1_wcs ) )}}
+			{{if theme.volpe_notice1_content}}
+			<div class='ipsMessage ipsMessage_{theme="volpe_notice1_type"}'>{theme="volpe_notice1_content"}</div>
+			{{endif}}
+		{{endif}}
+		{{if theme.volpe_notice2_type != 'off' and theme.volpe_notice2_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.volpe_notice2_wcs ) )}}
+			{{if theme.volpe_notice2_content}}
+			<div class='ipsMessage ipsMessage_{theme="volpe_notice2_type"}'>{theme="volpe_notice2_content"}</div>
+			{{endif}}
+		{{endif}}
+		{{if theme.volpe_notice3_type != 'off' and theme.volpe_notice3_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.volpe_notice3_wcs ) )}}
+			{{if theme.volpe_notice3_content}}
+			<div class='ipsMessage ipsMessage_{theme="volpe_notice3_type"}'>{theme="volpe_notice3_content"}</div>
+			{{endif}}
+		{{endif}}
+		{{if theme.volpe_notice4_type != 'off' and theme.volpe_notice4_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.volpe_notice4_wcs ) )}}
+			{{if theme.volpe_notice4_content}}
+			<div class='ipsMessage ipsMessage_{theme="volpe_notice4_type"}'>{theme="volpe_notice4_content"}</div>
+			{{endif}}
+		{{endif}}
+	</div>
+{{endif}}

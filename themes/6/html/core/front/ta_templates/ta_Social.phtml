@@ -1,0 +1,10 @@
+<ips:template parameters="" />
+{{if \IPS\Settings::i()->site_social_profiles AND $links = json_decode( \IPS\Settings::i()->site_social_profiles, TRUE ) AND count( $links )}}
+	<div class="slContainer">
+		<div class="socialLinks">
+			{{foreach $links as $profile}}
+				<a href='{$profile['key']}' target='blank' class='cShareLink cShareLink_{$profile['value']}'><i class='fa fa-{$profile['value']}'></i></a>
+			{{endforeach}}
+		</div>
+	</div>
+{{endif}}

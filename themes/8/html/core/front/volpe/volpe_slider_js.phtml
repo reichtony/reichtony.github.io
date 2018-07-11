@@ -1,0 +1,32 @@
+<ips:template parameters="" />
+<script src='{resource="swipper-slider/swiper.min.js" app="core" location="front"}'></script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+		{{if theme.slider_pagination}}
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		{{endif}}
+		{{if theme.slider_loop}}
+		loop: true,
+		{{endif}}
+		{{if theme.slider_navigation_buttons}}
+		nextButton: '.swiper-next',
+		prevButton: '.swiper-prev',
+		{{endif}}
+		{{if theme.slider_autoplay}}
+   		autoplay: {theme="slider_autoplay_delay"},
+		{{endif}}
+		{{if theme.slider_direction == 'vertical'}}
+		direction: 'vertical',
+		{{else}}
+		direction: 'horizontal',
+		{{endif}}
+		{{if theme.slider_transition_effect == 'slide'}}
+		effect: 'slide',
+		{{else}}
+		effect: 'fade',
+		{{endif}}
+		centeredSlides: true,
+		zoom: true
+	});
+</script>

@@ -1,0 +1,11 @@
+<ips:template parameters="" />
+{{if theme.volpe_newsticker_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.volpe_newsticker_wcs ) )}}
+	{{if theme.volpe_newsticker_content}}
+	<div id="newsticker" class="swiper-newsticker">
+		<div class="news">NEWS</div>
+		<div class="swiper-wrapper">
+			{theme="volpe_newsticker_content"}
+		</div>
+	</div>
+	{{endif}}
+{{endif}}

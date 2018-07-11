@@ -1,0 +1,7 @@
+<ips:template parameters="$name, $data" />
+{{if !$data['approved']}}
+	<span class="ipsBadge ipsBadge_small ipsBadge_icon ipsBadge_warning" title="{lang="club_unapproved"}" data-ipsTooltip>
+		<i class="fa fa fa-eye-slash"></i>
+	</span>
+{{endif}}
+{$name}

@@ -1,0 +1,54 @@
+<ips:template parameters="" />
+{{if theme.enable_slider_whocansee =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.enable_slider_whocansee ) )}}
+	{{if in_array('forumindex', explode(',', theme.slider_exclude )) && request.module == 'forums' && request.controller == 'index' || in_array('forumcat', explode(',', theme.slider_exclude )) && request.module == 'forums' && request.controller == 'forums' || in_array('forumtopic', explode(',', theme.slider_exclude )) && request.module == 'forums' && request.controller == 'topic' || in_array('profiles', explode(',', theme.slider_exclude )) && request.module == 'members' && request.controller == 'profile' || in_array('search', explode(',', theme.slider_exclude )) && request.module == 'search' && request.controller == 'search' || in_array('messages', explode(',', theme.slider_exclude )) && request.module == 'messaging' && request.controller == 'messenger' || in_array('login', explode(',', theme.slider_exclude )) && request.module == 'system' && request.controller == 'login' || in_array('register', explode(',', theme.slider_exclude )) && request.module == 'system' && request.controller == 'register' || in_array('activity', explode(',', theme.slider_exclude )) && request.module == 'discover' && request.controller == 'streams' || in_array('leaderboard', explode(',', theme.slider_exclude )) && request.module == 'discover' && request.controller == 'popular' || in_array('staff', explode(',', theme.slider_exclude )) && request.module == 'staffdirectory' && request.controller == 'directory' || in_array('clubsindex', explode(',', theme.slider_exclude )) && request.module == 'clubs' && request.controller == 'directory' || in_array('clubsview', explode(',', theme.slider_exclude )) && request.module == 'clubs' && request.controller == 'view' || in_array('pages', explode(',', theme.slider_exclude )) && request.module == 'pages' || in_array('gallery', explode(',', theme.slider_exclude )) && request.module == 'gallery' || in_array('blogs', explode(',', theme.slider_exclude )) && request.module == 'blogs' || in_array('downloads', explode(',', theme.slider_exclude )) && request.module == 'downloads'}}{{else}}
+		{{if theme.slider_wheretoshow == '*'}}
+			{{if theme.slider_1 && theme.slider_1_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_1_wcs ) ) || theme.slider_2 && theme.slider_2_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_2_wcs ) ) || theme.slider_3 && theme.slider_3_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_3_wcs ) ) || theme.slider_4 && theme.slider_4_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_4_wcs ) ) || theme.slider_5 && theme.slider_5_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_5_wcs ) )}}
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					{{$SlideK = explode(',', theme.slider_reorder);}}
+					{{foreach $SlideK as $slideT}}
+						{{$slides = mb_strtolower(preg_replace('/[\s+()]/', '', $slideT));}}
+							{template="{$slides}" app="core" group="ta_templates" location="front" params=""}
+					{{endforeach}}
+					{{if theme.slider_enable_articles}}{block="Pages_Slider_Articles"}{{endif}}
+				</div>
+				{{if theme.slider_enable_pagination}}
+					<div class="swiper-pagination"></div>
+				{{endif}}
+  				{{if theme.slider_navigation_buttons}}
+					<div class="SwiperNav">
+						<div class="swiper-next"></div>
+    					<div class="swiper-prev"></div>
+					</div>
+  				{{endif}}
+			</div>
+			{{endif}}
+		{{else}}
+			{{foreach explode(',', theme.slider_wheretoshow) as $val}}
+				{{if $val == 'forums' && request.module == 'forums' || $val == 'pages' && request.module == 'pages' || $val == 'gallery' && request.module == 'gallery' || $val == 'blogs' && request.module == 'blogs' || $val == 'downloads' && request.module == 'downloads' || $val == 'activiy' && request.module == 'discover' && request.controller == 'streams' || $val == 'store' && request.module == 'store' && request.controller == 'store' || $val == 'clubs' && request.module == 'clubs' && request.controller == 'directory'}}
+					{{if theme.slider_1 && theme.slider_1_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_1_wcs ) ) || theme.slider_2 && theme.slider_2_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_2_wcs ) ) || theme.slider_3 && theme.slider_3_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_3_wcs ) ) || theme.slider_4 && theme.slider_4_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_4_wcs ) ) || theme.slider_5 && theme.slider_5_wcs =='*' || \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_5_wcs ) )}}
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							{{$SlideK = explode(',', theme.slider_reorder);}}
+							{{foreach $SlideK as $slideT}}
+								{{$slides = mb_strtolower(preg_replace('/[\s+()]/', '', $slideT));}}
+									{template="{$slides}" app="core" group="ta_templates" location="front" params=""}
+							{{endforeach}}
+							{{if theme.slider_enable_articles}}{block="Pages_Slider_Articles"}{{endif}}
+						</div>
+						{{if theme.slider_enable_pagination}}
+							<div class="swiper-pagination"></div>
+						{{endif}}
+  						{{if theme.slider_navigation_buttons}}
+							<div class="SwiperNav">
+								<div class="swiper-next"></div>
+    							<div class="swiper-prev"></div>
+							</div>
+  						{{endif}}
+					</div>
+					{{endif}}
+				{{endif}}
+			{{endforeach}}
+		{{endif}}
+	{{endif}}
+{{endif}}

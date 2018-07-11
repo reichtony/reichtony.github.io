@@ -1,0 +1,123 @@
+<ips:template parameters="" />
+{{if theme.slider_whocansee1 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee1 ) ) or theme.slider_whocansee2 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee2 ) ) or theme.slider_whocansee3 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee3 ) ) or theme.slider_whocansee4 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee4 ) ) or theme.slider_whocansee5 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee5 ) )}}
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		{{if theme.slider_whocansee1 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee1 ) )}}
+      	{{if theme.slider_1}}
+			<div class="swiper-slide slide-1">
+              	<div class="lazyPreloader"><div class="lazyPreloader-wrapper"><div class="lazyPreloader-spinner"></div></div></div>
+				<div class="slide-bg swiper-lazy" data-background="{theme="slider_image1"}"></div>
+              	<div class="slide-ov"></div>
+				<div class="slide-container" {{if theme.slider_effect == 'fade'}}data-swiper-parallax="-50%"{{endif}}>
+					{{if theme.slider_1_content || theme.slider_1_title || theme.slider_1_buttons}}
+                  		<div class="slide-contents">
+							<h4 class="ipsType_veryLarge"><span>{theme="slider_1_title"}</span></h4>
+							<section class='ipsType_normal ipsType_richText ipsType_break'>{theme="slider_1_content"}</section>
+							{theme="slider_1_buttons"} 
+                  		</div>
+                  	{{endif}}
+				</div>
+			</div>
+		{{endif}}
+		{{endif}}
+		{{if theme.slider_whocansee2 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee2 ) )}}
+      	{{if theme.slider_2}}
+			<div class="swiper-slide slide-2">
+				<div class="lazyPreloader"><div class="lazyPreloader-wrapper"><div class="lazyPreloader-spinner"></div></div></div>
+				<div class="slide-bg swiper-lazy" data-background="{theme="slider_image2"}"></div>
+                <div class="slide-ov"></div>
+				<div class="slide-container" {{if theme.slider_effect == 'fade'}}data-swiper-parallax="-50%"{{endif}}>
+					{{if theme.slider_2_content || theme.slider_2_title || theme.slider_2_buttons}}
+                  		<div class="slide-contents">
+							<h4 class="ipsType_veryLarge"><span>{theme="slider_2_title"}</span></h4>
+							<section class='ipsType_normal ipsType_richText ipsType_break'>{theme="slider_2_content"}</section>
+							{theme="slider_2_buttons"} 
+                  		</div>
+                  	{{endif}}
+				</div>
+			</div>
+		{{endif}}
+      	{{endif}}
+		{{if theme.slider_whocansee3 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee3 ) )}}
+      	{{if theme.slider_3}}
+			<div class="swiper-slide slide-3">
+				<div class="lazyPreloader"><div class="lazyPreloader-wrapper"><div class="lazyPreloader-spinner"></div></div></div>
+				<div class="slide-bg swiper-lazy" data-background="{theme="slider_image3"}"></div>
+				<div class="slide-ov"></div>
+				<div class="slide-container" {{if theme.slider_effect == 'fade'}}data-swiper-parallax="-50%"{{endif}}>
+					{{if theme.slider_3_content || theme.slider_3_title || theme.slider_3_buttons}}
+                  		<div class="slide-contents">
+							<h4 class="ipsType_veryLarge"><span>{theme="slider_3_title"}</span></h4>
+							<section class='ipsType_normal ipsType_richText ipsType_break'>{theme="slider_3_content"}</section>
+							{theme="slider_3_buttons"} 
+                  		</div>
+                  	{{endif}}
+				</div>
+			</div>
+		{{endif}}
+		{{endif}}
+		{{if theme.slider_whocansee4 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee4 ) )}}
+      	{{if theme.slider_4}}
+			<div class="swiper-slide slide-4">
+				<div class="lazyPreloader"><div class="lazyPreloader-wrapper"><div class="lazyPreloader-spinner"></div></div></div>
+				<div class="slide-bg swiper-lazy" data-background="{theme="slider_image4"}"></div>
+				<div class="slide-ov"></div>
+				<div class="slide-container" {{if theme.slider_effect == 'fade'}}data-swiper-parallax="-50%"{{endif}}>
+					{{if theme.slider_4_content || theme.slider_4_title || theme.slider_4_buttons}}
+                  		<div class="slide-contents">
+							<h4 class="ipsType_veryLarge"><span>{theme="slider_4_title"}</span></h4>
+							<section class='ipsType_normal ipsType_richText ipsType_break'>{theme="slider_4_content"}</section>
+							{theme="slider_4_buttons"} 
+                  		</div>
+                  	{{endif}}
+				</div>
+			</div>
+		{{endif}}
+      	{{endif}}
+		{{if theme.slider_whocansee5 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_whocansee5 ) )}}
+      	{{if theme.slider_5}}
+			<div class="swiper-slide slide-5">
+				<div class="lazyPreloader"><div class="lazyPreloader-wrapper"><div class="lazyPreloader-spinner"></div></div></div>
+				<div class="slide-bg swiper-lazy" data-background="{theme="slider_image5"}"></div>
+				<div class="slide-ov"></div>
+				<div class="slide-container" {{if theme.slider_effect == 'fade'}}data-swiper-parallax="-50%"{{endif}}>
+					{{if theme.slider_5_content || theme.slider_5_title || theme.slider_5_buttons}}
+                  		<div class="slide-contents">
+							<h4 class="ipsType_veryLarge"><span>{theme="slider_5_title"}</span></h4>
+							<section class='ipsType_normal ipsType_richText ipsType_break'>{theme="slider_5_content"}</section>
+							{theme="slider_5_buttons"} 
+                  		</div>
+                  	{{endif}}
+				</div>
+			</div>
+		{{endif}}
+		{{endif}}
+		{{if theme.slider_enable_articles}}
+			{block="pages_slider_1"}
+      		{block="pages_slider_2"}
+			{block="pages_slider_3"}
+			{block="pages_slider_4"}
+      		{block="pages_slider_5"}
+			{block="pages_slider_6"}
+			{block="pages_slider_7"}
+      		{block="pages_slider_8"}
+			{block="pages_slider_9"}
+			{block="pages_slider_10"}
+		{{endif}}
+	</div>
+	{{if theme.slider_enable_pagination}}
+		<div class="swiper-pagination"></div>
+	{{endif}}
+  	{{if theme.slider_navigation_buttons}}
+		<div class="swiper-next"></div>
+        <div class="swiper-prev"></div>
+  	{{endif}}
+</div>
+{{if theme.remo_bodbgimgwidslider == '1' and theme.header_layout == 'wide'}}<style>body.ipsApp.ipsApp_front{background-image: none!important}</style>{{endif}}
+{{else}}
+	<div class="ta-headerImage {{if theme.header_remob == 1}}ipsResponsive_hidePhone ipsResponsive_hideTablet{{endif}}">
+		<div class="headerImage" style="background-image: url({{if theme.u_hdrimgs}}{{if theme.u_hdrimgs == 'slider1'}}{theme="slider_image1"}{{elseif theme.u_hdrimgs == 'slider2'}}{theme="slider_image2"}{{elseif theme.u_hdrimgs == 'slider3'}}{theme="slider_image3"}{{elseif theme.u_hdrimgs == 'slider4'}}{theme="slider_image4"}{{elseif theme.u_hdrimgs == 'slider5'}}{theme="slider_image5"}{{elseif theme.u_hdrimgs == 'none'}}{theme="header_image"}{{endif}}{{endif}})">
+			<div class="headerTexture"></div>
+		</div>
+	</div>
+{{endif}}

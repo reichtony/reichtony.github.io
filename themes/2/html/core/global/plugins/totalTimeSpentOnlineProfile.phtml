@@ -1,0 +1,14 @@
+<ips:template parameters="$member" />
+{{if \IPS\Settings::i()->timeSpent_viewGroups =='all' or \IPS\Member::loggedIn()->inGroup( explode( ',', \IPS\Settings::i()->timeSpent_viewGroups ) )}}
+	{{$totalTime = $member->time_spent > 0 ? \IPS\Member::loggedIn()->getTotalTimeSpentOnline( $member, $member->time_spent, FALSE ) : 0;}}
+	{{if $totalTime}}
+		<li>
+			<h4 class="ipsType_minorHeading">
+				{lang="time_spent"}
+			</h4>
+			<span>
+			{$totalTime}
+			</span>
+		</li>
+	{{endif}}
+{{endif}}

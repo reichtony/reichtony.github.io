@@ -1,0 +1,12 @@
+<ips:template parameters="" />
+{{if theme.volpe_newsticker_specific_pages}}
+		{{if in_array('pages', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'pages' or in_array('forums', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'forums' or in_array('forumsfront', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'forums' and \IPS\Request::i()->controller == 'index' or in_array('gallery', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'gallery' or in_array('blogs', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'blogs' or in_array('calendar', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'calendar' or in_array('nexus', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'store' or in_array('downloads', explode(',', theme.volpe_newsticker_specific_pages)) and \IPS\Request::i()->module == 'downloads'}}
+		{template="volpe_newsticker" app="core" group="volpe" params=""}
+	{{endif}}
+{{else}}
+	{{if theme.volpe_newsticker_where_show == 'homepage' and \IPS\Dispatcher::i()->application->default }}
+		{template="volpe_newsticker" app="core" group="volpe" params=""}
+	{{elseif theme.volpe_newsticker_where_show == 'everywhere'}}
+		{template="volpe_newsticker" app="core" group="volpe" params=""}
+	{{endif}}
+{{endif}}

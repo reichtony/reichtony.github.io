@@ -1,0 +1,30 @@
+<ips:template parameters="$member, $apps" />
+<div class='acpMemberView_2fa ipsBox ipsSpacer_bottom ipsSpacer_double'>
+	<h2 class='ipsBox_titleBar ipsType_reset'>
+		<a href="{url="app=core&module=applications&controller=api&do=tokens&member_id={$member->member_id}"}" class="ipsPos_right ipsType_medium">{lang="oauth_view_details"}</a>
+		{lang="oauth_member_authorized_apps"}
+	</h2>
+	{{if count( $apps )}}
+		<ul class="ipsDataList">
+			{{foreach $apps as $app}}
+				<li class='ipsDataItem'>
+					<div class='ipsDataItem_main'>
+						<ul class="ipsControlStrip ipsType_noBreak ipsList_reset">
+							<li class="ipsControlStrip_button">
+								<a href="{url="app=core&module=applications&controller=oauth&do=revokeToken&client_id={$app['data']['client_id']}&member_id={$app['data']['member_id']}&token={$app['data']['access_token']}&r=p"}" data-confirm data-ipsTooltip title="{lang="oauth_app_revoke"}"><i class="ipsControlStrip_icon fa fa-times-circle"></i></a>
+							</li>
+						</ul>
+						<div class='ipsType_normal ipsType_reset'>
+							{$app['title']}
+							<div class='ipsType_medium ipsType_light'>
+								{template="oauthStatus" group="api" params="$app['data'], $app['use_refresh_tokens']"}
+							</div>
+						</div>
+					</div>
+				</li>
+			{{endforeach}}
+		</ul>
+	{{else}}
+		<div class="ipsPad ipsType_reset ipsType_light">{lang="no_oauth_apps"}</div>
+	{{endif}}
+</div>

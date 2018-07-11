@@ -1,0 +1,9 @@
+<ips:template parameters="$ref" />
+<h3 class='ipsType_reset ipsWidget_title'>
+	{lang="block_newsletter_title"}
+</h3>
+<div class='ipsWidget_inner ipsPad'>
+	<span class="ipsType ipsType_veryLarge ipsPos_right ipsPad"><i class="fa fa-envelope"></i></span>
+	<p class='ipsType_reset ipsType_medium'>{lang="block_newsletter_signup"}</p>
+	<a class="ipsButton ipsButton_medium ipsButton_important ipsButton_fullWidth" href="{url="app=core&module=system&controller=settings&do=newsletterSubscribe&ref={$ref}" seoTemplate="settings" csrf="true"}">{lang="block_newsletter_signup_button"}</a>
+</div>

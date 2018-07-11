@@ -1,0 +1,5 @@
+<ips:template parameters="$app" />
+{$app->_title} <span class='ipsType_small ipsType_unbold ipsType_light'>{$app->version}</span>
+{{if in_array( $app->directory, \IPS\Application::$ipsApps )}}
+<span class=' ipsBadge ipsBadge_positive'>{lang="invision"}</span>
+{{endif}}

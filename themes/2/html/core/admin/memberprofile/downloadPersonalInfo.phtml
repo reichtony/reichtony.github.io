@@ -1,0 +1,7 @@
+<ips:template parameters="$member" />
+<div class="ipsPad">
+	<div class="ipsType_medium">{lang="member_export_pi_explain"}</div>
+	<div class="ipsPad ipsType_center">
+		<a href="{url="app=core&module=members&controller=members&do=exportPersonalInfo&id={$member->member_id}&process=1"}" class="ipsButton ipsButton_primary"><i class="fa fa-download"></i> {lang="download"}</a>
+	</div>
+</div>

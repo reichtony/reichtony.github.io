@@ -1,0 +1,68 @@
+<ips:template parameters="$member, $fields" />
+<div class='ipsPad'>
+	{{if $member->member_title || $member->rank['title'] || $member->rank['image'] || settings.profile_birthday_type != 'none' || settings.signatures_enabled}}
+		<div class="ipsSpacer_bottom">
+			<h2 class="ipsType_reset ipsType_minorHeading">{lang="profile_about" sprintf="$member->name"}</h2>
+			<ul class="ipsDataList ipsDataList_reducedSpacing">
+				{{if $member->member_title || $member->rank['title'] || $member->rank['image']}}
+					<li class='ipsDataItem'>
+						<span class='ipsDataItem_generic ipsDataItem_size3 ipsType_break'><strong>{lang="profile_rank"}</strong></span>
+						<div class='ipsDataItem_generic ipsType_break'>
+							{{if $member->member_title}}
+								{$member->member_title}
+								&nbsp;
+							{{elseif $member->rank['title']}}
+								{$member->rank['title']}
+								&nbsp;
+							{{endif}}
+							{$member->rank['image']|raw}
+						</div>
+					</li>
+				{{endif}}
+				{{if settings.profile_birthday_type != 'none'}}
+					<li class='ipsDataItem'>
+						<span class='ipsDataItem_generic ipsDataItem_size3 ipsType_break'><strong>{lang="bday"}</strong></span>
+						<span class='ipsDataItem_generic'>
+							{{if $member->birthday}}
+								{$member->birthday}
+							{{else}}
+								<em class="ipsType_light">{lang="no_value"}</em>
+							{{endif}}
+						</span>
+					</li>
+				{{endif}}
+				{{if settings.signatures_enabled}}
+					<li class='ipsDataItem'>
+						<span class='ipsDataItem_generic ipsDataItem_size3 ipsType_break'><strong>{lang="signature"}</strong></span>
+						<span class='ipsDataItem_generic ipsType_richText'>
+							{{if $member->signature}}
+								{expression="\IPS\Text\Parser::mungeResources( $member->signature, TRUE )" raw="true"}
+							{{else}}
+								<em class="ipsType_light">{lang="no_value"}</em>
+							{{endif}}
+						</span>
+					</li>
+				{{endif}}
+			</ul>
+		</div>
+	{{endif}}
+	{{foreach $fields as $groupKey => $values}}
+		<div class="ipsSpacer_bottom">
+			<h2 class="ipsType_reset ipsType_minorHeading">{lang="$groupKey"}</h2>
+			<ul class="ipsDataList ipsDataList_reducedSpacing">
+				{{foreach $values as $k => $v}}
+					<li class='ipsDataItem ipsType_break'>
+						<span class='ipsDataItem_generic ipsDataItem_size3 ipsType_break'><strong>{lang="$k"}</strong></span>
+						<div class='ipsDataItem_generic'>
+							{{if (string) $v === ''}}
+								<em class="ipsType_light">{lang="no_value"}</em>
+							{{else}}
+								<div class='ipsType_break ipsContained'>{$v|raw}</div>
+							{{endif}}
+						</div>
+					</li>
+				{{endforeach}}
+			</ul>
+		</div>
+	{{endforeach}}
+</div>

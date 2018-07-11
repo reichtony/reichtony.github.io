@@ -1,0 +1,1 @@
+var ipsJavascriptMap={"core":{"global_core":"http://l8maptdv.beget.tech/uploads/javascript_core/global_global_core.js.b689f2ce5102ea023392d2c147625c35.js","admin_core":"http://l8maptdv.beget.tech/uploads/javascript_core/admin_admin_core.js.d19985b988f9095ba9c8c784bd580376.js"}};;

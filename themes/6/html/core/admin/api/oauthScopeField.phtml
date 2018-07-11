@@ -1,0 +1,15 @@
+<ips:template parameters="$name, $value" />
+<div class="ipsFieldRow_title">
+	{lang="oauth_auth_scope_name"}
+</div>
+<div class="ipsFieldRow_content ipsClearfix">
+	<input type="text" name="{$name}[key]" value="{{if $value}}{$value['key']}{{endif}}"><br>
+</div>
+<div class="ipsFieldRow_title">
+	{lang="oauth_auth_scope_desc"}
+</div>
+<div class="ipsFieldRow_content ipsClearfix">
+	{lang="oauth_auth_scope_title"}<br>
+	<textarea name="{$name}[desc]" class="ipsField_fullWidth" rows="5">{{if $value}}{$value['desc']}{{endif}}</textarea><br>
+	<p class="ipsFieldRow_desc">{lang="oauth_auth_scope_desc_desc"}</p>
+</div>

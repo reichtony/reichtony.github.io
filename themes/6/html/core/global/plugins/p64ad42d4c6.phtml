@@ -1,0 +1,33 @@
+<ips:template parameters="$widgetData, $inviteLink, $showMemberAvatars" />
+
+<h3 class="ipsWidget_title ipsType_reset">{lang="p64ad42d4c6_discord_title"}: {$widgetData['name']} <div class="ipsPos_right">{$widgetData['memberCount']}</div></h3>
+
+<div class="ipsPad_half ipsWidget_inner">
+  <ul class="ipsDataList ipsDataList_reducedSpacing">
+    {{foreach $widgetData['members'] as $member}}
+      <li class="ipsDataItem">
+        <style>.ipsOnlineStatus_idle {color: #d7d000;}</style>
+        <div class="ipsDataItem_icon ipsPos_middle ipsType_center ipsType_large ipsType_light">
+          <strong class="ipsOnlineStatus ipsOnlineStatus_{$member['status']}"><i class='fa fa-circle'></i></strong>
+        </div>
+
+        {{if $showMemberAvatars }}
+          <div class="ipsDataItem_icon ipsPos_top">
+            <div class="ipsUserPhoto ipsUserPhoto_tiny">
+              <img src="{$member['avatar_url']}" alt="{$member['username']}" itemprop="image">
+            </div>
+          </div>
+        {{endif}}
+
+        <div class="ipsDataItem_main ipsPos_middle" style="padding:12px 10px;">
+          <div class="ipsType_large">{$member['username']}</div>
+        </div>
+      </li>
+    {{endforeach}}
+  </ul>
+
+  {{if $inviteLink}}
+    <a class="ipsPos_right ipsSpacer_top ipsButton ipsButton_normal ipsButton_small" href="{$widgetData['invite']}" target="_blank">{lang="p64ad42d4c6_invite"}</a>
+    <div class="ipsClear"></div>
+  {{endif}}
+</div>

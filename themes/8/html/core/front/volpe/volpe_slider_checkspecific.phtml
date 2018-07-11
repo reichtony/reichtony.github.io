@@ -1,0 +1,131 @@
+<ips:template parameters=" " />
+{{if theme.volpe_sc1_turn == '1' and theme.volpe_sc1_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc1_wcs))}}
+	{{if theme.volpe_sc1_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide1" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc1_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide1" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc2_turn == '1' and theme.volpe_sc2_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc2_wcs))}}
+	{{if theme.volpe_sc2_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide2" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc2_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide2" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc3_turn == '1' and theme.volpe_sc3_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc3_wcs))}}
+	{{if theme.volpe_sc3_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide3" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc3_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide3" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc4_turn == '1' and theme.volpe_sc4_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc4_wcs))}}
+	{{if theme.volpe_sc4_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide4" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc4_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide4" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc5_turn == '1' and theme.volpe_sc5_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc5_wcs))}}
+	{{if theme.volpe_sc5_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide5" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc5_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide5" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc6_turn == '1' and theme.volpe_sc6_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc6_wcs))}}
+	{{if theme.volpe_sc6_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide6" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc6_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide6" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc7_turn == '1' and theme.volpe_sc7_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc7_wcs))}}
+	{{if theme.volpe_sc7_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide7" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc7_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide7" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc8_turn == '1' and theme.volpe_sc8_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc8_wcs))}}
+	{{if theme.volpe_sc8_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide8" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc8_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide8" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc9_turn == '1' and theme.volpe_sc9_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc9_wcs))}}
+	{{if theme.volpe_sc9_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide9" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc9_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide9" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}
+{{if theme.volpe_sc10_turn == '1' and theme.volpe_sc10_wcs =='*' or member.loggedIn()->inGroup( explode(',',theme.volpe_sc10_wcs))}}
+	{{if theme.volpe_sc10_ws == '*' }}
+		{{if request.module == 'forums' or request.module == 'forums' and request.controller == 'index' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+			{template="volpe_slide10" app="core" group="volpe" params=""}
+		{{endif}}
+	{{else}}
+		{{foreach explode(',', theme.volpe_sc10_ws) as $value}}
+			{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and 	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and 	request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller == 'profile'}}
+				{template="volpe_slide10" app="core" group="volpe" params=""}
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}

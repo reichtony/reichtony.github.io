@@ -1,0 +1,95 @@
+<ips:template parameters="$member, $lastUsedIp, $devices" />
+<div class='acpMemberView_devices ipsBox ipsSpacer_bottom ipsSpacer_double'>
+	<h2 class='ipsBox_titleBar ipsType_reset'>
+		{{if settings.ipsgeoip and \IPS\GeoLocation::enabled()}}
+			{lang="devices_and_locations"}
+		{{else}}
+			{lang="devices_and_ips"}
+		{{endif}}
+	</h2>
+	<div class='ipsTabs ipsTabs_contained ipsTabs_small ipsTabs_stretch ipsClearfix' id='tabs_devices' data-ipsTabBar data-ipsTabBar-contentArea='#ipsTabs_content_devices'>
+		<a href='#tabs_devices' data-action='expandTabs'><i class='fa fa-caret-down'></i></a>
+		<ul role='tablist'>
+			<li>
+				<a href='#ipsTabs_tabs_devices_devices_tab_location_panel' id='devices_tab_location' class="ipsTabs_item" role="tab">
+					{{if settings.ipsgeoip and \IPS\GeoLocation::enabled()}}
+						{lang="member_ip_locations"}
+					{{else}}
+						{lang="ip_addresses"}
+					{{endif}}
+				</a>
+			</li>
+			<li>
+				<a href='#ipsTabs_tabs_devices_devices_tab_devices_panel' id='devices_tab_devices' class="ipsTabs_item" role="tab">
+					{lang="members_devices"}
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div id='ipsTabs_content_devices'>
+		<div id='ipsTabs_tabs_devices_devices_tab_location_panel' class="ipsTabs_panel ipsPad" aria-labelledby="devices_tab_location" aria-hidden="false">
+			{{if settings.ipsgeoip and \IPS\GeoLocation::enabled()}}
+				<div data-controller="core.admin.members.lazyLoadingProfileBlock" data-url="{$member->acpUrl()->setQueryString( array( 'do' => 'lazyBlock', 'block' => 'IPS\core\extensions\core\MemberACPProfileBlocks\Locations' ) )}">
+					<div class='acpMemberView_map ipsLoading ipsLoading_tiny'></div>
+				</div>
+			{{endif}}
+			<div class='ipsGrid ipsSpacer_top ipsSpacer_half'>
+				<div class='ipsGrid_span12'>
+					<h3 class='ipsType_minorHeading'>{lang="registration_ip"}</h3>
+					<p class='ipsType_medium ipsType_reset'>
+						{{if member.hasAcpRestriction( 'core', 'members', 'membertools_ip' )}}
+							<a href="{url="app=core&module=members&controller=ip&ip={$member->ip_address}"}" class="ipsType_blendLinks">{$member->ip_address}</a>
+						{{else}}
+							{$member->ip_address}
+						{{endif}}
+					</p>
+				</div>
+				<div class='ipsGrid_span12 ipsSpacer_top ipsSpacer_half'>
+					<h3 class='ipsType_minorHeading'>{lang="last_used_ip"}</h3>
+					<p class='ipsType_medium ipsType_reset'>
+						{{if member.hasAcpRestriction( 'core', 'members', 'membertools_ip' )}}
+							<a href="{url="app=core&module=members&controller=ip&ip={$lastUsedIp}"}" class="ipsType_blendLinks">{$lastUsedIp}</a>
+						{{else}}
+							{$lastUsedIp}
+						{{endif}}
+					</p>
+				</div>
+			</div>
+			{{if member.hasAcpRestriction( 'core', 'members', 'membertools_ip' )}}
+				<a href="{url="app=core&module=members&controller=members&do=ip&id={$member->member_id}"}" class="ipsButton ipsButton_verySmall ipsButton_light ipsSpacer_top ipsSpacer_half ipsButton_fullWidth">{lang="view_all_ip_addresses"}</a>
+			{{endif}}
+		</div>
+		<div id='ipsTabs_tabs_devices_devices_tab_devices_panel' class="ipsTabs_panel ipsPad" aria-labelledby="devices_tab_devices" aria-hidden="false">
+			<ul class='ipsDataList ipsDataList_reducedSpacing'>
+				{{foreach $devices as $device}}
+					<li class='ipsDataItem'>
+						<a href="{url="app=core&module=members&controller=devices&do=device&key={$device->device_key}&member={$member->member_id}"}" class="ipsType_blendLinks">
+							<div class='ipsDataItem_generic ipsDataItem_size1'>
+								{{if $device->userAgent()->platform === 'Macintosh'}}
+									<img src="{resource="logos/devices/mac.png" location="interface"}" class="ipsImage">
+								{{elseif $device->userAgent()->platform === 'Android' or $device->userAgent()->platform === 'Windows Phone'}}
+									<img src="{resource="logos/devices/android.png" location="interface"}" class="ipsImage">
+								{{elseif $device->userAgent()->platform === 'iPad'}}
+									<img src="{resource="logos/devices/ipad.png" location="interface"}" class="ipsImage">
+								{{elseif $device->userAgent()->platform === 'iPhone'}}
+									<img src="{resource="logos/devices/iphone.png" location="interface"}" class="ipsImage">
+								{{else}}
+									<img src="{resource="logos/devices/pc.png" location="interface"}" class="ipsImage">
+								{{endif}}
+							</div>
+							<div class='ipsDataItem_main'>
+								<p class='ipsType_normal ipsType_reset'>
+									{$device->userAgent()->platform}<br>
+									<span class='ipsType_medium ipsType_light'>{lang="device_last_loggedin" sprintf="\IPS\DateTime::ts( $device->last_seen )->relative()"}</span>
+								</p>
+							</div>
+						</a>
+					</li>
+				{{endforeach}}
+			</ul>
+			{{if member.hasAcpRestriction( 'core', 'members', 'membertools_ip' )}}
+				<a href="{url="app=core&module=members&controller=devices&do=member&id={$member->member_id}"}" class="ipsButton ipsButton_verySmall ipsButton_light ipsSpacer_top ipsSpacer_half ipsButton_fullWidth">{lang="view_all_devices"}</a>
+			{{endif}}
+		</div>
+	</div>
+</div>

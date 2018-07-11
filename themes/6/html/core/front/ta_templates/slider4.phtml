@@ -1,0 +1,19 @@
+<ips:template parameters="" />
+{{if theme.slider_4_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_4_wcs ) )}}
+	{{if theme.slider_4}}
+		<div class="swiper-slide slide-1">
+			<div class="lazyPreloader"><div class="lazyPreloader-wrapper"><div class="lazyPreloader-spinner"></div></div></div>
+			<div class="slide-bg swiper-lazy" data-background="{theme="slider_4_img"}"></div>
+			{{if theme.slider_enable_overlay}}<div class="slide-ov"></div>{{endif}}
+			<div class="slide-container" {{if theme.slider_effect == 'fade'}}data-swiper-parallax="-50%"{{endif}}>
+				{{if theme.slider_4_content || theme.slider_4_title || theme.slider_4_buttons}}
+                  	<div class="slide-contents">
+						<h4 class="ipsType_veryLarge"><span>{theme="slider_4_title"}</span></h4>
+						<section class='ipsType_normal ipsType_richText ipsType_break'>{theme="slider_4_content"}</section>
+						{theme="slider_4_buttons"}
+                  	</div>
+            	{{endif}}
+			</div>
+		</div>
+	{{endif}}
+{{endif}}

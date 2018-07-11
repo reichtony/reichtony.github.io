@@ -1,0 +1,12 @@
+<ips:template parameters="$value" />
+{{if $value === \IPS\Member\Club::TYPE_PUBLIC}}
+	<span class="ipsBadge ipsBadge_style4">{lang="club_type_public"}</span>
+{{elseif $value === \IPS\Member\Club::TYPE_OPEN}}
+	<span class="ipsBadge ipsBadge_style1">{lang="club_type_open"}</span>
+{{elseif $value === \IPS\Member\Club::TYPE_CLOSED}}
+	<span class="ipsBadge ipsBadge_style7">{lang="club_type_closed"}</span>
+{{elseif $value === \IPS\Member\Club::TYPE_PRIVATE}}
+	<span class="ipsBadge ipsBadge_style5">{lang="club_type_private"}</span>
+{{elseif $value === \IPS\Member\Club::TYPE_READONLY}}
+	<span class="ipsBadge ipsBadge_style2">{lang="club_type_readonly"}</span>
+{{endif}}

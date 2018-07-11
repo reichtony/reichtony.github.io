@@ -1,0 +1,86 @@
+<ips:template parameters="$member, $restrictions, $flagMessage" />
+<div class='acpMemberView_contentStats ipsBox ipsSpacer_bottom ipsSpacer_double'>
+	<h2 class='ipsBox_titleBar ipsType_reset'>
+		{{if member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( !$member->isAdmin() or member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) )}}
+			<a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\Warnings&id={$member->member_id}"}" class="ipsPos_right ipsType_medium" data-ipsDialog data-ipsDialog-title="{lang="warnings_and_restrictions"}">{lang="edit"}</a>
+		{{endif}}
+		{lang="warnings_and_restrictions"}
+	</h2>
+	<div class='ipsPad'>
+		<div class="ipsClearfix">
+			{{if $member->member_id != member.member_id}}
+				<ul class="ipsList_inline ipsPos_right">
+					{{if member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) or !$member->isAdmin() )}}
+						<li>
+							{{if $member->members_bitoptions['bw_is_spammer']}}
+								<a href="{url="app=core&module=members&controller=members&do=spam&id={$member->member_id}&status=0"}" data-confirm data-confirmSubmessage="{lang="spam_unflag_confirm"}" class="ipsButton ipsButton_light ipsButton_small">{lang="spam_unflag"}</a>
+							{{else}}
+								<a href="{url="app=core&module=members&controller=members&do=spam&id={$member->member_id}&status=1"}" data-confirm {{if $flagMessage}}data-confirmMessage="{lang="spam_flag"}" data-confirmSubmessage="{$flagMessage}"{{endif}} class="ipsButton ipsButton_light ipsButton_small">{lang="spam_flag"}</a>
+							{{endif}}
+						</li>
+					{{endif}}
+					{{if member.hasAcpRestriction( 'core', 'members', 'member_ban' ) and ( member.hasAcpRestriction( 'core', 'members', 'member_ban_admin' ) or !$member->isAdmin() ) and $member->member_id != member.member_id}}
+						<li>
+							<a href="{url="app=core&module=members&controller=members&do=ban&id={$member->member_id}"}" data-ipsDialog data-ipsDialog-title="{{if $member->temp_ban}}{lang="adjust_ban"}{{else}}{lang="ban"}{{endif}}" class="ipsButton ipsButton_light ipsButton_small">
+								{{if $member->temp_ban}}
+									{lang="adjust_ban"}
+								{{else}}
+									{lang="ban"}
+								{{endif}}
+							</a>
+						</li>
+					{{endif}}
+				</ul>
+			{{endif}}
+			{{if settings.warn_on and !$member->inGroup( explode( ',', \IPS\Settings::i()->warn_protected ) )}}
+				<p class="ipsType_reset ipsType_large">{lang="member_warn_level" pluralize="$member->warn_level"}</p>
+			{{endif}}
+			{{if !count( $restrictions )}}
+				<p class="ipsType_reset ipsType_normal">{lang="no_restrictions_applied"}</p>
+			{{else}}
+				<ul class="ipsList_inline ipsType_negative">
+					{{foreach $restrictions as $restriction}}
+						<li>
+							{lang="$restriction"}
+						</li>
+					{{endforeach}}
+				</ul>
+			{{endif}}
+		</div>
+		{{if member.modPermission('mod_see_warn') and $warnings = $member->warnings( NULL ) and count( $warnings )}}
+			<hr class="ipsHr">
+			<ol class='ipsDataList'>
+				{{foreach $warnings as $warning}}
+					<li class="ipsDataItem">
+						<div class='ipsDataItem_icon ipsType_center'>
+							<a href="{url="app=core&module=members&controllers=members&do=viewWarning&id={$warning->id}"}" class="ipsType_blendLinks" data-ipsDialog data-ipsDialog-size='narrow'>
+								<span class="ipsPoints">{$warning->points}</span>
+							</a>
+						</div>
+						<div class='ipsDataItem_main'>
+							{{if $warning->canDelete()}}
+								<a href="{url="app=core&module=members&controllers=members&do=warningRevoke&id={$warning->id}"}" data-confirm data-confirmMessage="{lang="warning_revoke_blurb"}" data-confirmType="verify" data-confirmButtons='{expression="json_encode( array( 'yes' => \IPS\Member::loggedIn()->language()->addToStack('warning_revoke_undo'), 'no' => \IPS\Member::loggedIn()->language()->addToStack('delete'), 'cancel' => \IPS\Member::loggedIn()->language()->addToStack('cancel') ) )" raw="true"}' class='ipsPos_right ipsButton ipsButton_small ipsButton_light ipsButton_narrow'>{lang="revoke"}</i></a>
+							{{endif}}
+							<a href="{url="app=core&module=members&controllers=members&do=viewWarning&id={$warning->id}"}" class="ipsType_blendLinks" data-ipsDialog data-ipsDialog-size='narrow'>
+								<h4 class="ipsType_reset">
+									{lang="core_warn_reason_{$warning->reason}"}
+									{{if settings.warnings_acknowledge}}
+										&nbsp;
+										{{if $warning->acknowledged}}
+											<strong class='ipsType_success'><i class='fa fa-check-circle'></i> {lang="warning_acknowledged"}</strong>
+										{{else}}
+											<strong class='ipsType_light'><i class='fa fa-circle-o'></i> {lang="warning_not_acknowledged"}</strong>
+										{{endif}}
+									{{endif}}
+								</h4>
+								<p class='ipsDataItem_meta ipsType_light'>
+									{lang="byline" sprintf="\IPS\Member::load( $warning->moderator )->name"}{datetime="$warning->date"}
+								</p>
+							</a>
+						</div>
+					</li>
+				{{endforeach}}
+			</ol>
+		{{endif}}
+	</div>
+</div>

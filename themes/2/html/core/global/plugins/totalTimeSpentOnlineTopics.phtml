@@ -1,0 +1,11 @@
+<ips:template parameters="$comment" />
+{{if \IPS\Settings::i()->timeSpent_viewGroups =='all' or \IPS\Member::loggedIn()->inGroup( explode( ',', \IPS\Settings::i()->timeSpent_viewGroups ) )}}
+	{{$totalTime = $comment->author()->time_spent > 0 ? \IPS\Member::loggedIn()->getTotalTimeSpentOnline( $comment->author(), $comment->author()->time_spent, TRUE ) : 0;}}
+	{{if $totalTime}}
+		<span>
+			<li class="ipsType_light">
+				{$totalTime}
+			</li>
+		</span>
+	{{endif}}
+{{endif}}

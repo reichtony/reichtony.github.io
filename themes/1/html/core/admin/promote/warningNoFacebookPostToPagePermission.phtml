@@ -1,0 +1,18 @@
+<ips:template parameters="$message, $facebook" />
+<div id='acpWarnings'>
+	<div class='ipsAreaBackground_light ipsPad'>
+		<div>
+			<h2 class='ipsType_sectionHead'><strong>{lang="promote_facebook_setup_post"}</strong></h2>
+			<div class='ipsType_normal ipsType_reset'>
+				{lang="promote_facebook_setup_post_desc"}
+				<ul class='ipsToolList ipsToolList_horizontal ipsAlert_buttonRow ipsClear ipsClearfix'>
+					<li class="ipsPos_left"><a href="{url="app=core&module=system&controller=settings&area=login&service={$facebook->id}&scopes=manage_pages,publish_pages,user_managed_groups" base="front" seoTemplate="settings_login"}" target="_blank" class="ipsButton ipsButton_primary">{lang="promote_facebook_setup_post_button"}</a></li>
+					<li class="ipsPos_left"><a href="{url="app=core&module=promotion&controller=promote&tab=facebook"}" class="ipsButton ipsButton_secondary"><i class="fa fa-refresh"></i> &nbsp; {lang="promote_reload_page"}</a></li>
+					{{if $message}}
+					<li class="ipsPos_left"><a href="{url="app=core&module=system&controller=settings&area=login&service={$facebook->id}" base="front" seoTemplate="settings_login"}" target="_blank" class="ipsButton ipsButton_secondary">{lang="promote_facebook_remove_user"}</a></li>
+					{{endif}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

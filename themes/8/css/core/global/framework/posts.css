@@ -1,0 +1,13 @@
+/* Additional styles that apply to posts */
+/* Author responses to reviews */
+.ipsReviewResponse {
+	border-left: 1px solid #c5c5c5;
+}
+
+html[dir="ltr"] .ipsReviewResponse {
+	margin-left: 20px;
+}
+html[dir="rtl"] .ipsReviewResponse {
+	margin-right: 20px;
+}
+

@@ -1,0 +1,32 @@
+<ips:template parameters="" />
+{{if theme.enable_slider == '1' and theme.enable_slider_whocansee =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.enable_slider_whocansee ) )}}
+	{{if theme.slider_specificpage}}
+		{{if in_array('pages', explode(',', theme.slider_specificpage)) and \IPS\Request::i()->module == 'pages' or in_array('forums', explode(',', theme.slider_specificpage)) and \IPS\Request::i()->module == 'forums' or in_array('forumsfront', explode(',', theme.slider_specificpage)) and \IPS\Request::i()->module == 'forums' and \IPS\Request::i()->controller == 'index' or in_array('gallery', explode(',', theme.slider_specificpage)) and \IPS\Request::i()->module == 'gallery' or in_array('blogs', explode(',', theme.slider_specificpage)) and \IPS\Request::i()->module == 'blogs'}}				
+			{template="ta_swiperSlider" app="core" group="global" location="front" params=""}
+		{{else}}
+			<div class="ta-headerImage {{if theme.header_remob == 1}}ipsResponsive_hidePhone ipsResponsive_hideTablet{{endif}}">
+				<div class="headerImage" style="background-image: url({{if theme.u_hdrimgs}}{{if theme.u_hdrimgs == 'slider1'}}{theme="slider_image1"}{{elseif theme.u_hdrimgs == 'slider2'}}{theme="slider_image2"}{{elseif theme.u_hdrimgs == 'slider3'}}{theme="slider_image3"}{{elseif theme.u_hdrimgs == 'slider4'}}{theme="slider_image4"}{{elseif theme.u_hdrimgs == 'slider5'}}{theme="slider_image5"}{{elseif theme.u_hdrimgs == 'none'}}{theme="header_image"}{{endif}}{{endif}})">
+					<div class="headerTexture"></div>
+				</div>
+			</div>
+		{{endif}}
+	{{else}}
+		{{if theme.slider_homeall == 'homepage' and \IPS\Dispatcher::i()->application->default}}
+			{template="ta_swiperSlider" app="core" group="global" location="front" params=""}
+		{{elseif theme.slider_homeall == 'everywhere'}}
+			{template="ta_swiperSlider" app="core" group="global" location="front" params=""}
+		{{else}}
+			<div class="ta-headerImage {{if theme.header_remob == 1}}ipsResponsive_hidePhone ipsResponsive_hideTablet{{endif}}">
+				<div class="headerImage" style="background-image: url({{if theme.u_hdrimgs}}{{if theme.u_hdrimgs == 'slider1'}}{theme="slider_image1"}{{elseif theme.u_hdrimgs == 'slider2'}}{theme="slider_image2"}{{elseif theme.u_hdrimgs == 'slider3'}}{theme="slider_image3"}{{elseif theme.u_hdrimgs == 'slider4'}}{theme="slider_image4"}{{elseif theme.u_hdrimgs == 'slider5'}}{theme="slider_image5"}{{elseif theme.u_hdrimgs == 'none'}}{theme="header_image"}{{endif}}{{endif}})">
+					<div class="headerTexture"></div>
+				</div>
+			</div>
+		{{endif}}
+	{{endif}}
+{{else}}
+	<div class="ta-headerImage {{if theme.header_remob == 1}}ipsResponsive_hidePhone ipsResponsive_hideTablet{{endif}}">
+		<div class="headerImage" style="background-image: url({{if theme.u_hdrimgs}}{{if theme.u_hdrimgs == 'slider1'}}{theme="slider_image1"}{{elseif theme.u_hdrimgs == 'slider2'}}{theme="slider_image2"}{{elseif theme.u_hdrimgs == 'slider3'}}{theme="slider_image3"}{{elseif theme.u_hdrimgs == 'slider4'}}{theme="slider_image4"}{{elseif theme.u_hdrimgs == 'slider5'}}{theme="slider_image5"}{{elseif theme.u_hdrimgs == 'none'}}{theme="header_image"}{{endif}}{{endif}})">
+			<div class="headerTexture"></div>
+		</div>
+	</div>
+{{endif}}

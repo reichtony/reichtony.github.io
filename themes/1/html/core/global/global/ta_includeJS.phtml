@@ -1,0 +1,57 @@
+<ips:template parameters="" />
+<script type="text/javascript">
+/*=====================*/
+/* jQuery.flexMenu */
+/*=====================*/
+  $(document).ready(function() {
+    $('ul.menu.flex').flexMenu({linkText:'MORE'});
+});
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+	{{if theme.nav_position == 'fixed'}}
+    	if (scroll >= 100) {
+     	   $(".ta-Header").addClass("ta-Sticky_top")
+    	} 
+  		else {
+    	    $(".ta-Header").removeClass("ta-Sticky_top")
+    	}
+	{{elseif theme.nav_position == 'onscrollfixed'}}
+    	if (scroll >= 200) {
+     	   $(".ta-Header").addClass("ta-Sticky_top")
+    	} 
+  		else if (scroll <= 0) {
+       	 $(".ta-Header").removeClass("ta-Sticky_top")
+    	}
+  	{{endif}}
+}); 
+</script>
+<script type="text/javascript">
+var swiper = new Swiper('.swiper-container', {
+  	{{if theme.slider_enable_pagination == 1}}pagination: '.swiper-pagination',paginationClickable: true,{{endif}}
+	{{if theme.slider_effect == 'fade'}}parallax: true,{{endif}}
+	{{if theme.slider_loop == '1'}} loop: true,{{endif}}
+	centeredSlides: true,
+	{{if theme.slider_navigation_buttons}}nextButton: '.swiper-next', prevButton: '.swiper-prev',{{endif}}
+    effect: {{if theme.slider_effect == 'slide'}}'slide'{{elseif theme.slider_effect == 'fade'}}'fade'{{elseif theme.slider_effect == 'cube'}}'cube'{{elseif theme.slider_effect == 'coverflow'}}'coverflow'{{elseif theme.slider_effect == 'flip'}}'flip'{{endif}},
+    {{if theme.slider_enable_autoplay == '1'}}autoplay: {theme="slider_autoplay_delay"},{{endif}}            
+    grabCursor: true,
+    lazyPreloaderClass: 'lazyPreloader',         
+    preloadImages: false,
+    lazyLoading: true,
+    lazyLoadingInPrevNext: true
+});
+{{if theme.nav_position == 'fixed' or theme.nav_position == 'onscrollfixed'}}
+$(window).scroll(function(){  
+  var scrolled = $(window).scrollTop();
+  $('.slide-container').css('opacity', '1'-(scrolled*.003));
+});
+{{endif}}
+{{if theme.slider_full_screen}}
+var slidevh = function() {
+var bheight = $(window).height();
+	$(".swiper-container").css('height', bheight);
+};
+$(document).ready(slidevh);
+$(window).resize(slidevh);
+{{endif}}
+</script>

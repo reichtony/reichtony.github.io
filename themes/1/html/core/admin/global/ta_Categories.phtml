@@ -1,0 +1,118 @@
+<ips:template parameters="" />
+{{if theme.category_r1 == '1'}}
+	.cForumRow[cat-title="{theme="cat_title_r1"}"] h2{
+		background: {theme="cat_ti_bg_r1"};
+		{{if theme.cat_ti_bg_gradi_r1}}{theme="cat_ti_bg_gradi_r1"}{{endif}}
+	}
+	.cForumRow[cat-title="{theme="cat_title_r1"}"] a.ipsType_sectionTitle,
+	.cForumRow[cat-title="{theme="cat_title_r1"}"] .ipsType_sectionTitle a{
+		color: {theme="cat_ti_font_r1"};
+	}
+	{{if theme.cat_private_r1 == '1'}}
+		{{if theme.cat_exclude_group_r1 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.cat_exclude_group_r1 ) )}} {{else}}
+			.cForumRow[cat-title="{theme="cat_title_r1"}"] > ol:before {
+    			content: "";
+    			position: absolute;
+    			top: 0;
+    			width: 100%;
+    			height: 100%;
+    			z-index: 1;
+			}
+			.cForumRow[cat-title="{theme="cat_title_r1"}"] > ol:before {
+				{{if theme.cat_private_bg_r1}}{theme="cat_private_bg_r1"}{{endif}}
+			}
+			.cForumRow[cat-title="{theme="cat_title_r1"}"] > ol:after {
+  				content: "{theme="cat_private_ti_r1"}";
+				font-size: 25px;
+				color: {theme="cat_private_ti_font_r1"}; 
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				text-align: center;
+				-ms-transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			}
+		{{endif}}
+	{{endif}}
+{{endif}}
+{{if theme.category_r2 == '1'}}
+	.cForumRow[cat-title="{theme="cat_title_r2"}"] h2{
+		background: {theme="cat_ti_bg_r2"};
+		{{if theme.cat_ti_bg_gradi_r2}}{theme="cat_ti_bg_gradi_r2"}{{endif}}
+	}
+	.cForumRow[cat-title="{theme="cat_title_r2"}"] a.ipsType_sectionTitle,
+	.cForumRow[cat-title="{theme="cat_title_r2"}"] .ipsType_sectionTitle a{
+		color: {theme="cat_ti_font_r2"};
+	}
+	{{if theme.cat_private_r2 == '1'}}
+		{{if theme.cat_exclude_group_r2 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.cat_exclude_group_r2 ) )}} {{else}}
+			.cForumRow[cat-title="{theme="cat_title_r2"}"] > ol:before {
+    			content: "";
+    			position: absolute;
+    			top: 0;
+    			width: 100%;
+    			height: 100%;
+    			z-index: 1;
+			}
+			.cForumRow[cat-title="{theme="cat_title_r2"}"] > ol:before {
+				{{if theme.cat_private_bg_r2}}{theme="cat_private_bg_r2"}{{endif}}
+			}
+			.cForumRow[cat-title="{theme="cat_title_r2"}"] > ol:after {
+  				content: "{theme="cat_private_ti_r2"}";
+				font-size: 25px;
+				color: {theme="cat_private_ti_font_r2"}; 
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				text-align: center;
+				-ms-transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			}
+		{{endif}}
+	{{endif}}
+{{endif}}
+{{if theme.category_r3 == '1'}}
+	.cForumRow[cat-title="{theme="cat_title_r3"}"] h2{
+		background: {theme="cat_ti_bg_r3"};
+		{{if theme.cat_ti_bg_gradi_r3}}{theme="cat_ti_bg_gradi_r3"}{{endif}}
+	}
+	.cForumRow[cat-title="{theme="cat_title_r3"}"] a.ipsType_sectionTitle,
+	.cForumRow[cat-title="{theme="cat_title_r3"}"] .ipsType_sectionTitle a{
+		color: {theme="cat_ti_font_r3"};
+	}
+	{{if theme.cat_private_r3 == '1'}}
+		{{if theme.cat_exclude_group_r3 =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.cat_exclude_group_r3 ) )}} {{else}}
+			.cForumRow[cat-title="{theme="cat_title_r3"}"] > ol:before {
+    			content: "";
+    			position: absolute;
+    			top: 0;
+    			width: 100%;
+    			height: 100%;
+    			z-index: 1;
+			}
+			.cForumRow[cat-title="{theme="cat_title_r3"}"] > ol:before {
+				{{if theme.cat_private_bg_r3}}{theme="cat_private_bg_r3"}{{endif}}
+			}
+			.cForumRow[cat-title="{theme="cat_title_r3"}"] > ol:after {
+  				content: "{theme="cat_private_ti_r3"}";
+				font-size: 25px;
+				color: {theme="cat_private_ti_font_r3"}; 
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				text-align: center;
+				-ms-transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			}
+		{{endif}}
+	{{endif}}
+{{endif}}

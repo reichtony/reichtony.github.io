@@ -1,0 +1,106 @@
+<ips:template parameters="" />
+{{if theme.sc1_turn or theme.sc2_turn or theme.sc3_turn or theme.sc4_turn or theme.sc5_turn}}
+<div id="slider" class="{{if !theme.slider_fullwidth}}ipsLayout_container {{endif}}{{if !theme.slider_mobile_show}}ipsResponsive_hidePhone{{endif}}">
+	<div class="swiper-container ipsBox">
+		<div class="swiper-wrapper">
+			{{if theme.scguest_turn and !\IPS\Member::loggedIn()->member_id}}
+				{{if theme.scguest_header or theme.scguest_content}}
+				<div class="swiper-slide slide-guest s_container" style="background-color: {theme="scguest_bgcolor"}; {{if theme.scguest_bg}}background-image: url('{theme="scguest_bg"}');{{endif}}">
+					<div class="ipsLayout_container ipsPad_double">
+						{{if theme.scguest_header}}<h2 class="ipsType_pageTitle ipsType_{{if theme.scguest_halign == 'left'}}left{{elseif theme.scguest_halign == 'center'}}center{{else}}right{{endif}} s_header">{theme="scguest_header"}</h2>{{endif}}
+						<div class="ipsType_large ipsType_richText s_content">
+							{{if theme.scguest_content}}{theme="scguest_content"}{{endif}}
+							<div class="ipsType_{theme="scguest_balign"}">
+								{{if \IPS\Settings::i()->allow_reg}}
+								<span>
+									<a href='{url="app=core&module=system&controller=register" seoTemplate="register" protocol="\IPS\Settings::i()->logins_over_https"}' {{if \IPS\Settings::i()->quick_register}}data-ipsDialog data-ipsDialog-size='narrow' 						data-ipsDialog-title='{lang="sign_up"}'{{endif}} id='elRegisterButton' class='ipsButton ipsButton_normal ipsButton_primary'>
+											{lang="sign_up"}
+									</a>
+								</span>
+								{{endif}}
+								<span>
+									<a href='{url="app=core&module=system&controller=login" seoTemplate="login" protocol="\IPS\Settings::i()->logins_over_https"}' class="ipsButton ipsButton_link ipsButton_medium">{lang="sign_in"}</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{endif}}
+			{{endif}}
+      		{{if theme.sc1_turn and theme.sc1_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_wcs1 ) )}}
+				{{if theme.sc1_header or theme.sc1_content or theme.sc1_buttons}}
+				<div class="swiper-slide slide-1 s_container" style="background-color: {theme='sc1_bgcolor'}; {{if theme.sc1_bg}}background-image: url({theme='sc1_bg'});{{endif}}">
+					<div class="ipsLayout_container ipsPad_double">
+						{{if theme.sc1_header}}<h2 class="ipsType_pageTitle ipsType_{{if theme.sc1_halign == 'left'}}left{{elseif theme.sc1_halign == 'center'}}center{{else}}right{{endif}} s_header">{theme="sc1_header"}</h2>{{endif}}
+						<div class="ipsType_large ipsType_richText s_content">
+							{{if theme.sc1_content}}{theme="sc1_content"}{{endif}}
+							{{if theme.sc1_buttons}}<div class="ipsType_{theme="sc1_balign"}">{theme="sc1_buttons"}</div>{{endif}}
+						</div>
+					</div>
+				</div>
+				{{endif}}
+			{{endif}}
+			{{if theme.sc2_turn and theme.sc2_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_wcs1 ) )}}
+				{{if theme.sc2_header or theme.scX_content or theme.sc2_buttons}}
+				<div class="swiper-slide slide-2 s_container" style="background-color: {theme="sc2_bgcolor"}; {{if theme.sc2_bg}}background-image: url('{theme="sc2_bg"}');{{endif}}">
+					<div class="ipsLayout_container ipsPad_double">
+						{{if theme.sc2_header}}<h2 class="ipsType_pageTitle ipsType_{{if theme.sc2_halign == 'left'}}left{{elseif theme.sc2_halign == 'center'}}center{{else}}right{{endif}} s_header">{theme="sc2_header"}</h2>{{endif}}
+						<div class="ipsType_large ipsType_richText s_content">
+							{{if theme.sc2_content}}{theme="sc2_content"}{{endif}}
+							{{if theme.sc2_buttons}}<div class="ipsType_{theme="sc2_balign"}">{theme="sc2_buttons"}</div>{{endif}}
+						</div>
+					</div>
+				</div>
+				{{endif}}
+			{{endif}}
+			{{if theme.sc3_turn and theme.sc3_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_wcs1 ) )}}
+				{{if theme.sc3_header or theme.sc3_content or theme.sc3_buttons}}
+				<div class="swiper-slide slide-3 s_container" style="background-color: {theme="sc3_bgcolor"}; {{if theme.sc3_bg}}background-image: url('{theme="sc3_bg"}');{{endif}}">
+					<div class="ipsLayout_container ipsPad_double">
+						{{if theme.sc3_header}}<h2 class="ipsType_pageTitle ipsType_{{if theme.sc3_halign == 'left'}}left{{elseif theme.sc3_halign == 'center'}}center{{else}}right{{endif}} s_header">{theme="sc3_header"}</h2>{{endif}}
+						<div class="ipsType_large ipsType_richText s_content">
+							{{if theme.sc3_content}}{theme="sc3_content"}{{endif}}
+							{{if theme.sc3_buttons}}<div class="ipsType_{theme="sc3_balign"}">{theme="sc3_buttons"}</div>{{endif}}
+						</div>
+					</div>
+				</div>
+				{{endif}}
+			{{endif}}
+			{{if theme.sc4_turn and theme.sc4_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_wcs1 ) )}}
+				{{if theme.sc4_header or theme.sc4_content or theme.sc4_buttons}}
+				<div class="swiper-slide slide-4 s_container" style="background-color: {theme="sc4_bgcolor"}; {{if theme.sc4_bg}}background-image: url('{theme="sc4_bg"}');{{endif}}">
+					<div class="ipsLayout_container ipsPad_double">
+						{{if theme.sc4_header}}<h2 class="ipsType_pageTitle ipsType_{{if theme.sc4_halign == 'left'}}left{{elseif theme.sc4_halign == 'center'}}center{{else}}right{{endif}} s_header">{theme="sc4_header"}</h2>{{endif}}
+						<div class="ipsType_large ipsType_richText s_content">
+							{{if theme.sc4_content}}{theme="sc4_content"}{{endif}}
+							{{if theme.sc4_buttons}}<div class="ipsType_{theme="sc4_balign"}">{theme="sc4_buttons"}</div>{{endif}}
+						</div>
+					</div>
+				</div>
+				{{endif}}
+			{{endif}}
+			{{if theme.sc5_turn and theme.sc5_wcs =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.slider_wcs1 ) )}}
+				{{if theme.sc5_header or theme.sc5_content or theme.sc5_buttons}}
+				<div class="swiper-slide slide-5 s_container" style="background-color: {theme="sc5_bgcolor"}; {{if theme.sc5_bg}}background-image: url('{theme="sc5_bg"}');{{endif}}">
+					<div class="ipsLayout_container ipsPad_double">
+						{{if theme.sc5_header}}<h2 class="ipsType_pageTitle ipsType_{{if theme.sc5_halign == 'left'}}left{{elseif theme.sc5_halign == 'center'}}center{{else}}right{{endif}} s_header">{theme="sc5_header"}</h2>{{endif}}
+						<div class="ipsType_large ipsType_richText s_content">
+							{{if theme.sc5_content}}{theme="sc5_content"}{{endif}}
+							{{if theme.sc5_buttons}}<div class="ipsType_{theme="sc5_balign"}">{theme="sc5_buttons"}</div>{{endif}}
+						</div>
+					</div>
+				</div>
+				{{endif}}
+			{{endif}}
+		</div>
+		{{if theme.slider_pagination}}
+			<div class="swiper-pagination"></div>
+		{{endif}}
+		{{if theme.slider_navigation_buttons}}
+			<div class="swiper-next"></div>
+        	<div class="swiper-prev"></div>
+  		{{endif}}
+	</div>
+</div>
+{template="slider_js" app="core" group="global" params=""}
+{{endif}}

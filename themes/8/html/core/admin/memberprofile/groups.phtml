@@ -1,0 +1,30 @@
+<ips:template parameters="$member, $secondaryGroups" />
+<div class='acpMemberView_groups ipsBox ipsSpacer_bottom ipsSpacer_double'>
+	<h2 class='ipsBox_titleBar ipsType_reset'>
+		{{if member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( !$member->isAdmin() or ( member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) and  member.hasAcpRestriction( 'core', 'members', 'member_move_admin1' ) ) )}}
+			<a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\Groups&id={$member->member_id}"}" class="ipsPos_right ipsType_medium" data-ipsDialog data-ipsDialog-title="{lang="groups"}">{lang="edit"}</a>
+		{{endif}}
+		{lang="groups"}
+	</h2>
+	<div class='ipsPad ipsClearfix'>
+		{{if $member->group['g_icon'] }}
+			<img src='{file="$member->group['g_icon']" extension="core_Theme"}' alt='' class="ipsPos_right">
+		{{endif}}
+		<h3 class='ipsType_minorHeading'>{lang="primary_group"}</h3>
+		<a href="{url="app=core&module=members&controller=members&advanced_search_submitted=1&members_member_group_id={$member->group['g_id']}&noColumn=1" csrf="true"}" class="ipsType_normal ipsType_blendLinks">
+			{$member->groupName|raw}
+		</a>
+		{{if $secondaryGroups}}
+			<div class="ipsSpacer_top ipsSpacer_half">
+				<h3 class='ipsType_minorHeading'>{lang="secondary_groups"}</h3>
+				<ul class="ipsList_reset">
+					{{foreach $secondaryGroups as $group}}
+						<li>
+							<a href="{url="app=core&module=members&controller=members&advanced_search_submitted=1&members_member_group_id={$group->g_id}&noColumn=1" csrf="true"}" class="ipsType_medium ipsType_blendLinks">{$group->formattedName|raw}</a>
+						</li>
+					{{endforeach}}
+				</ul>
+			</div>
+		{{endif}}
+	</div>
+</div>

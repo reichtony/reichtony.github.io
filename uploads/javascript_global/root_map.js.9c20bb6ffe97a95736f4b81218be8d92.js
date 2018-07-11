@@ -1,0 +1,1 @@
+var ipsJavascriptMap={"core":{"global_core":"http://l8maptdv.beget.tech/uploads/javascript_core/global_global_core.js.28d516c833f2e83e3785ed3dabceece5.js"},"forums":{"front_forum":"http://l8maptdv.beget.tech/uploads/javascript_forums/front_front_forum.js.c9c6ee68df26cde9f0ca82141599e419.js"}};;

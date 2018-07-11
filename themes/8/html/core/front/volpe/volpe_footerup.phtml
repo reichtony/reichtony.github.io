@@ -1,0 +1,38 @@
+<ips:template parameters="" />
+{{if ( \IPS\Settings::i()->site_online || \IPS\Member::loggedIn()->group['g_access_offline'] ) and ( \IPS\Dispatcher::i()->application instanceof \IPS\Application AND \IPS\Dispatcher::i()->application->canAccess() )}}
+{{if theme.volpe_footer_turn}}
+<div id="footerup">
+    <div class='ipsLayout_container'>
+        {{if theme.volpe_newsticker_turn == '1'}}
+            {template="volpe_newsticker_check" app="core" group="volpe" params=""}
+        {{endif}}
+        <div class="ipsGrid ipsGrid_collapsePhone">
+            {{if theme.volpe_footer1_turn}}
+                <div class="ipsGrid_span{theme='volpe_footer1_width'} ipsType_left">
+                    {{if theme.volpe_footer1_header}}<h3>{theme="volpe_footer1_header"}</h3>{{endif}}
+                    {{if theme.volpe_footer1_content}}{theme="volpe_footer1_content"}{{endif}}
+                </div>
+            {{endif}}
+            {{if theme.volpe_footer2_turn}}
+                <div class="ipsGrid_span{theme='volpe_footer2_width'} ipsType_left">
+                    {{if theme.volpe_footer2_header}}<h3>{theme="volpe_footer2_header"}</h3>{{endif}}
+                    {{if theme.volpe_footer2_content}}{theme="volpe_footer2_content"}{{endif}}
+                </div>
+            {{endif}}
+            {{if theme.volpe_footer3_turn}}
+                <div class="ipsGrid_span{theme='volpe_footer3_width'} ipsType_left">
+                    {{if theme.volpe_footer3_header}}<h3>{theme="volpe_footer3_header"}</h3>{{endif}}
+                    {{if theme.volpe_footer3_content}}{theme="volpe_footer3_content"}{{endif}}
+                </div>
+            {{endif}}
+            {{if theme.volpe_footer4_turn}}
+                <div class="ipsGrid_span{theme='volpe_footer4_width'} ipsType_left">
+                    {{if theme.volpe_footer4_header}}<h3>{theme="volpe_footer4_header"}</h3>{{endif}}
+                    {{if theme.volpe_footer4_content}}{theme="volpe_footer4_content"}{{endif}}
+                </div>
+            {{endif}}
+        </div>
+    </div>
+</div>
+{{endif}}
+{{endif}}

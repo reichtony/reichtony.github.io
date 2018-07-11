@@ -1,0 +1,32 @@
+<ips:template parameters="$form=NULL, $login=NULL, $error=NULL" />
+<h2 class='ipsType_sectionHead'>{lang="change_email_address"}</h2>
+{{if $form}}
+	{{if \IPS\Settings::i()->reg_auth_type == 'user' or \IPS\Settings::i()->reg_auth_type == 'admin_user'}}
+		<br><br>
+		<div class='ipsType_textBlock ipsType_normal'>
+			<ul class='ipsList_bullets'>
+				<li>{lang="change_email_explain_1"}</li>
+				<li>
+					{lang="change_email_explain_2"}
+				</li>
+			</ul>
+		</div>
+	{{endif}}
+	<br><hr class='ipsHr'>
+	{$form|raw}
+{{elseif $login}}
+	<br><hr class='ipsHr'>
+	{template="reauthenticate" group="system" params="$login, $error"}
+{{else}}
+	<hr class='ipsHr'><br>
+	<div class='ipsType_normal'>
+		{lang="change_email_admin_1"}
+	</div>
+
+	<ol class='ipsList_bullets ipsList_numbers ipsSpacer_top ipsType_normal'>
+		<li>{lang="change_email_admin_2"}</li>
+		<li>{lang="change_email_admin_3" sprintf="\IPS\Member::loggedIn()->name"}</li>
+		<li>{lang="change_email_admin_4"}</li>
+		<li>{lang="change_email_admin_5"}</li>
+	</ol>
+{{endif}}

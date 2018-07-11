@@ -1,0 +1,2432 @@
+{
+    "app=core&module=activitystats&controller=communityactivity": {
+        "lang_key": "menu__core_activitystats_communityactivity",
+        "restriction": null,
+        "keywords": {
+            "0": "active members",
+            "6": "activity",
+            "12": "community activity",
+            "18": "member activity",
+            "24": "new posts"
+        }
+    },
+    "app=core&module=activitystats&controller=keywords": {
+        "lang_key": "menu__core_activitystats_keywords",
+        "restriction": null,
+        "keywords": {
+            "0": "keyword tracking",
+            "6": "keywords",
+            "12": "tracking"
+        }
+    },
+    "app=core&module=applications&controller=api": {
+        "lang_key": "menu__core_applications_api",
+        "restriction": "api_manage",
+        "keywords": {
+            "0": "api",
+            "6": "rest api"
+        }
+    },
+    "app=core&module=applications&controller=api&tab=apiKeys": {
+        "lang_key": "api_keys",
+        "restriction": "api_manage",
+        "keywords": [
+            "api keys"
+        ]
+    },
+    "app=core&module=applications&controller=api&tab=apiLogs": {
+        "lang_key": "api_logs",
+        "restriction": "api_logs",
+        "keywords": [
+            "api logs"
+        ]
+    },
+    "app=core&module=applications&controller=api&tab=apiReference": {
+        "lang_key": "api_reference",
+        "restriction": "api_reference",
+        "keywords": {
+            "0": "api documentation",
+            "6": "api reference"
+        }
+    },
+    "app=core&module=applications&controller=applications": {
+        "lang_key": "menu__core_applications_applications",
+        "restriction": "app_manage",
+        "keywords": {
+            "0": "applications",
+            "6": "install",
+            "12": "modules",
+            "18": "offline",
+            "24": "online"
+        }
+    },
+    "app=core&module=applications&controller=enhancements": {
+        "lang_key": "menu__core_applications_enhancements",
+        "restriction": "enhancements_manage",
+        "keywords": {
+            "0": "bulk mail",
+            "6": "email",
+            "12": "enhancements",
+            "18": "geo",
+            "24": "maps",
+            "30": "maxmind",
+            "36": "sendgrid",
+            "42": "spam",
+            "48": "viglink"
+        }
+    },
+    "app=core&module=applications&controller=enhancements&do=edit&id=core_FacebookPixel": {
+        "lang_key": "menu__core_applications_enhancements",
+        "restriction": "enhancements_manage",
+        "keywords": {
+            "0": "facebook",
+            "6": "facebook pixel",
+            "12": "pixel"
+        }
+    },
+    "app=core&module=applications&controller=enhancements&do=edit&id=core_GoogleMaps&searchResult=form_googlemaps": {
+        "lang_key": "googlemaps",
+        "restriction": "enhancements_manage",
+        "keywords": {
+            "0": "google",
+            "6": "maps"
+        }
+    },
+    "app=core&module=applications&controller=enhancements&do=edit&id=core_Viglink&searchResult=form_viglink_account_type": {
+        "lang_key": "viglink_account_type",
+        "restriction": "enhancements_manage",
+        "keywords": {
+            "0": "advertising",
+            "6": "viglink"
+        }
+    },
+    "app=core&module=applications&controller=menu": {
+        "lang_key": "menu__core_applications_menu",
+        "restriction": "menu_manage",
+        "keywords": [
+            "menu manager"
+        ]
+    },
+    "app=core&module=applications&controller=plugins": {
+        "lang_key": "menu__core_applications_plugins",
+        "restriction": "plugins_view",
+        "keywords": {
+            "0": "add-ons",
+            "6": "addons",
+            "12": "hooks",
+            "18": "install",
+            "24": "mod",
+            "30": "modification",
+            "36": "plugins"
+        }
+    },
+    "app=core&module=bulkmail&controller=bulkmail": {
+        "lang_key": "menu__core_bulkmail_bulkmail",
+        "restriction": "bulkmail_manage",
+        "keywords": {
+            "0": "announce",
+            "6": "blast",
+            "12": "bulk",
+            "18": "bulk mail",
+            "24": "campaign",
+            "30": "email",
+            "36": "mail",
+            "42": "mass",
+            "48": "newsletter",
+            "54": "sendgrid"
+        }
+    },
+    "app=core&module=clubs&controller=clubs": {
+        "lang_key": "menu__core_clubs_clubs",
+        "restriction": "clubs_manage",
+        "keywords": {
+            "0": "circles",
+            "6": "clubs",
+            "12": "social groups"
+        }
+    },
+    "app=core&module=clubs&controller=settings": {
+        "lang_key": "menu__core_clubs_settings",
+        "restriction": null,
+        "keywords": [
+            "club settings"
+        ]
+    },
+    "app=core&module=clubs&controller=settings&searchResult=clubs_locations": {
+        "lang_key": "clubs_locations",
+        "restriction": null,
+        "keywords": {
+            "0": "address",
+            "6": "locations"
+        }
+    },
+    "app=core&module=clubs&controller=settings&searchResult=clubs_modperms": {
+        "lang_key": "clubs_modperms",
+        "restriction": null,
+        "keywords": [
+            "moderator"
+        ]
+    },
+    "app=core&module=clubs&controller=settings&searchResult=form_clubs_enabled_setting": {
+        "lang_key": "clubs_enabled_setting",
+        "restriction": null,
+        "keywords": [
+            "clubs"
+        ]
+    },
+    "app=core&module=customization&controller=emails": {
+        "lang_key": "menu__core_customization_emails",
+        "restriction": "emails_manage",
+        "keywords": [
+            "email content"
+        ]
+    },
+    "app=core&module=customization&controller=themes": {
+        "lang_key": "menu__core_customization_themes",
+        "restriction": "theme_sets_manage",
+        "keywords": {
+            "0": "design",
+            "6": "look",
+            "12": "skins",
+            "18": "themes"
+        }
+    },
+    "app=core&module=customization&controller=themes&do=designersmode&searchResult=form_theme_designers_mode": {
+        "lang_key": "theme_designers_mode",
+        "restriction": "theme_templates_manage",
+        "keywords": [
+            "designers mode"
+        ]
+    },
+    "app=core&module=discovery&controller=rss": {
+        "lang_key": "menu__core_discovery_rss",
+        "restriction": null,
+        "keywords": {
+            "0": "feed",
+            "6": "rss"
+        }
+    },
+    "app=core&module=discovery&controller=search": {
+        "lang_key": "menu__core_discovery_search",
+        "restriction": "search_manage",
+        "keywords": {
+            "0": "rebuild search",
+            "6": "rebuild search index",
+            "12": "reindex",
+            "18": "reindex search",
+            "24": "reindex search results",
+            "30": "search",
+            "36": "search index",
+            "42": "search index rebuild",
+            "48": "searching"
+        }
+    },
+    "app=core&module=discovery&controller=search&searchResult=search_index_timeframe": {
+        "lang_key": "search_index_timeframe",
+        "restriction": "search_manage",
+        "keywords": {
+            "0": "search",
+            "6": "search content",
+            "12": "search cutoff",
+            "18": "search limit",
+            "24": "search results"
+        }
+    },
+    "app=core&module=editor&controller=emoticons": {
+        "lang_key": "menu__core_editor_emoticons",
+        "restriction": "emoticons_manage",
+        "keywords": {
+            "0": "emoticons",
+            "6": "smileys",
+            "12": "smilies"
+        }
+    },
+    "app=core&module=editor&controller=emoticons&tab=custom": {
+        "lang_key": "custom_emoji",
+        "restriction": "emoticons_manage",
+        "keywords": {
+            "0": "emoticon",
+            "6": "smiley",
+            "12": "smilie"
+        }
+    },
+    "app=core&module=editor&controller=emoticons&tab=standard": {
+        "lang_key": "standard_emoji",
+        "restriction": "emoticons_manage",
+        "keywords": [
+            "emoji"
+        ]
+    },
+    "app=core&module=editor&controller=settings": {
+        "lang_key": "menu__core_editor_settings",
+        "restriction": "settings_manage",
+        "keywords": [
+            "editor"
+        ]
+    },
+    "app=core&module=editor&controller=settings&searchResult=form_editor_paragraph_padding": {
+        "lang_key": "editor_paragraph_padding",
+        "restriction": "settings_manage",
+        "keywords": {
+            "0": "enter",
+            "6": "paragraph",
+            "12": "return"
+        }
+    },
+    "app=core&module=editor&controller=settings&searchResult=form_editor_paste_behaviour": {
+        "lang_key": "editor_paste_behaviour",
+        "restriction": "settings_manage",
+        "keywords": {
+            "0": "formatting",
+            "6": "paste",
+            "12": "posting",
+            "18": "remove"
+        }
+    },
+    "app=core&module=editor&controller=toolbar": {
+        "lang_key": "editor_customization",
+        "restriction": "toolbar_manage",
+        "keywords": {
+            "0": "bbcode",
+            "6": "buttons",
+            "12": "ckeditor",
+            "18": "comment",
+            "24": "editor",
+            "30": "mobile",
+            "36": "phone",
+            "42": "plugins",
+            "48": "post",
+            "54": "responsive",
+            "60": "tablet",
+            "66": "toolbars",
+            "72": "wysiwyg"
+        }
+    },
+    "app=core&module=languages&controller=languages": {
+        "lang_key": "menu__core_languages_languages",
+        "restriction": null,
+        "keywords": {
+            "0": "languages",
+            "6": "locales",
+            "12": "translate",
+            "18": "translations"
+        }
+    },
+    "app=core&module=members&controller=groups": {
+        "lang_key": "menu__core_members_groups",
+        "restriction": "groups_manage",
+        "keywords": [
+            "groups"
+        ]
+    },
+    "app=core&module=members&controller=groups&do=form&searchResult=g_promote_exclude": {
+        "lang_key": "g_promote_exclude",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "group promotion",
+            "6": "member promotions",
+            "12": "member upgrades"
+        }
+    },
+    "app=core&module=members&controller=groups&do=form&searchResult=gbw_hide_group": {
+        "lang_key": "gbw_hide_group",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "allow filtering",
+            "6": "online users",
+            "12": "search"
+        }
+    },
+    "app=core&module=members&controller=groups&do=form&searchResult=gbw_post_highlight": {
+        "lang_key": "gbw_post_highlight",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "background",
+            "6": "highlight",
+            "12": "highlight post",
+            "18": "replies"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_access_offline": {
+        "lang_key": "g_access_offline",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "offline access",
+            "6": "site offline"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_append_edit": {
+        "lang_key": "g_append_edit",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "edit",
+            "6": "silent edit"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_attach": {
+        "lang_key": "g_attach",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "attachments",
+            "6": "uploads"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_attach_max": {
+        "lang_key": "g_attach_max",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "attachments",
+            "6": "storage",
+            "12": "uploads"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_attach_per_post": {
+        "lang_key": "g_attach_per_post",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "upload per article",
+            "6": "upload per blog",
+            "12": "upload per content item",
+            "18": "upload per post",
+            "24": "upload per topic"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_avoid_flood": {
+        "lang_key": "g_avoid_flood",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "flood control",
+            "6": "post flood control",
+            "12": "posting flood control"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_avoid_q": {
+        "lang_key": "g_avoid_q",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "hidden",
+            "6": "hide",
+            "12": "hiding",
+            "18": "mod queue",
+            "24": "moderation",
+            "30": "queue"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_bypass_badwords": {
+        "lang_key": "g_bypass_badwords",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "bad words",
+            "6": "profanity",
+            "12": "swear words"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_can_msg_attach": {
+        "lang_key": "g_can_msg_attach",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "messenger attachments",
+            "6": "messenger images",
+            "12": "messenger upload",
+            "18": "pm attachments",
+            "24": "pm images",
+            "30": "pm upload"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_can_report": {
+        "lang_key": "g_can_report",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "report",
+            "6": "reporting"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_delete_own_posts": {
+        "lang_key": "g_delete_own_posts",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "delete",
+            "6": "deleting"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_dohtml": {
+        "lang_key": "g_dohtml",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "html posting",
+            "6": "post html"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_edit_cutoff": {
+        "lang_key": "g_edit_cutoff",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "edit restriction",
+            "6": "edit time",
+            "12": "edit timing"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_edit_posts": {
+        "lang_key": "g_edit_posts",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "edit",
+            "6": "editing"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_edit_profile": {
+        "lang_key": "g_edit_profile",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "edit profile",
+            "6": "profiles"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_hide_online_list": {
+        "lang_key": "g_hide_online_list",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "online list",
+            "6": "show user list",
+            "12": "show user online"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_hide_own_posts": {
+        "lang_key": "g_hide_own_posts",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "hide",
+            "6": "hiding"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_icon": {
+        "lang_key": "g_icon",
+        "restriction": "groups_manage",
+        "keywords": [
+            "group icon"
+        ]
+    },
+    "app=core&module=members&controller=groups&searchResult=g_max_bgimg_upload": {
+        "lang_key": "g_max_bgimg_upload",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "cover photo size",
+            "6": "profile cover photo size"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_max_messages": {
+        "lang_key": "g_max_messages",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "messenger storage",
+            "6": "personal messenger storage",
+            "12": "pm storage",
+            "18": "pms"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_photo_max_vars_size": {
+        "lang_key": "g_photo_max_vars_size",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "photo size",
+            "6": "photos",
+            "12": "profile photo size"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_photo_max_vars_wh": {
+        "lang_key": "g_photo_max_vars_wh",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "photo size",
+            "6": "photos",
+            "12": "profile photo size"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_pm_perday": {
+        "lang_key": "g_pm_perday",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "new pms",
+            "6": "personal messages",
+            "12": "personal messenger",
+            "18": "pm limit",
+            "24": "pms"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_post_polls": {
+        "lang_key": "g_post_polls",
+        "restriction": "groups_manage",
+        "keywords": [
+            "polls"
+        ]
+    },
+    "app=core&module=members&controller=groups&searchResult=g_ppd_limit": {
+        "lang_key": "g_ppd_limit",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "content restriction",
+            "6": "max content",
+            "12": "max posts",
+            "18": "per day",
+            "24": "positing limit",
+            "30": "positing restriction"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_ppd_unit": {
+        "lang_key": "g_ppd_unit",
+        "restriction": "groups_manage",
+        "keywords": [
+            "positing limit"
+        ]
+    },
+    "app=core&module=members&controller=groups&searchResult=g_prefixsuffix": {
+        "lang_key": "g_prefixsuffix",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "group color",
+            "6": "group colour",
+            "12": "group formatting"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_rep_max_positive": {
+        "lang_key": "g_rep_max_positive",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "karma",
+            "6": "like",
+            "12": "reputation"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_search_flood": {
+        "lang_key": "g_search_flood",
+        "restriction": "groups_manage",
+        "keywords": [
+            "search flood control"
+        ]
+    },
+    "app=core&module=members&controller=groups&searchResult=g_sig_max_image_size": {
+        "lang_key": "g_sig_max_image_size",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "signature images",
+            "6": "signatures"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_sig_max_images": {
+        "lang_key": "g_sig_max_images",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "signature images",
+            "6": "signatures"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_sig_max_lines": {
+        "lang_key": "g_sig_max_lines",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "signature length",
+            "6": "signature size",
+            "12": "signature text",
+            "18": "signatures"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_sig_max_urls": {
+        "lang_key": "g_sig_max_urls",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "signature links",
+            "6": "signatures"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_topic_rate_setting": {
+        "lang_key": "g_topic_rate_setting",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "rate",
+            "6": "ratings"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_use_signatures": {
+        "lang_key": "g_use_signatures",
+        "restriction": "groups_manage",
+        "keywords": [
+            "signatures"
+        ]
+    },
+    "app=core&module=members&controller=groups&searchResult=g_view_board": {
+        "lang_key": "g_view_board",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "access",
+            "6": "allowed to enter community",
+            "12": "allowed to enter site",
+            "18": "allowed to view community",
+            "24": "allowed to view site",
+            "30": "ban",
+            "36": "user access site"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=g_vote_polls": {
+        "lang_key": "g_vote_polls",
+        "restriction": "groups_manage",
+        "keywords": [
+            "polls"
+        ]
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_allow_upload_bgimage": {
+        "lang_key": "gbw_allow_upload_bgimage",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "cover photo",
+            "6": "profile cover photo"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_cannot_be_ignored": {
+        "lang_key": "can_be_ignored",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "ignore",
+            "6": "ignored users"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_delete_attachments": {
+        "lang_key": "gbw_delete_attachments",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "attachments",
+            "6": "delete attachments",
+            "12": "uploads"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_disable_prefixes": {
+        "lang_key": "gbw_disable_prefixes",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "prefixes",
+            "6": "tagging",
+            "12": "tags"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_disable_tagging": {
+        "lang_key": "gbw_disable_tagging",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "tagging",
+            "6": "tags"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_no_status_import": {
+        "lang_key": "gbw_no_status_import",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "facebook status",
+            "6": "profile status",
+            "12": "status updates",
+            "18": "statuses",
+            "24": "twitter status"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_no_status_update": {
+        "lang_key": "gbw_no_status_update",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "profile status",
+            "6": "status updates",
+            "12": "statuses"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=gbw_view_reps": {
+        "lang_key": "gbw_view_reps",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "karma",
+            "6": "like",
+            "12": "reputation"
+        }
+    },
+    "app=core&module=members&controller=groups&searchResult=group_username": {
+        "lang_key": "group_username",
+        "restriction": "groups_manage",
+        "keywords": {
+            "0": "display name changes",
+            "6": "name changes",
+            "12": "user name changes",
+            "18": "username changes"
+        }
+    },
+    "app=core&module=members&controller=ip": {
+        "lang_key": "menu__core_members_ip",
+        "restriction": "membertools_ip",
+        "keywords": {
+            "0": "address",
+            "6": "IP",
+            "12": "lookup"
+        }
+    },
+    "app=core&module=members&controller=members": {
+        "lang_key": "menu__core_members_members",
+        "restriction": null,
+        "keywords": {
+            "0": "accounts",
+            "6": "administrators",
+            "12": "banned",
+            "18": "locked",
+            "24": "members",
+            "30": "spammers",
+            "36": "validating"
+        }
+    },
+    "app=core&module=members&controller=members&searchResult=form_allow_admin_mails": {
+        "lang_key": "allow_admin_mails",
+        "restriction": null,
+        "keywords": {
+            "0": "Email",
+            "6": "Send Email",
+            "12": "Send News"
+        }
+    },
+    "app=core&module=members&controller=members&searchResult=form_auto_track": {
+        "lang_key": "auto_track",
+        "restriction": null,
+        "keywords": {
+            "0": "Auto",
+            "6": "Automatically",
+            "12": "Content",
+            "18": "Follow"
+        }
+    },
+    "app=core&module=members&controller=members&searchResult=form_group": {
+        "lang_key": "group",
+        "restriction": null,
+        "keywords": [
+            "Group"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_ips_address_mail": {
+        "lang_key": "ips_address_mail",
+        "restriction": null,
+        "keywords": [
+            "Email Address"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_ips_member_name": {
+        "lang_key": "ips_member_name",
+        "restriction": null,
+        "keywords": [
+            "Display Name"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_member_content_items": {
+        "lang_key": "member_content_items",
+        "restriction": null,
+        "keywords": {
+            "0": "Content Item",
+            "6": "Recount"
+        }
+    },
+    "app=core&module=members&controller=members&searchResult=form_member_reputation": {
+        "lang_key": "member_reputation",
+        "restriction": null,
+        "keywords": {
+            "0": "Recount",
+            "6": "Reputation Level"
+        }
+    },
+    "app=core&module=members&controller=members&searchResult=form_member_title": {
+        "lang_key": "member_title",
+        "restriction": null,
+        "keywords": [
+            "Member Title"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_member_warnings": {
+        "lang_key": "member_warnings",
+        "restriction": null,
+        "keywords": [
+            "Warning Points"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_password": {
+        "lang_key": "password",
+        "restriction": null,
+        "keywords": {
+            "0": "Change Password",
+            "6": "Password"
+        }
+    },
+    "app=core&module=members&controller=members&searchResult=form_secondary_groups": {
+        "lang_key": "secondary_groups",
+        "restriction": null,
+        "keywords": [
+            "Secondary Groups"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_skin": {
+        "lang_key": "skin",
+        "restriction": null,
+        "keywords": [
+            "Theme"
+        ]
+    },
+    "app=core&module=members&controller=members&searchResult=form_view_sigs": {
+        "lang_key": "view_sigs",
+        "restriction": null,
+        "keywords": {
+            "0": "Signatures",
+            "6": "View"
+        }
+    },
+    "app=core&module=members&controller=promotions": {
+        "lang_key": "menu__core_members_promotions",
+        "restriction": "promotions_manage",
+        "keywords": {
+            "0": "group promotion",
+            "6": "member promotions",
+            "12": "member upgrades",
+            "18": "promotion rules",
+            "24": "upgrade members"
+        }
+    },
+    "app=core&module=membersettings&controller=ban": {
+        "lang_key": "menu__core_membersettings_ban",
+        "restriction": "ban_manage",
+        "keywords": {
+            "0": "banned",
+            "6": "bans",
+            "12": "email",
+            "18": "ip address",
+            "24": "register",
+            "30": "username"
+        }
+    },
+    "app=core&module=membersettings&controller=notifications": {
+        "lang_key": "menu__core_membersettings_notifications",
+        "restriction": "notifications_manage",
+        "keywords": [
+            "notifications"
+        ]
+    },
+    "app=core&module=membersettings&controller=notifications&do=settings&searchResult=auto_follow_new_content": {
+        "lang_key": "auto_follow_new_content",
+        "restriction": "notifications_manage",
+        "keywords": {
+            "0": "auto",
+            "6": "automatically",
+            "12": "content",
+            "18": "follow"
+        }
+    },
+    "app=core&module=membersettings&controller=notifications&do=settings&searchResult=auto_follow_replied_to": {
+        "lang_key": "auto_follow_replied_to",
+        "restriction": "notifications_manage",
+        "keywords": {
+            "0": "auto",
+            "6": "automatically",
+            "12": "content",
+            "18": "follow"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles": {
+        "lang_key": "profile_fields",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "custom fields",
+            "6": "custom profile",
+            "12": "custom profile fields",
+            "18": "edit fields",
+            "24": "edit profile fields",
+            "30": "profile fields"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilecompletion": {
+        "lang_key": "profile_completion",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "complete my profile",
+            "6": "complete profile",
+            "12": "complete your profile",
+            "18": "profile completion",
+            "24": "register completion",
+            "30": "registration completion",
+            "36": "sign up completion"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_allow_gravatars": {
+        "lang_key": "allow_gravatars",
+        "restriction": "profiles_manage",
+        "keywords": [
+            "gravatar"
+        ]
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_letter_photos": {
+        "lang_key": "letter_photos",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "avatar",
+            "6": "letter",
+            "12": "letter avatars",
+            "18": "letter photos",
+            "24": "letters",
+            "30": "photo",
+            "36": "photos",
+            "42": "profile photo"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_profile_comments": {
+        "lang_key": "profile_comments",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "profile comments",
+            "6": "profile statuses"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_signatures_enabled": {
+        "lang_key": "signatures_enabled",
+        "restriction": "profiles_manage",
+        "keywords": [
+            "signatures"
+        ]
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_user_name_length": {
+        "lang_key": "user_name_length",
+        "restriction": "profiles_manage",
+        "keywords": [
+            "name length"
+        ]
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_username_characters": {
+        "lang_key": "username_characters",
+        "restriction": "profiles_manage",
+        "keywords": [
+            "username characters"
+        ]
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=ignore_system_on": {
+        "lang_key": "ignore_system_on",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "ignore",
+            "6": "ignoring"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=profile_birthday_type": {
+        "lang_key": "profile_birthday_type",
+        "restriction": "profiles_manage",
+        "keywords": [
+            "birthday"
+        ]
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=profile_comment_approval": {
+        "lang_key": "profile_comment_approval",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "profile comments",
+            "6": "profile statuses"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=prune_member_history": {
+        "lang_key": "prune_member_history",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "change log",
+            "6": "member history"
+        }
+    },
+    "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=user_name_length": {
+        "lang_key": "user_name_length",
+        "restriction": "profiles_manage",
+        "keywords": {
+            "0": "display name length",
+            "6": "display name size",
+            "12": "maximum display name length",
+            "18": "maximum display name size",
+            "24": "maximum username length",
+            "30": "maximum username size",
+            "36": "minimum display name length",
+            "42": "minimum display name size",
+            "48": "minimum username length",
+            "54": "minimum username size",
+            "60": "username length",
+            "66": "username size"
+        }
+    },
+    "app=core&module=membersettings&controller=ranks": {
+        "lang_key": "menu__core_membersettings_ranks",
+        "restriction": "ranks_manage",
+        "keywords": {
+            "0": "badges",
+            "6": "ranks",
+            "12": "titles"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation": {
+        "lang_key": "menu__core_membersettings_reputation",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "karma",
+            "6": "likes",
+            "12": "reactions",
+            "18": "reputation"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=form_reaction_count_display": {
+        "lang_key": "reaction_count_display",
+        "restriction": "reps_manage",
+        "keywords": [
+            "reaction display"
+        ]
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=form_reputation_enabled": {
+        "lang_key": "reputation_enabled",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "Likes",
+            "6": "negative reputation",
+            "12": "positive reputation",
+            "18": "Reputation"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_can_self_vote": {
+        "lang_key": "reputation_can_self_vote",
+        "restriction": "reps_settings",
+        "keywords": {
+            "0": "like own",
+            "6": "like self",
+            "12": "own",
+            "18": "rep self",
+            "24": "reputation self",
+            "30": "self",
+            "36": "self reputation"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_highlight": {
+        "lang_key": "reputation_highlight",
+        "restriction": "reps_manage",
+        "keywords": [
+            "popular"
+        ]
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_leaderboard_default_tab": {
+        "lang_key": "reputation_leaderboard_default_tab",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "leaderboard",
+            "6": "member list"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_leaderboard_on": {
+        "lang_key": "reputation_leaderboard_on",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "leaderboard",
+            "6": "reputation"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_max_members": {
+        "lang_key": "reputation_max_members",
+        "restriction": "reps_manage",
+        "keywords": [
+            "top members"
+        ]
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_protected_groups": {
+        "lang_key": "reputation_protected_groups",
+        "restriction": "reps_settings",
+        "keywords": {
+            "0": "no likes",
+            "6": "no reputation",
+            "12": "protected"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_show_content": {
+        "lang_key": "reputation_show_content",
+        "restriction": "reps_settings",
+        "keywords": {
+            "0": "show likes",
+            "6": "show reputation"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_show_days_won_trophy": {
+        "lang_key": "reputation_show_days_won_trophy",
+        "restriction": "reps_manage",
+        "keywords": [
+            "days won"
+        ]
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_show_profile": {
+        "lang_key": "reputation_show_profile",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "show likes",
+            "6": "show reputation"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&searchResult=reputation_timezone": {
+        "lang_key": "reputation_timezone",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "leaderboard",
+            "6": "timezone"
+        }
+    },
+    "app=core&module=membersettings&controller=reputation&tab=leaderboard&searchResult=reputation_leaderboard_on": {
+        "lang_key": "reputation_leaderboard_on",
+        "restriction": "reps_manage",
+        "keywords": [
+            "leaderboard"
+        ]
+    },
+    "app=core&module=membersettings&controller=reputation&tab=leaderboard&searchResult=reputation_max_members": {
+        "lang_key": "reputation_top_members_overview",
+        "restriction": "reps_manage",
+        "keywords": [
+            "top members"
+        ]
+    },
+    "app=core&module=membersettings&controller=reputation&tab=leaderboard&searchResult=reputation_show_days_won_trophy": {
+        "lang_key": "reputation_show_days_won_trophy",
+        "restriction": "reps_manage",
+        "keywords": {
+            "0": "leaderboard",
+            "6": "winner"
+        }
+    },
+    "app=core&module=messengerstats&controller=pmstats": {
+        "lang_key": "menu__core_members_pmstats",
+        "restriction": null,
+        "keywords": {
+            "0": "message statistics",
+            "6": "Messenger Statistics",
+            "12": "private messages"
+        }
+    },
+    "app=core&module=moderation&controller=reportedContent": {
+        "lang_key": "menu__core_moderation_reportedContent",
+        "restriction": "reportedContent_manage",
+        "keywords": {
+            "0": "moderation",
+            "6": "report"
+        }
+    },
+    "app=core&module=moderation&controller=spam": {
+        "lang_key": "menu__core_moderation_spam",
+        "restriction": "spam_manage",
+        "keywords": {
+            "0": "spam",
+            "6": "spammers"
+        }
+    },
+    "app=core&module=moderation&controller=spam&do=serviceLogs": {
+        "lang_key": "spamlogs",
+        "restriction": "spam_service_log",
+        "keywords": [
+            "spam logs"
+        ]
+    },
+    "app=core&module=moderation&controller=spam&searchResult=bot_antispam_type": {
+        "lang_key": "bot_antispam_type",
+        "restriction": "spam_manage",
+        "keywords": {
+            "0": "bot prevention",
+            "6": "CAPTCHA",
+            "12": "security question"
+        }
+    },
+    "app=core&module=moderation&controller=spam&searchResult=guest_captcha": {
+        "lang_key": "guest_captcha_search_target",
+        "restriction": "spam_manage",
+        "keywords": {
+            "0": "delete guest content",
+            "6": "delete guest posts",
+            "12": "guest content",
+            "18": "guest posts"
+        }
+    },
+    "app=core&module=moderation&controller=spam&tab=captcha": {
+        "lang_key": "spamprevention_captcha",
+        "restriction": "spam_manage",
+        "keywords": {
+            "0": "captcha",
+            "6": "keycaptcha",
+            "12": "recaptcha"
+        }
+    },
+    "app=core&module=moderation&controller=spam&tab=flagging": {
+        "lang_key": "spamprevention_flagging",
+        "restriction": "spam_manage",
+        "keywords": [
+            "flagging"
+        ]
+    },
+    "app=core&module=moderation&controller=spam&tab=qanda": {
+        "lang_key": "qanda_settings",
+        "restriction": "qanda_manage",
+        "keywords": {
+            "0": "answers",
+            "6": "challenge",
+            "12": "question",
+            "18": "registration"
+        }
+    },
+    "app=core&module=moderation&controller=spam&tab=service": {
+        "lang_key": "moderation",
+        "restriction": "spam_manage",
+        "keywords": {
+            "0": "ips spam monitor",
+            "6": "ips spam monitoring",
+            "12": "ips spam service"
+        }
+    },
+    "app=core&module=moderation&controller=warnings": {
+        "lang_key": "menu__core_moderation_warnings",
+        "restriction": "warn_settings",
+        "keywords": {
+            "0": "acknowledge",
+            "6": "actions",
+            "12": "reasons",
+            "18": "warnings"
+        }
+    },
+    "app=core&module=moderation&controller=warnings&tab=settings&searchResult=form_warn_on": {
+        "lang_key": "warn_on",
+        "restriction": "warn_settings",
+        "keywords": {
+            "0": "warning",
+            "6": "warning setting",
+            "12": "warning system"
+        }
+    },
+    "app=core&module=moderation&controller=warnings&tab=settings&searchResult=warn_protected": {
+        "lang_key": "warn_protected",
+        "restriction": "warn_settings",
+        "keywords": {
+            "0": "no warnings",
+            "6": "protected"
+        }
+    },
+    "app=core&module=moderation&controller=warnings&tab=settings&searchResult=warn_show_own": {
+        "lang_key": "warn_show_own",
+        "restriction": "warn_settings",
+        "keywords": [
+            "own"
+        ]
+    },
+    "app=core&module=moderation&controller=warnings&tab=settings&searchResult=warnings_acknowledge": {
+        "lang_key": "warnings_acknowledge",
+        "restriction": "warn_settings",
+        "keywords": [
+            "acknowledge"
+        ]
+    },
+    "app=core&module=overview&controller=files": {
+        "lang_key": "menu__core_overview_files",
+        "restriction": "files_view",
+        "keywords": {
+            "0": "attachments",
+            "6": "files",
+            "12": "storage",
+            "18": "uploads"
+        }
+    },
+    "app=core&module=overview&controller=files&do=imagesettings": {
+        "lang_key": "image_settings",
+        "restriction": "files_view",
+        "keywords": {
+            "0": "gd",
+            "6": "imagemagick"
+        }
+    },
+    "app=core&module=overview&controller=files&do=imagesettings&searchResult=form_image_jpg_quality": {
+        "lang_key": "image_jpg_quality",
+        "restriction": "files_view",
+        "keywords": {
+            "0": "jpeg",
+            "6": "jpg"
+        }
+    },
+    "app=core&module=overview&controller=files&do=imagesettings&searchResult=image_png_quality_gd": {
+        "lang_key": "image_png_quality_gd",
+        "restriction": "files_view",
+        "keywords": [
+            "png"
+        ]
+    },
+    "app=core&module=overview&controller=files&do=settings": {
+        "lang_key": "menu__core_overview_files",
+        "restriction": "files_view",
+        "keywords": {
+            "0": "amazon",
+            "6": "files",
+            "12": "ftp",
+            "18": "photos",
+            "24": "storage",
+            "30": "uploads"
+        }
+    },
+    "app=core&module=promotion&controller=advertisements": {
+        "lang_key": "menu__core_promotion_advertisements",
+        "restriction": "advertisements_manage",
+        "keywords": {
+            "0": "ads",
+            "6": "adsense",
+            "12": "advertisements",
+            "18": "adverts",
+            "24": "adwords",
+            "30": "google"
+        }
+    },
+    "app=core&module=promotion&controller=analytics": {
+        "lang_key": "ipbseo_ga_enabled",
+        "restriction": "analytics_manage",
+        "keywords": {
+            "0": "analytics",
+            "6": "ga",
+            "12": "google",
+            "18": "google analytics",
+            "24": "omniture",
+            "30": "piwik",
+            "36": "tracking"
+        }
+    },
+    "app=core&module=promotion&controller=promote": {
+        "lang_key": "menu__core_promotion_promote",
+        "restriction": "promote_manage",
+        "keywords": {
+            "0": "promote",
+            "6": "promotion",
+            "12": "sharing",
+            "18": "social media"
+        }
+    },
+    "app=core&module=promotion&controller=promote&tab=facebook": {
+        "lang_key": "promote_tab_facebook",
+        "restriction": "promote_manage",
+        "keywords": [
+            "facebook"
+        ]
+    },
+    "app=core&module=promotion&controller=promote&tab=internal": {
+        "lang_key": "promote_tab_internal",
+        "restriction": "promote_manage",
+        "keywords": [
+            "our picks"
+        ]
+    },
+    "app=core&module=promotion&controller=promote&tab=links": {
+        "lang_key": "promote_tab_links",
+        "restriction": "promote_manage",
+        "keywords": {
+            "0": "links",
+            "6": "shorten"
+        }
+    },
+    "app=core&module=promotion&controller=promote&tab=permissions": {
+        "lang_key": "promote_tab_permissions",
+        "restriction": "promote_manage",
+        "keywords": [
+            "permissions"
+        ]
+    },
+    "app=core&module=promotion&controller=promote&tab=schedule": {
+        "lang_key": "promote_tab_schedule",
+        "restriction": "promote_manage",
+        "keywords": [
+            "schedule"
+        ]
+    },
+    "app=core&module=promotion&controller=promote&tab=twitter": {
+        "lang_key": "promote_tab_twitter",
+        "restriction": "promote_manage",
+        "keywords": [
+            "twitter"
+        ]
+    },
+    "app=core&module=promotion&controller=seo": {
+        "lang_key": "menu__core_promotion_seo",
+        "restriction": "seo_manage",
+        "keywords": {
+            "0": "analytics",
+            "6": "furl",
+            "12": "search",
+            "18": "search engine optimization",
+            "24": "seo"
+        }
+    },
+    "app=core&module=promotion&controller=seo&tab=metatags": {
+        "lang_key": "seo_tab_metatags",
+        "restriction": "seo_manage",
+        "keywords": {
+            "0": "description",
+            "6": "keywords",
+            "12": "meta tags",
+            "18": "robots"
+        }
+    },
+    "app=core&module=promotion&controller=seo&tab=sitemap": {
+        "lang_key": "seo_tab_sitemap",
+        "restriction": "seo_manage",
+        "keywords": {
+            "0": "google",
+            "6": "priority",
+            "12": "site map",
+            "18": "sitemap",
+            "24": "xml"
+        }
+    },
+    "app=core&module=promotion&controller=seo&tab=urls": {
+        "lang_key": "seo_tab_furls",
+        "restriction": "seo_manage",
+        "keywords": {
+            "0": "friendly url",
+            "6": "furls",
+            "12": "htaccess",
+            "18": "mod_rewrite",
+            "24": "urls"
+        }
+    },
+    "app=core&module=promotion&controller=sharelinks": {
+        "lang_key": "menu__core_promotion_sharelinks",
+        "restriction": "sharelinks_manage",
+        "keywords": {
+            "0": "delicious",
+            "6": "digg",
+            "12": "facebook",
+            "18": "google",
+            "24": "linkedin",
+            "30": "reddit",
+            "36": "share links",
+            "42": "stumbleupon",
+            "48": "twitter"
+        }
+    },
+    "app=core&module=settings&controller=advanced&do=tasks": {
+        "lang_key": "task_manager",
+        "restriction": null,
+        "keywords": {
+            "0": "cron",
+            "6": "cronjob",
+            "12": "task",
+            "18": "tasklog",
+            "24": "tasks"
+        }
+    },
+    "app=core&module=settings&controller=advanced&searchResult=form_auto_polling_enabled": {
+        "lang_key": "auto_polling_enabled",
+        "restriction": "advanced_manage",
+        "keywords": {
+            "0": "auto",
+            "6": "automatic",
+            "12": "polling"
+        }
+    },
+    "app=core&module=settings&controller=advanced&tab=datastore": {
+        "lang_key": "data_store",
+        "restriction": "datastore",
+        "keywords": [
+            "storage"
+        ]
+    },
+    "app=core&module=settings&controller=advanced&tab=datastore&searchResult=cache_guest_page": {
+        "lang_key": "cache_guest_page",
+        "restriction": "advanced_manage_server",
+        "keywords": {
+            "0": "cache",
+            "6": "guest cache",
+            "12": "output cache"
+        }
+    },
+    "app=core&module=settings&controller=advanced&tab=datastore&searchResult=cache_method": {
+        "lang_key": "cache_method",
+        "restriction": "datastore",
+        "keywords": {
+            "0": "apc",
+            "6": "memcached",
+            "12": "redis",
+            "18": "wincache",
+            "24": "xcache"
+        }
+    },
+    "app=core&module=settings&controller=advanced&tab=furl": {
+        "lang_key": "furls_customize",
+        "restriction": "advanced_manage_furls",
+        "keywords": {
+            "0": "friendly",
+            "6": "furl",
+            "12": "seo"
+        }
+    },
+    "app=core&module=settings&controller=advanced&tab=settings&searchResult=match_ipaddress": {
+        "lang_key": "match_ipaddress",
+        "restriction": "security_manage",
+        "keywords": {
+            "0": "ip address",
+            "6": "session"
+        }
+    },
+    "app=core&module=settings&controller=advanced&tab=settings&searchResult=task_use_cron": {
+        "lang_key": "task_use_cron",
+        "restriction": "advanced_manage_server",
+        "keywords": {
+            "0": "cron job",
+            "6": "cronjob",
+            "12": "tasks"
+        }
+    },
+    "app=core&module=settings&controller=advanced&tab=settings&searchResult=xforward_matching": {
+        "lang_key": "xforward_matching",
+        "restriction": "security_manage",
+        "keywords": {
+            "0": "http_x_forwarded_for",
+            "6": "ip address",
+            "12": "proxies",
+            "18": "proxy"
+        }
+    },
+    "app=core&module=settings&controller=contactus": {
+        "lang_key": "menu__core_settings_contactus",
+        "restriction": "contactus_manage",
+        "keywords": [
+            "contact us"
+        ]
+    },
+    "app=core&module=settings&controller=email": {
+        "lang_key": "menu__core_settings_email",
+        "restriction": "email_manage",
+        "keywords": {
+            "0": "address",
+            "6": "email",
+            "12": "email logo",
+            "18": "mail",
+            "24": "smtp"
+        }
+    },
+    "app=core&module=settings&controller=email&do=errorLog": {
+        "lang_key": "emailerrorlogs",
+        "restriction": "email_errorlog",
+        "keywords": {
+            "0": "email error logs",
+            "6": "email logs",
+            "12": "logs"
+        }
+    },
+    "app=core&module=settings&controller=email&searchResult=settings_form_email_color": {
+        "lang_key": "email_color",
+        "restriction": "email_manage",
+        "keywords": {
+            "0": "email color",
+            "6": "email colour"
+        }
+    },
+    "app=core&module=settings&controller=email&searchResult=settings_form_email_in": {
+        "lang_key": "email_in",
+        "restriction": "email_manage",
+        "keywords": {
+            "0": "contact email",
+            "6": "contact us email",
+            "12": "incoming email"
+        }
+    },
+    "app=core&module=settings&controller=email&searchResult=settings_form_email_logo": {
+        "lang_key": "email_logo",
+        "restriction": "email_manage",
+        "keywords": [
+            "email logo"
+        ]
+    },
+    "app=core&module=settings&controller=email&searchResult=settings_form_email_out": {
+        "lang_key": "email_out",
+        "restriction": "email_manage",
+        "keywords": {
+            "0": "email",
+            "6": "outgoing email",
+            "12": "site email"
+        }
+    },
+    "app=core&module=settings&controller=email&searchResult=settings_form_mail_method": {
+        "lang_key": "mail_method",
+        "restriction": "email_manage",
+        "keywords": {
+            "0": "email",
+            "6": "mail",
+            "12": "smtp"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_board_name": {
+        "lang_key": "board_name",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "community name",
+            "6": "site name",
+            "12": "website name"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_copyright_line": {
+        "lang_key": "copyright_line",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "copyright",
+            "6": "license"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_diagnostics_reporting": {
+        "lang_key": "diagnostics_reporting",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "diagnostics",
+            "6": "reports"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_show_home_link": {
+        "lang_key": "show_home_link",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "breadcrumb",
+            "6": "navigation"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_site_address": {
+        "lang_key": "site_address",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "address",
+            "6": "mail"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_site_online": {
+        "lang_key": "site_online",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "offline",
+            "6": "online"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_site_social_profiles": {
+        "lang_key": "site_social_profiles",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "facebook",
+            "6": "social profile",
+            "12": "twitter"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_site_twitter_id": {
+        "lang_key": "site_twitter_id",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "site twitter",
+            "6": "twitter",
+            "12": "twitter id"
+        }
+    },
+    "app=core&module=settings&controller=general&searchResult=form_upgrade_email": {
+        "lang_key": "upgrade_email",
+        "restriction": "general_manage",
+        "keywords": {
+            "0": "update",
+            "6": "upgrade"
+        }
+    },
+    "app=core&module=settings&controller=licensekey": {
+        "lang_key": "menu__core_settings_licensekey",
+        "restriction": "licensekey_manage",
+        "keywords": [
+            "license key"
+        ]
+    },
+    "app=core&module=settings&controller=login": {
+        "lang_key": "menu__core_settings_login",
+        "restriction": "login_manage",
+        "keywords": {
+            "0": "accounts",
+            "6": "facebook",
+            "12": "google",
+            "18": "https",
+            "24": "ips connect",
+            "30": "ldap",
+            "36": "locking",
+            "42": "login",
+            "48": "microsoft",
+            "54": "twitter",
+            "60": "windows"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=accountsettings&searchResult=device_management": {
+        "lang_key": "device_management",
+        "restriction": "security_manage",
+        "keywords": {
+            "0": "manage authorised browsers",
+            "6": "manage authorised devices",
+            "12": "manage authorized browsers",
+            "18": "manage authorized devices",
+            "24": "manage recently used browsers",
+            "30": "manage recently used devices"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=accountsettings&searchResult=password_strength_meter": {
+        "lang_key": "password_strength_meter",
+        "restriction": "security_manage",
+        "keywords": {
+            "0": "meter",
+            "6": "password",
+            "12": "strength"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=registration": {
+        "lang_key": "menu__core_membersettings_registration",
+        "restriction": "registration_manage",
+        "keywords": {
+            "0": "approve",
+            "6": "confirmation",
+            "12": "coppa",
+            "18": "registration",
+            "24": "validate",
+            "30": "validation"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=registration&searchResult=allow_reg": {
+        "lang_key": "allow_reg",
+        "restriction": "registration_manage",
+        "keywords": {
+            "0": "allow registrations",
+            "6": "new registrations",
+            "12": "registration",
+            "18": "registrations"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=registration&searchResult=new_reg_notify": {
+        "lang_key": "new_reg_notify",
+        "restriction": "registration_manage",
+        "keywords": {
+            "0": "email on",
+            "6": "email on new registration",
+            "12": "new registrations",
+            "18": "notify",
+            "24": "notify new registration",
+            "30": "registrations"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=registration&searchResult=quick_register": {
+        "lang_key": "quick_register",
+        "restriction": "registration_manage",
+        "keywords": {
+            "0": "quick register",
+            "6": "register"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=registration&searchResult=reg_auth_type": {
+        "lang_key": "reg_auth_type",
+        "restriction": "login_access",
+        "keywords": {
+            "0": "email",
+            "6": "validation"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=registration&searchResult=updates_consent_default": {
+        "lang_key": "updates_consent_default",
+        "restriction": "login_access",
+        "keywords": [
+            "gdpr"
+        ]
+    },
+    "app=core&module=settings&controller=login&tab=registration&searchResult=use_coppa": {
+        "lang_key": "use_coppa",
+        "restriction": "registration_manage",
+        "keywords": [
+            "coppa"
+        ]
+    },
+    "app=core&module=settings&controller=login&tab=settings&searchResult=disable_anonymous": {
+        "lang_key": "disable_anonymous",
+        "restriction": "login_manage",
+        "keywords": {
+            "0": "anonymous",
+            "6": "anonymous login"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=settings&searchResult=form_new_device_email": {
+        "lang_key": "new_device_email",
+        "restriction": "login_manage",
+        "keywords": {
+            "0": "new authorised device email",
+            "6": "new authorized device email",
+            "12": "new browser email",
+            "18": "new device email",
+            "24": "new log in email",
+            "30": "new login email",
+            "36": "new sign in email",
+            "42": "new signin email"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=settings&searchResult=ipb_bruteforce_attempts": {
+        "lang_key": "ipb_bruteforce_attempts",
+        "restriction": "login_manage",
+        "keywords": {
+            "0": "brute",
+            "6": "bruteforce",
+            "12": "failed",
+            "18": "lock",
+            "24": "logins"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=settings&searchResult=ipb_bruteforce_period": {
+        "lang_key": "ipb_bruteforce_period",
+        "restriction": "login_access",
+        "keywords": {
+            "0": "failed",
+            "6": "login"
+        }
+    },
+    "app=core&module=settings&controller=login&tab=settings&searchResult=ipb_bruteforce_unlock": {
+        "lang_key": "ipb_bruteforce_unlock",
+        "restriction": "login_access",
+        "keywords": {
+            "0": "failed",
+            "6": "login"
+        }
+    },
+    "app=core&module=settings&controller=mfa": {
+        "lang_key": "menu__core_settings_mfa",
+        "restriction": "mfa_manage",
+        "keywords": {
+            "0": "2 factor authentication",
+            "6": "2 factor verification",
+            "12": "2-factor authentication",
+            "18": "2-factor verification",
+            "24": "2fa",
+            "30": "account authentication",
+            "36": "account verification",
+            "42": "authentication",
+            "48": "google authentication",
+            "54": "google authenticator",
+            "60": "mfa",
+            "66": "multi factor authentication",
+            "72": "multi factor verification",
+            "78": "multi-factor authentication",
+            "84": "multi-factor verification",
+            "90": "multifactor authentication",
+            "96": "multifactor verification",
+            "102": "security",
+            "108": "security questions",
+            "114": "two factor authentication",
+            "120": "two factor verification",
+            "126": "two-factor authentication",
+            "132": "two-factor verification",
+            "138": "verification"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=attach_allowed_extensions": {
+        "lang_key": "attach_allowed_extensions",
+        "restriction": "posting_manage",
+        "keywords": [
+            "extensions"
+        ]
+    },
+    "app=core&module=settings&controller=posting&searchResult=attachment_image_size": {
+        "lang_key": "attachment_image_size",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "thumbnail dimensions",
+            "6": "thumbnail size"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=attachment_resample_size": {
+        "lang_key": "attachment_resample_size",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "image dimensions",
+            "6": "image size"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_allow_remote_images": {
+        "lang_key": "allow_remote_images",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "external images",
+            "6": "linked images",
+            "12": "remote images"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_attach_allowed_types": {
+        "lang_key": "attach_allowed_types",
+        "restriction": null,
+        "keywords": {
+            "0": "attachment restrictions",
+            "6": "attachments",
+            "12": "file types",
+            "18": "files"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_dellog_retention_period": {
+        "lang_key": "dellog_retention_period",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "content",
+            "6": "delete"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_edit_log": {
+        "lang_key": "edit_log",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "edit log",
+            "6": "editing"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_editor_embeds": {
+        "lang_key": "editor_embeds",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "disable",
+            "6": "embed",
+            "12": "embeds",
+            "18": "facebook",
+            "24": "youtube"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_flood_control": {
+        "lang_key": "flood_control",
+        "restriction": "posting_manage",
+        "keywords": [
+            "flood control"
+        ]
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_ip_address_prune": {
+        "lang_key": "ip_address_prune",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "gdpr",
+            "6": "ip address",
+            "12": "prune"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_max_title_length": {
+        "lang_key": "max_title_length",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "title length",
+            "6": "title size"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_max_video_width": {
+        "lang_key": "max_video_width",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "video size",
+            "6": "video width",
+            "12": "videos"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_merge_concurrent_posts": {
+        "lang_key": "merge_concurrent_posts",
+        "restriction": null,
+        "keywords": {
+            "0": "concurrent",
+            "6": "merge",
+            "12": "merging"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_reviews_rating_out_of": {
+        "lang_key": "reviews_rating_out_of",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "reviews",
+            "6": "stars"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=form_topic_redirect_prune": {
+        "lang_key": "topic_redirect_prune",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "moved links",
+            "6": "shadow topics"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=max_video_width": {
+        "lang_key": "max_video_width",
+        "restriction": "posting_manage",
+        "keywords": [
+            "width"
+        ]
+    },
+    "app=core&module=settings&controller=posting&searchResult=remote_image_proxy": {
+        "lang_key": "remote_image_proxy",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "external image proxy",
+            "6": "https",
+            "12": "image proxy",
+            "18": "proxy",
+            "24": "remote image proxy",
+            "30": "ssl"
+        }
+    },
+    "app=core&module=settings&controller=posting&searchResult=remote_image_proxy_cache": {
+        "lang_key": "image_proxy_cache_period",
+        "restriction": "posting_manage",
+        "keywords": [
+            "cache"
+        ]
+    },
+    "app=core&module=settings&controller=posting&tab=acronymExpansion": {
+        "lang_key": "acronym_expansion",
+        "restriction": "posting_manage_acronym",
+        "keywords": {
+            "0": "abbreviations",
+            "6": "acronyms"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=attachment_image_size": {
+        "lang_key": "attachment_image_size",
+        "restriction": null,
+        "keywords": {
+            "0": "attachments",
+            "6": "images",
+            "12": "thumbnails",
+            "18": "uploads"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_allow_remote_images": {
+        "lang_key": "allow_remote_images",
+        "restriction": null,
+        "keywords": {
+            "0": "external",
+            "6": "images",
+            "12": "linked",
+            "18": "remote"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_attach_allowed_types": {
+        "lang_key": "attach_allowed_types",
+        "restriction": null,
+        "keywords": {
+            "0": "attachments",
+            "6": "extensions",
+            "12": "uploads"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_edit_log": {
+        "lang_key": "edit_log",
+        "restriction": null,
+        "keywords": {
+            "0": "edit",
+            "6": "log"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_flood_control": {
+        "lang_key": "flood_control",
+        "restriction": null,
+        "keywords": {
+            "0": "flood",
+            "6": "limit",
+            "12": "posting"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_max_title_length": {
+        "lang_key": "max_title_length",
+        "restriction": null,
+        "keywords": [
+            "titles"
+        ]
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_max_video_width": {
+        "lang_key": "max_video_width",
+        "restriction": null,
+        "keywords": {
+            "0": "embedded",
+            "6": "media",
+            "12": "videos",
+            "18": "vimeo",
+            "24": "youtube"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_merge_concurrent_posts": {
+        "lang_key": "merge_concurrent_posts",
+        "restriction": null,
+        "keywords": {
+            "0": "combine",
+            "6": "concurrent",
+            "12": "merge"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_reviews_rating_out_of": {
+        "lang_key": "reviews_rating_out_of",
+        "restriction": null,
+        "keywords": {
+            "0": "ratings",
+            "6": "reviews",
+            "12": "stars"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=general&searchResult=form_topic_redirect_prune": {
+        "lang_key": "topic_redirect_prune",
+        "restriction": null,
+        "keywords": {
+            "0": "moved",
+            "6": "shadow"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=polls": {
+        "lang_key": "polls",
+        "restriction": "posting_manage_polls",
+        "keywords": {
+            "0": "polls",
+            "6": "question",
+            "12": "vote"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=profanityFilters": {
+        "lang_key": "profanity",
+        "restriction": "posting_manage_profanity",
+        "keywords": {
+            "0": "bad words",
+            "6": "filter",
+            "12": "profanity",
+            "18": "swear words",
+            "24": "word filters"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=tags": {
+        "lang_key": "tags",
+        "restriction": "posting_manage_tags",
+        "keywords": {
+            "0": "prefixes",
+            "6": "tagging",
+            "12": "tags"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=tags&searchResult=tags_can_prefix": {
+        "lang_key": "tags_can_prefix",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "prefix",
+            "6": "prefixes"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=urlFilters": {
+        "lang_key": "ipb_url_filter_option",
+        "restriction": "posting_manage_url",
+        "keywords": {
+            "0": "blacklist",
+            "6": "links",
+            "12": "urls",
+            "18": "whitelist"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=urlFilters&searchResult=form_links_external": {
+        "lang_key": "links_external",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "blank",
+            "6": "link",
+            "12": "tab",
+            "18": "target",
+            "24": "window"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=urlFilters&searchResult=ipb_url_blacklist": {
+        "lang_key": "ipb_url_blacklist",
+        "restriction": "posting_manage",
+        "keywords": [
+            "blacklist"
+        ]
+    },
+    "app=core&module=settings&controller=posting&tab=urlFilters&searchResult=posts_add_nofollow": {
+        "lang_key": "posts_add_nofollow",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "nofollow",
+            "6": "pagerank"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=urlFilters&searchResult=posts_add_nofollow_exclude": {
+        "lang_key": "posts_add_nofollow_exclude",
+        "restriction": null,
+        "keywords": {
+            "0": "follow",
+            "6": "nofollow",
+            "12": "pagerank"
+        }
+    },
+    "app=core&module=settings&controller=posting&tab=urlFilters&searchResult=url_filter_action": {
+        "lang_key": "url_filter_action",
+        "restriction": "posting_manage",
+        "keywords": {
+            "0": "approval",
+            "6": "moderate",
+            "12": "queue"
+        }
+    },
+    "app=core&module=settings&controller=securityquestions": {
+        "lang_key": "menu__core_settings_mfa",
+        "restriction": "securityquestions_manage",
+        "keywords": {
+            "0": "answers",
+            "6": "questions",
+            "12": "security"
+        }
+    },
+    "app=core&module=settings&controller=terms": {
+        "lang_key": "menu__core_settings_terms",
+        "restriction": "terms_manage",
+        "keywords": {
+            "0": "conditions",
+            "6": "gdpr",
+            "12": "guidelines",
+            "18": "legal",
+            "24": "privacy policy",
+            "30": "rules",
+            "36": "terms"
+        }
+    },
+    "app=core&module=settings&controller=terms&searchResult=form_guest_terms_bar": {
+        "lang_key": "guest_terms_bar",
+        "restriction": "terms_manage",
+        "keywords": {
+            "0": "cookie control",
+            "6": "gdpr",
+            "12": "terms bar"
+        }
+    },
+    "app=core&module=settings&controller=terms&searchResult=guest_terms_bar_text": {
+        "lang_key": "guest_terms_bar_text",
+        "restriction": "terms_manage",
+        "keywords": [
+            "cookie control"
+        ]
+    },
+    "app=core&module=settings&controller=terms&searchResult=privacy_show_processors": {
+        "lang_key": "privacy_show_processors",
+        "restriction": "terms_manage",
+        "keywords": [
+            "gdpr"
+        ]
+    },
+    "app=core&module=staff&controller=admin": {
+        "lang_key": "menu__core_staff_admin",
+        "restriction": "restrictions_manage",
+        "keywords": {
+            "0": "acp",
+            "6": "administrators",
+            "12": "admins",
+            "18": "restrictions",
+            "24": "staff"
+        }
+    },
+    "app=core&module=staff&controller=admin&do=actionLogs": {
+        "lang_key": "acplogs",
+        "restriction": "restrictions_adminlogs",
+        "keywords": {
+            "0": "acp logs",
+            "6": "admin logs",
+            "12": "logs"
+        }
+    },
+    "app=core&module=staff&controller=admin&do=loginLogs": {
+        "lang_key": "menu__core_staff_admin",
+        "restriction": "restrictions_manage",
+        "keywords": {
+            "0": "acp logins",
+            "6": "admin logins"
+        }
+    },
+    "app=core&module=staff&controller=directory": {
+        "lang_key": "menu__core_staff_directory",
+        "restriction": "leaders_manage",
+        "keywords": {
+            "0": "leaders",
+            "6": "moderators",
+            "12": "staff"
+        }
+    },
+    "app=core&module=staff&controller=moderators": {
+        "lang_key": "menu__core_staff_moderators",
+        "restriction": "moderators_manage",
+        "keywords": {
+            "0": "moderators",
+            "6": "staff"
+        }
+    },
+    "app=core&module=staff&controller=moderators&do=actionLogs": {
+        "lang_key": "modlogs",
+        "restriction": "restrictions_moderatorlogs",
+        "keywords": {
+            "0": "logs",
+            "6": "mod logs",
+            "12": "moderator logs",
+            "18": "staff logs"
+        }
+    },
+    "app=core&module=stats&controller=membervisits": {
+        "lang_key": "menu__core_stats_membervisits",
+        "restriction": "membervisits_manage",
+        "keywords": {
+            "0": "activity",
+            "6": "member visits",
+            "12": "visits"
+        }
+    },
+    "app=core&module=stats&controller=onlineusers": {
+        "lang_key": "menu__core_stats_onlineusers",
+        "restriction": "onlineusers_manage",
+        "keywords": {
+            "0": "activity statistics",
+            "6": "member activity",
+            "12": "online users",
+            "18": "page views",
+            "24": "site activity",
+            "30": "user activity"
+        }
+    },
+    "app=core&module=stats&controller=registrationstats": {
+        "lang_key": "menu__core_members_registrationstats",
+        "restriction": null,
+        "keywords": {
+            "0": "registration statistics",
+            "6": "Registrations"
+        }
+    },
+    "app=core&module=support&controller=errorLogs": {
+        "lang_key": "error_logs",
+        "restriction": null,
+        "keywords": {
+            "0": "error log",
+            "6": "errors",
+            "12": "logs"
+        }
+    },
+    "app=core&module=support&controller=sql": {
+        "lang_key": "sql_toolbox",
+        "restriction": "sql_toolbox",
+        "keywords": [
+            "sql toolbox"
+        ]
+    },
+    "app=core&module=support&controller=support": {
+        "lang_key": "menu__core_support_dashboard",
+        "restriction": "support_dashboard",
+        "keywords": {
+            "0": "diagnose",
+            "6": "diagnostics",
+            "12": "documentation",
+            "18": "help",
+            "24": "phpinfo",
+            "30": "server",
+            "36": "support",
+            "42": "system",
+            "48": "tech support",
+            "54": "technical support",
+            "60": "troubleshoot"
+        }
+    },
+    "app=core&module=support&controller=systemLogs": {
+        "lang_key": "system_logs",
+        "restriction": null,
+        "keywords": {
+            "0": "driver errors",
+            "6": "logs",
+            "12": "sql error logs",
+            "18": "sql logs",
+            "24": "system logs"
+        }
+    }
+}

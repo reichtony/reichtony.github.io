@@ -1,0 +1,90 @@
+.state-indicator {
+    display: inline-block;
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.avatar_indicator { 
+position: absolute;
+border: 7px solid transparent;
+border-radius: 3px 3px 0 3px;
+}
+
+
+.avatar_indicator_top_left { 
+top: -1px; 
+left: -1px; 
+}
+.avatar_indicator_online_color_top_left {
+	border-left-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+	border-top-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+}
+.avatar_indicator_offline_color_top_left {
+	border-left-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+    border-top-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+}
+
+
+.avatar_indicator_top_right { 
+top: -1px; 
+right: -1px; 
+}
+.avatar_indicator_online_color_top_right {
+	border-right-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+	border-top-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+}
+.avatar_indicator_offline_color_top_right {
+	border-right-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+    border-top-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+}
+
+
+.avatar_indicator_bottom_left { 
+bottom: -1px; 
+left: -1px; 
+}
+.avatar_indicator_online_color_bottom_left {
+	border-left-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+	border-bottom-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+}
+.avatar_indicator_offline_color_bottom_left {
+	border-left-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+    border-bottom-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+}
+
+
+.avatar_indicator_bottom_right { 
+bottom: -1px; 
+right: -1px; 
+}
+.avatar_indicator_online_color_bottom_right {
+	border-right-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+	border-bottom-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+}
+.avatar_indicator_offline_color_bottom_right {
+	border-right-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+    border-bottom-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+}
+
+
+.avatar_round_edge {
+	border: {setting="onlineIndicator_roundAvatars_edgeWidth"}px {setting="onlineIndicator_roundAvatars_style"};
+}
+.avatar_round_indicator_online_color, .avatar_round_indicator_online_color:hover {
+	border-color: {setting="onlineIndicator_inAvatar_onlineColor"};
+}
+.avatar_round_indicator_offline_color, .avatar_round_indicator_offline_color:hover {
+	border-color: {setting="onlineIndicator_inAvatar_offlineColor"};
+}
+
+.online_glow {
+	box-shadow: 0px 0px 15px {setting="onlineIndicator_inAvatar_onlineColor"};
+}
+
+.offline_glow {
+	box-shadow: 0px 0px 15px {setting="onlineIndicator_inAvatar_offlineColor"};
+}

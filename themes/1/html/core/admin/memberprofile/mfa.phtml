@@ -1,0 +1,43 @@
+<ips:template parameters="$member, $configuredHandlers, $hasSecurityQuestions, $showEditButton" />
+<div class='acpMemberView_2fa ipsBox ipsSpacer_bottom ipsSpacer_double'>
+	<h2 class='ipsBox_titleBar ipsType_reset'>
+		{{if $showEditButton and member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( !$member->isAdmin() or member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) )}}
+			<a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\MFA&id={$member->member_id}"}" class="ipsPos_right ipsType_medium" data-ipsDialog data-ipsDialog-title="{lang="member__core_SecurityAnswers"}">{lang="edit"}</a>
+		{{endif}}
+		{lang="member__core_SecurityAnswers"}
+	</h2>
+	<div class='ipsPad'>
+		{{if $member->members_bitoptions['security_questions_opt_out'] and settings.mfa_required_groups != '*' and !$member->inGroup( explode( ',', settings.mfa_required_groups ) )}}
+			<div class="ipsType_negative ipsType_sectionHead">
+				<i class="fa fa-times-circle"></i> &nbsp; {lang="mfa_opted_out"}
+			</div>
+		{{else}}
+			{{foreach $configuredHandlers as $key => $handler}}
+				<div class="ipsType_positive ipsSpacer_top ipsSpacer_half ipsType_sectionHead">
+					<i class="fa fa-check-circle"></i> &nbsp; {lang="mfa_method_enabled" sprintf="\IPS\Member::loggedIn()->language()->addToStack( 'mfa_' . $key . '_title' )"}
+				</div>
+			{{endforeach}}
+			{{if !count( $configuredHandlers ) and !$hasSecurityQuestions}}
+				<div class="ipsType_neutral">
+					{lang="no_mfa_methods_enabled"}
+				</div>
+			{{endif}}
+			{{if settings.security_questions_enabled and $hasSecurityQuestions}}
+				{{if count( $configuredHandlers )}}
+					<hr class='ipsHr'>
+				{{endif}}
+				{{$answers = $member->securityAnswers();}}
+				{{if count( $answers )}}
+					{{foreach $answers as $questionId => $answer}}
+						<div class="ipsSpacer_bottom ipsSpacer_half">
+							<h2 class='ipsType_reset ipsType_minorHeading'>{lang="security_question_{$questionId}"}</h2>
+							<p class='ipsType_reset ipsType_medium'>
+								{expression="\IPS\Text\Encrypt::fromTag( $answer )->decrypt()"}
+							</p>
+						</div>
+					{{endforeach}}
+				{{endif}}
+			{{endif}}
+		{{endif}}
+	</div>
+</div>

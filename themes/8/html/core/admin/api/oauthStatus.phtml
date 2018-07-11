@@ -1,0 +1,22 @@
+<ips:template parameters="$accessToken, $useRefreshTokens" />
+{{if $accessToken['access_token_expires']}}
+	{{if $accessToken['access_token_expires'] > time()}}
+		<i class="fa fa-check"></i> {lang="oauth_status_active"}
+	{{else}}
+		{{if $useRefreshTokens and $accessToken['refresh_token']}}
+			{{if $accessToken['refresh_token_expires']}}
+				{{if $accessToken['refresh_token_expires'] > time()}}
+					<i class="fa fa-refresh"></i> {lang="oauth_status_refresh"}
+				{{else}}
+					<i class="fa fa-times"></i> {lang="oauth_status_expired"}
+				{{endif}}
+			{{else}}
+				<i class="fa fa-refresh"></i> {lang="oauth_status_refresh"}
+			{{endif}}
+		{{else}}
+			<i class="fa fa-times"></i> {lang="oauth_status_expired"}
+		{{endif}}
+	{{endif}}
+{{else}}
+	<i class="fa fa-check"></i> {lang="oauth_status_active"}
+{{endif}}

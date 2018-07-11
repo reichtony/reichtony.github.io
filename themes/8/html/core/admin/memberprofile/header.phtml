@@ -1,0 +1,129 @@
+<ips:template parameters="$member, $validatingRow, $sparkline" />
+
+{{if $validatingRow}}
+	<div class="ipsMessage ipsMessage_general acpMemberView_message ipsSpacer_bottom ipsSpacer_double">
+		{{if member.hasAcpRestriction( 'core', 'members', 'membertools_validating' )}}
+			<ul class='ipsButton_split ipsPos_right'>
+				<li><a href="{$member->acpUrl()->setQueryString( 'do', 'approve' )}" class="ipsButton {{if !$validatingRow['user_verified']}}ipsButton_small{{else}}ipsButton_medium{{endif}} ipsButton_positive" data-confirm>{lang="approve"}</a></li>
+				{{if !$validatingRow['user_verified']}}
+					<li><a href="{$member->acpUrl()->setQueryString( 'do', 'resendEmail' )}" class="ipsButton ipsButton_small ipsButton_light">{lang="resend_validation_email"}</a></li>
+				{{endif}}
+				<li><a href="{$member->acpUrl()->setQueryString( array( 'do' => 'ban', 'permban' => 1 ) )}" class="ipsButton {{if !$validatingRow['user_verified']}}ipsButton_small{{else}}ipsButton_medium{{endif}} ipsButton_negative" data-confirm>{lang="ban"}</a></li>
+			</ul>
+		{{endif}}
+		<h4 class='ipsMessage_title'>{lang="reg_admin_validation"}</h4>
+		<p class='ipsType_reset ipsType_normal'>{$member->validatingDescription()}</p>		
+	</div>
+{{endif}}
+{{if $time = $member->isBanned()}}
+	<div class="ipsMessage ipsMessage_error acpMemberView_message ipsSpacer_bottom ipsSpacer_double">
+		{{if $member->temp_ban and member.hasAcpRestriction( 'core', 'members', 'member_ban' ) and ( member.hasAcpRestriction( 'core', 'members', 'member_ban_admin' ) or !$member->isAdmin() ) AND $member->member_id != member.member_id}}
+			<a href="{$member->acpUrl()->setQueryString( array( 'do' => 'ban' ) )}" data-ipsDialog data-ipsDialog-title="{lang="adjust_ban"}" class="ipsButton ipsButton_medium ipsButton_veryLight ipsPos_right">{lang="adjust_ban"}</a>
+		{{endif}}
+		<h4 class='ipsMessage_title'>{lang="banned"}</h4>
+		{{if $time === TRUE}}
+			{{if $member->temp_ban}}
+				<p class='ipsType_reset ipsType_normal'>{lang="account_banned_perm"}</p>
+			{{else}}
+				<p class='ipsType_reset ipsType_normal'>{lang="account_banned_group"}</p>
+			{{endif}}
+		{{else}}
+			<p class='ipsType_reset ipsType_normal'>{lang="account_banned_time" sprintf="$time"}</p>
+		{{endif}}
+	</div>
+{{elseif $member->members_bitoptions['bw_is_spammer']}}
+	<div class="ipsMessage ipsMessage_error acpMemberView_message ipsSpacer_bottom ipsSpacer_double">
+		{{if member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and (member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) or !$member->isAdmin() )}}
+			<a href="{$member->acpUrl()->setQueryString( array( 'do' => 'spam', 'status' => 0 ) )}" class="ipsButton ipsButton_medium ipsButton_veryLight ipsPos_right" data-confirm data-confirmSubmessage="{lang="spam_unflag_confirm"}">{lang="spam_unflag"}</a>
+		{{endif}}
+		<h4 class='ipsMessage_title'>{lang="account_flagged_as_spammer_title"}</h4>
+		<p class='ipsType_reset ipsType_normal'>{lang="account_flagged_as_spammer"}</p>		
+	</div>
+{{endif}}
+{{if settings.ipb_bruteforce_attempts and $member->failed_login_count >= settings.ipb_bruteforce_attempts}}
+	<div class="ipsMessage ipsMessage_warning acpMemberView_message ipsSpacer_bottom ipsSpacer_double">
+		<a href="{$member->acpUrl()->setQueryString( array( 'do' => 'unlock' ) )}" class="ipsButton ipsButton_veryLight ipsButton_medium ipsPos_right">{lang="unlock"}</a>
+		
+		<h4 class='ipsMessage_title'>{lang="account_locked_title"}</h4>
+		<p class='ipsType_reset ipsType_normal'>{lang="account_locked_logins"}</p>		
+	</div>
+{{elseif settings.security_questions_tries and $member->failed_mfa_attempts >= settings.security_questions_tries}}
+	<div class="ipsMessage ipsMessage_warning acpMemberView_message ipsSpacer_bottom ipsSpacer_double">
+		<a href="{$member->acpUrl()->setQueryString( array( 'do' => 'unlock' ) )}" class="ipsButton ipsButton_veryLight ipsButton_medium ipsPos_right">{lang="unlock"}</a>
+
+		<h4 class='ipsMessage_title'>{lang="account_locked_title"}</h4>
+		<p class='ipsType_reset ipsType_normal'>{lang="account_locked_2fa"}</p>
+	</div>
+{{endif}}
+{{if ! $member->name or ! $member->email}}
+	<div class="ipsMessage ipsMessage_error acpMemberView_message ipsSpacer_bottom ipsSpacer_double">
+		{{if $member->members_bitoptions['created_externally']}}
+			<h4 class='ipsMessage_title'>
+				{{if ! $member->name and ! $member->email}}
+					{lang="member_reserved_external_both"}
+				{{elseif ! $member->name}}
+					{lang="member_reserved_external_name"}
+				{{elseif ! $member->email}}	
+					{lang="member_reserved_external_email"}
+				{{endif}}
+			</h4>
+			<p class='ipsType_reset ipsType_normal'>{lang="members_name_missing_as_reserved_external"}</p>
+		{{elseif ( $member->last_visit == 0 and $member->joined->getTimestamp() > ( time() - 3600 ) )}}
+			{{$mins = ceil( ( $member->joined->getTimestamp() - ( time() - 3600 ) ) / 60 );}}
+			<h4 class='ipsMessage_title'>{lang="member_reserved_pending_deletion" sprintf="$mins"}</h4>
+			<p class='ipsType_reset ipsType_normal'>{lang="members_name_missing_as_reserved_tt"}</p>
+		{{endif}}
+	</div>
+{{endif}}
+<div class='acpMemberView_stats ipsSpacer_bottom ipsSpacer_double'>
+	<div class='ipsGrid ipsGrid_collapseTablet'>
+		<div class='ipsGrid_span{{if settings.reputation_enabled}}6{{else}}9{{endif}} ipsSpacer_bottom'>
+			{$sparkline|raw}
+		</div>
+		<div class='ipsGrid_span3 ipsSpacer_bottom'>
+			{{if member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) or !$member->isAdmin() )}}
+				<a href='#memberPostsBlock_menu' id='memberPostsBlock' data-ipsMenu class='acpMemberView_countStat acpMemberView_contentCount' title="{lang="member_ranks_posts_desc"}" data-ipsTooltip>
+					<h3 class='ipsType_minorHeading ipsTruncate ipsTruncate_line'>{lang="members_member_posts"}</h3>
+					<p class='ipsType_large ipsType_reset acpMemberView_countStatStat ipsTruncate ipsTruncate_line'>{number="$member->member_posts"}</p>
+				</a>
+				<div id='memberPostsBlock_menu' class='ipsMenu ipsMenu_narrow ipsHide'>
+					<ul>
+						<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\Header&id={$member->member_id}&type=content"}" data-ipsDialog data-ipsDialog-title="{lang="members_member_posts"}">{lang="set_manually"}</a></li>
+						<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=recountContent&id={$member->member_id}"}" data-confirm data-confirmType="verify" data-confirmButtons='{expression="json_encode( array( 'yes' => \IPS\Member::loggedIn()->language()->addToStack('yes'), 'no' => \IPS\Member::loggedIn()->language()->addToStack('recount_all'), 'cancel' => \IPS\Member::loggedIn()->language()->addToStack('cancel') ) )" raw="true"}' data-confirmSubMessage="{lang="member_content_items_recount"}">{lang="recount"}</a></li>
+						{{if member.hasAcpRestriction( 'core', 'members', 'membertools_delete' )}}
+							<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=deleteContent&id={$member->member_id}"}" data-ipsDialog data-ipsDialog-title="{lang="member_delete_content"}">{lang="member_delete_content"}</a></li>
+						{{endif}}
+					</ul>
+				</div>
+			{{else}}
+				<span id='memberPostsBlock' data-ipsMenu class='acpMemberView_countStat acpMemberView_contentCount' title="{lang="member_ranks_posts_desc"}" data-ipsTooltip>
+					<h3 class='ipsType_minorHeading'>{lang="members_member_posts"}</h3>
+					<p class='ipsType_large ipsType_reset acpMemberView_countStatStat'>{number="$member->member_posts"}</p>
+				</span>
+			{{endif}}
+		</div>
+		{{if settings.reputation_enabled}}
+			<div class='ipsGrid_span3 ipsSpacer_bottom'>
+				{{if member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) or !$member->isAdmin() )}}
+					<a href='#memberRepBlock_menu' id="memberRepBlock" data-ipsMenu class='acpMemberView_countStat acpMemberView_repCount'>
+						<h3 class='ipsType_minorHeading ipsTruncate ipsTruncate_line'>{lang="member_reputation"}</h3>
+						<p class='ipsType_large ipsType_reset acpMemberView_countStatStat ipsTruncate ipsTruncate_line'>{number="$member->pp_reputation_points"}</p>
+					</a>
+					<div id='memberRepBlock_menu' class='ipsMenu ipsMenu_narrow ipsHide'>
+						<ul>
+						<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\Header&id={$member->member_id}&type=reputation"}" data-ipsDialog data-ipsDialog-title="{lang="members_member_posts"}">{lang="set_manually"}</a></li>
+							<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=recountReputation&id={$member->member_id}"}" data-confirm data-confirmType="verify" data-confirmButtons='{expression="json_encode( array( 'yes' => \IPS\Member::loggedIn()->language()->addToStack('yes'), 'no' => \IPS\Member::loggedIn()->language()->addToStack('recount_all'), 'cancel' => \IPS\Member::loggedIn()->language()->addToStack('cancel') ) )" raw="true"}' data-confirmSubMessage="{lang="member_reputation_recount"}">{lang="recount"}</a></li>
+							<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=removeReputation&type=given&id={$member->member_id}"}" data-confirm>{lang="reputation_remove_given"}</a></li>
+							<li class="ipsMenu_item"><a href="{url="app=core&module=members&controller=members&do=removeReputation&type=received&id={$member->member_id}"}" data-confirm>{lang="reputation_remove_received"}</a></li>
+						</ul>
+					</div>
+				{{else}}
+					<span id="memberRepBlock" data-ipsMenu class='acpMemberView_countStat acpMemberView_repCount'>
+						<h3 class='ipsType_minorHeading'>{lang="member_reputation"}</h3>
+						<p class='ipsType_large ipsType_reset acpMemberView_countStatStat'>{number="$member->pp_reputation_points"}</p>
+					</span>
+				{{endif}}
+			</div>
+		{{endif}}
+	</div>
+</div>

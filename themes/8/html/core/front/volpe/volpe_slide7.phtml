@@ -1,0 +1,14 @@
+<ips:template parameters=" " />
+{{if theme.volpe_sc7_header or theme.volpe_sc7_content or theme.volpe_sc7_buttons}}
+<div class="swiper-slide slide-7">
+	<div class="swiper-lazy" data-background="{theme='volpe_sc7_bgimage'}">
+		<article class="align-{theme='volpe_sc7_align'}">
+			<div class="slide-content">
+				{{if theme.volpe_sc7_header}}<h2 class="sheader">{theme="volpe_sc7_header"}</h2>{{endif}}
+				{{if theme.volpe_sc7_content}}<div class="scontent">{theme="volpe_sc7_content"}</div>{{endif}}
+				{{if theme.volpe_sc7_buttons}}<div class="sbuttons">{theme="volpe_sc7_buttons"}</div>{{endif}}
+			</div>
+		</article>
+	</div>
+</div>
+{{endif}}

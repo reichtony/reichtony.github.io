@@ -1,0 +1,74 @@
+<ips:template parameters="$member, $messengerCount, $messengerPercent, $attachmentStorage, $attachmentPercent, $viewAttachmentsLink" />
+{{if $member->canAccessModule( \IPS\Application\Module::get( 'core', 'messaging', 'front' ) ) or $attachmentStorage !== NULL}}
+	<div class='ipsGrid ipsGrid_collapsePhone acpMemberView_quotas'>
+		<div class='ipsGrid_span6'>
+			<div class='acpMemberView_quota ipsBox ipsSpacer_bottom ipsSpacer_double'>
+				<h2 class='ipsBox_titleBar ipsType_reset'>
+					{{if $member->canAccessModule( \IPS\Application\Module::get( 'core', 'messaging', 'front' ) ) and member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( !$member->isAdmin() or member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) )}}
+						{{if $messengerCount === NULL}}
+							<a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\Quotas&id={$member->member_id}&enable=1"}" class="ipsPos_right ipsType_medium" data-confirm>
+								{lang="admin_enable_messenger"}
+							</a>
+						{{else}}
+							<a href="{url="app=core&module=members&controller=members&do=editBlock&block=IPS\\core\\extensions\\core\\MemberACPProfileBlocks\\Quotas&id={$member->member_id}"}" class="ipsPos_right ipsType_medium" data-confirm data-confirmType="verify" data-confirmIcon="question" data-confirmMessage="{lang="admin_disable_messenger"}" data-confirmSubMessage="{lang="admin_disable_messenger_confirm"}" data-confirmButtons='{expression="json_encode( array( 'yes' => \IPS\Member::loggedIn()->language()->addToStack('no'), 'no' => \IPS\Member::loggedIn()->language()->addToStack('yes'), 'cancel' => \IPS\Member::loggedIn()->language()->addToStack('cancel') ) )" raw="true"}'>
+								{lang="admin_disable_messenger"}
+							</a>
+						{{endif}}
+					{{endif}}
+					{lang="messenger_quota_header"}
+				</h2>
+				<div class='ipsPad'>
+					{{if $messengerCount !== NULL}}
+						{{if $messengerPercent !== NULL}}
+							<div class="ipsAttachment_progress acpMemberView_progress ipsSpacer_bottom ipsSpacer_half"><span style='width: {{if $messengerPercent > 100}}100{{else}}{$messengerPercent}{{endif}}%'></span></div>
+							<span class='acpMemberView_percentage ipsFaded ipsPos_right ipsType_light'>{number="$messengerPercent"}%</span>
+						{{endif}}
+						
+						<span class='acpMemberView_quotaNumber ipsType_large'>{number="$messengerCount"}</span><br>
+						{{if $member->group['g_max_messages'] > 0}}
+							<span class='ipsType_medium ipsType_light'>{lang="quota_allowance" sprintf="\IPS\Member::loggedIn()->language()->formatNumber( $member->group['g_max_messages'] )"}</span>
+						{{else}}
+							<span class='ipsType_medium ipsType_light'>{lang="quota_allowance_unlimited"}</span>
+						{{endif}}
+					{{else}}
+						<div class="ipsType_medium ipsType_light">
+							{{if $member->members_disable_pm == 1}}
+								{lang="messenger_quota_disabled_self"}
+							{{elseif $member->members_disable_pm == 2}}
+								{lang="messenger_quota_disabled_admin"}
+							{{else}}
+								{lang="messenger_quota_disabled_group"}
+							{{endif}}
+						</div>
+					{{endif}}
+				</div>
+			</div>
+		</div>
+		<div class='ipsGrid_span6'>
+			<div class='acpMemberView_quota ipsBox ipsSpacer_bottom ipsSpacer_double'>
+				<h2 class='ipsBox_titleBar ipsType_reset'>
+					{{if $viewAttachmentsLink}}
+						<a href="{$viewAttachmentsLink}" class="ipsPos_right ipsType_medium">{lang="view_attachments"}</a>
+					{{endif}}
+					{lang="my_attachment_quota"}
+				</h2>
+				<div class='ipsPad'>
+					{{if $attachmentStorage !== NULL}}
+						{{if $attachmentPercent !== NULL}}
+							<div class="ipsAttachment_progress acpMemberView_progress ipsSpacer_bottom ipsSpacer_half"><span style='width: {{if $attachmentPercent > 100}}100{{else}}{$attachmentPercent}{{endif}}%;'></span></div>
+							<span class='acpMemberView_percentage ipsFaded ipsPos_right ipsType_light'>{number="$attachmentPercent"}%</span>
+						{{endif}}
+						<span class='acpMemberView_quotaNumber ipsType_large'>{filesize="$attachmentStorage"}</span><br>
+						{{if $member->group['g_attach_max'] > 0}}
+							<span class='ipsType_medium ipsType_light'>{lang="quota_allowance" sprintf="\IPS\Output\Plugin\Filesize::humanReadableFilesize( $member->group['g_attach_max'] * 1024 )"}</span>
+						{{else}}
+							<span class='ipsType_medium ipsType_light'>{lang="quota_allowance_unlimited"}</span>
+						{{endif}}
+					{{else}}
+						<div class="ipsType_medium ipsType_light">{lang="quota_allowance_disabled"}</div>
+					{{endif}}
+				</div>
+			</div>
+		</div>
+	</div>
+{{endif}}

@@ -1,0 +1,44 @@
+<ips:template parameters="$member, $clubs" />
+<div class="ipsPad">
+	<ul class='ipsDataList'>
+		{{foreach $clubs as $club}}
+			<li class="ipsDataItem {{if settings.clubs_require_approval and !$club->approved}}ipsModerated{{endif}}">
+				<div class='ipsDataItem_icon'>
+					{template="clubIcon" group="clubs" app="core" location="front" params="$club, 'tiny'"}
+				</div>
+				<div class='ipsDataItem_main'>
+					<h4 class='ipsDataItem_title ipsContained_container'>
+						{{if settings.clubs_require_approval and !$club->approved}}
+							<span><span class="ipsBadge ipsBadge_small ipsBadge_icon ipsBadge_warning" data-ipsTooltip title='{lang="club_unapproved"}'><i class='fa fa-eye-slash'></i></span></span>
+						{{else}}
+							{{if $club->featured}}
+								<span><span class="ipsBadge ipsBadge_small ipsBadge_icon ipsBadge_positive" data-ipsTooltip title='{lang="featured"}'><i class='fa fa-star'></i></span></span>
+							{{endif}}
+						{{endif}}
+						<span class='ipsType_break ipsContained'>
+							<a href='{$club->url()}' title="{$club->name}">{$club->name}</a>
+						</span>
+					</h4>
+					<div class='ipsDataItem_meta ipsType_reset ipsType_blendLinks ipsType_break ipsContained' data-ipsTruncate data-ipsTruncate-type='remove' data-ipsTruncate-size='1 lines'>
+						{$club->about}
+					</div>
+				</div>
+				<ul class='ipsDataItem_stats'>
+					<li>
+						{lang="club_{$club->type}"}
+					</li>
+					{{if $club->type !== $club::TYPE_PUBLIC}}
+						<li class="ipsType_light">
+							{lang="club_members_count" pluralize="$club->members"}
+						</li>
+					{{endif}}
+				</ul>
+				{{if \IPS\Member::loggedIn()->hasAcpRestriction( 'core', 'clubs', 'clubs_edit' )}}
+					<div class='ipsDataItem_generic ipsDataItem_size3 ipsSpacer_top ipsSpacer_half'>
+						<a href='{url="app=core&module=clubs&controller=clubs&do=edit&id={$club->id}"}' class='ipsButton ipsButton_light ipsButton_small ipsButton_fullWidth'><i class='fa fa-pencil'></i> {lang="edit_club"}</a>
+					</div>
+				{{endif}}
+			</li>
+		{{endforeach}}
+	</ul>
+</div>

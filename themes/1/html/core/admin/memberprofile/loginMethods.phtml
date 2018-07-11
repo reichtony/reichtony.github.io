@@ -1,0 +1,52 @@
+<ips:template parameters="$member, $loginMethods" />
+{{if count( $loginMethods )}}
+	<hr class='ipsHr'>
+	<h3 class='ipsType_minorHeading'>{lang="active_account_integrations"}</h3>
+
+	<ul class='ipsDataList ipsDataList_reducedSpacing acpMemberView_integrations'>
+		{{foreach $loginMethods as $id => $details}}
+			<li class='ipsDataItem'>
+				<div class='ipsDataItem_icon'>
+					{{if $details['link']}}
+						<a href="{$details['link']}" target="_blank" class="ipsType_blendLinks">
+					{{endif}}
+					{{if isset( $details['icon'] )}}
+						<img src="{$details['icon']}" class="ipsUserPhoto ipsUserPhoto_tiny">
+					{{else}}
+						<img src="{resource="default_photo.png" app="core" location="global"}" class="ipsUserPhoto ipsUserPhoto_tiny">
+					{{endif}}
+					{{if $details['link']}}
+						</a>
+					{{endif}}
+				</div>
+				<div class='ipsDataItem_main'>
+					{{if isset( $details['edit'] ) and ( $details['edit'] or $details['delete'] ) and member.hasAcpRestriction( 'core', 'members', 'member_edit' ) and ( member.hasAcpRestriction( 'core', 'members', 'member_edit_admin' ) or !$member->isAdmin() )}}
+						<ul class="ipsControlStrip ipsType_noBreak ipsList_reset">
+							{{if $details['edit']}}
+								<li class="ipsControlStrip_button">
+									<a href="{url="app=core&module=members&controller=members&do=loginEdit&id={$member->member_id}&method={$id}"}" data-ipsDialog data-ipsDialog-title="{$details['title']}" data-ipsTooltip title="{lang="profilesync_configure"}"><i class="ipsControlStrip_icon fa fa-pencil"></i></a>
+								</li>
+							{{endif}}
+							{{if $details['delete']}}
+								<li class="ipsControlStrip_button">
+									<a href="{url="app=core&module=members&controller=members&do=loginDelete&id={$member->member_id}&method={$id}"}" data-confirm data-ipsTooltip title="{lang="sign_out"}"><i class="ipsControlStrip_icon fa fa-times-circle"></i></a>
+								</li>
+							{{endif}}
+						</ul>
+					{{endif}}
+					<p class='ipsType_normal ipsType_reset acpMemberView_integrations_text'>
+						{{if $details['link']}}
+							<a href="{$details['link']}" target="_blank" class="ipsType_blendLinks">
+						{{endif}}
+						{$details['title']}<br>
+						<span class='ipsType_medium ipsType_light'>{$details['blurb']}</span>
+						{{if $details['link']}}
+							</a>
+						{{endif}}
+					</p>
+				</div>
+
+			</li>
+		{{endforeach}}
+	</ul>
+{{endif}}

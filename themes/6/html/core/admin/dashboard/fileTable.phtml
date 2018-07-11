@@ -1,0 +1,150 @@
+<ips:template parameters="$table, $headers, $rows, $quickSearch" />
+<div data-baseurl="{$table->baseUrl}" data-resort='{$table->resortKey}' data-controller="core.global.core.table,core.front.core.moderation">
+	<div class='ipsClearfix'>
+		<div data-role="tablePagination" class='ipsSpacer_bottom'>
+			{template="pagination" group="global" app="core" location="global" params="$table->baseUrl, $table->pages, $table->page, $table->limit"}
+		</div>
+		{template="buttons" params="$table->rootButtons, ''" group="global" app="core" if="isset( $headers['_buttons'] )"}
+	</div>
+	<div class="acpBlock ipsClear">
+		{{if $quickSearch !== NULL or $table->advancedSearch or !empty( $table->filters )}}
+		<div class='ipsClearfix ipsClear acpWidgetToolbar' data-role="tableSortBar">
+			<div class='ipsButtonBar ipsClearfix ipsPos_right ipsResponsive_showDesktop'>
+				<ul class="ipsButtonRow ipsPos_right ipsClearfix">
+					<li>
+						<a class="ipsJS_show" href="#elCheck_menu" id="elCheck" title='{lang="select_rows_tooltip"}' data-ipsTooltip data-ipsAutoCheck data-ipsAutoCheck-context="#elFileResults" data-ipsMenu data-ipsMenu-activeClass="ipsButtonRow_active">
+							<span class="cAutoCheckIcon ipsType_medium"><i class="fa fa-square-o"></i></span> <i class="fa fa-caret-down"></i>
+							<span class='ipsNotificationCount' data-role='autoCheckCount'>0</span>
+						</a>
+						<ul class="ipsMenu ipsMenu_auto ipsMenu_withStem ipsHide" id="elCheck_menu">
+							<li class="ipsMenu_title">{lang="select_rows"}</li>
+							<li class="ipsMenu_item" data-ipsMenuValue="all"><a href="#">{lang="all"}</a></li>
+							<li class="ipsMenu_item" data-ipsMenuValue="none"><a href="#">{lang="none"}</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			{{if $table->advancedSearch}}
+				<a class='ipsPos_right acpWidgetSearch' data-ipsTooltip aria-label='{lang="search"}' href='{$table->baseUrl->setQueryString( array( 'advancedSearchForm' => '1', 'filter' => $table->filter, 'sortby' => $table->sortBy, 'sortdirection' => $table->sortDirection ) )}' data-ipsDialog data-ipsDialog-title='{lang="search"}'><i class='fa fa-cog'></i></a>
+			{{endif}}
+			{{if $quickSearch !== NULL}}
+				<input type='text' class='ipsPos_right acpTable_search ipsJS_show' data-role='tableSearch' results placeholder="{{if is_string( $quickSearch )}}{lang="search_prefix" sprintf="\IPS\Member::loggedIn()->language()->addToStack( $table->langPrefix . $quickSearch )"}{{else}}{lang="search"}{{endif}}" value="{expression="\IPS\Request::i()->quicksearch"}">
+			{{endif}}
+
+			{{if !empty( $table->filters )}}
+				<div class='ipsButtonBar ipsClearfix ipsResponsive_showDesktop'>
+					<ul class='ipsButtonRow ipsPos_left ipsClearfix'>
+						<li data-action="tableFilter" data-filter="">
+							<a href='{$table->baseUrl->setQueryString( array( 'sortby' => $table->sortBy, 'sortdirection' => $table->sortDirection, 'page' => '1', 'filter' => '' ) )}' class='{{if !array_key_exists( $table->filter, $table->filters )}}ipsButtonRow_active{{endif}}'>{lang="all"}</a>
+						</li>
+						{{foreach $table->filters as $k => $q}}
+							<li data-action="tableFilter" data-filter="{$k}">
+								<a href='{$table->baseUrl->setQueryString( array( 'filter' => $k, 'sortby' => $table->sortBy, 'sortdirection' => $table->sortDirection, 'page' => '1' ) )}' class='{{if $k === $table->filter}}ipsButtonRow_active{{endif}}'>{lang="$k"}</a>
+							</li>
+						{{endforeach}}
+					</ul>
+				</div>
+			{{endif}}
+			<div class='ipsButtonBar ipsClearfix ipsResponsive_hideDesktop ipsResponsive_block'>
+				{{if !empty( $table->filters )}}
+					<ul class='ipsButtonRow ipsPos_left ipsClearfix'>
+						<li>
+							<a href='#elFilterMenu_menu' data-role="tableFilterMenu" id='elFilterMenu' data-ipsMenu data-ipsMenu-activeClass='ipsButtonRow_active' data-ipsMenu-selectable="radio">{lang="filter"} <i class='fa fa-caret-down'></i></a>
+							<ul class='ipsMenu ipsMenu_auto ipsMenu_withStem ipsMenu_selectable ipsHide' id='elFilterMenu_menu'>
+								<li data-ipsMenuValue='' class='ipsMenu_item {{if !array_key_exists( $table->filter, $table->filters )}}ipsMenu_itemChecked{{endif}}'><a href={$table->baseUrl->setQueryString( array( 'sortby' => $table->sortBy, 'sortdirection' => $table->sortDirection, 'page' => '1' ) )}'>{lang="all"}</a></li>
+								{{foreach $table->filters as $k => $q}}
+									<li class='ipsMenu_item {{if $k === $table->filter}}ipsMenu_itemChecked{{endif}}' data-action="tableFilter" data-ipsMenuValue='{$k}'><a href={$table->baseUrl->setQueryString( array( 'filter' => $k, 'sortby' => $table->sortBy, 'sortdirection' => $table->sortDirection, 'page' => '1' ) )}'>{lang="$k"}</a></li>
+								{{endforeach}}
+							</ul>
+						</li>
+					</ul>
+				{{endif}}
+				<ul class='ipsButtonRow ipsPos_left ipsClearfix'>
+					<li>
+						<a href='#elSortMenu_menu' id='elSortMenu' data-ipsMenu data-ipsMenu-activeClass='ipsButtonRow_active' data-ipsMenu-selectable="radio">{lang="sort_by"} <i class='fa fa-caret-down'></i></a>
+						<ul class='ipsMenu ipsMenu_auto ipsMenu_withStem ipsMenu_selectable ipsHide' id='elSortMenu_menu'>
+							{{foreach $headers as $k => $header}}
+								{{if $header !== '_buttons' && !in_array( $header, $table->noSort )}}
+									<li class='ipsMenu_item {{if $header == $table->sortBy}}ipsMenu_itemChecked{{endif}}' data-ipsMenuValue='{$header}'>
+										{{if $header == $table->sortBy and $table->sortDirection == 'desc'}}
+											<a href='{$table->baseUrl->setQueryString( array( 'filter' => $table->filter, 'sortby' => $header, 'sortdirection' => 'desc' ) )}'>
+										{{else}}
+											<a href='{$table->baseUrl->setQueryString( array( 'filter' => $table->filter, 'sortby' => $header, 'sortdirection' => 'asc' ) )}'>
+										{{endif}}
+										{lang="{$table->langPrefix}{$header}"}
+										</a>
+									</li>
+								{{endif}}
+							{{endforeach}}
+						</ul>
+					</li>
+					<li>
+						<a href='#elOrderMenu_menu' id='elOrderMenu' data-ipsMenu data-ipsMenu-activeClass='ipsButtonRow_active' data-ipsMenu-selectable="radio">{lang="order_by"} <i class='fa fa-caret-down'></i></a>
+						<ul class='ipsMenu ipsMenu_auto ipsMenu_withStem ipsMenu_selectable ipsHide' id='elOrderMenu_menu'>
+							<li class='ipsMenu_item {{if $table->sortDirection == 'asc'}}ipsMenu_itemChecked{{endif}}' data-ipsMenuValue='asc'>
+								<a href='{$table->baseUrl->setQueryString( array( 'filter' => $table->filter, 'sortby' => $table->sortBy, 'sortdirection' => 'asc' ) )}'>{lang="ascending"}</a>
+							</li>
+							<li class='ipsMenu_item {{if $table->sortDirection == 'desc'}}ipsMenu_itemChecked{{endif}}' data-ipsMenuValue='desc'>
+								<a href='{$table->baseUrl->setQueryString( array( 'filter' => $table->filter, 'sortby' => $table->sortBy, 'sortdirection' => 'desc' ) )}'>{lang="descending"}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		{{endif}}
+
+		<div data-role="extraHtml">{$table->extraHtml|raw}</div>
+		<form action="{$table->baseUrl->csrf()->setQueryString('do','multimod')}" method="post" data-role='moderationTools' data-ipsPageAction>
+			<table class='ipsTable ipsTable_responsive ipsTable_zebra {{foreach $table->classes as $class}}{$class} {{endforeach}}' data-role="table" data-ipsKeyNav data-ipsKeyNav-observe='e d return'>
+				<thead>
+					<tr class='ipsAreaBackground'>
+						{{foreach $headers as $k => $header}}
+							{{if $header != 'attach_id'}}
+								{{if $header !== '_buttons'}}
+									<th class='{{if !in_array( $header, $table->noSort )}}ipsTable_sortable {{if $header == ( mb_strrpos( $table->sortBy, ',' ) !== FALSE ? trim( mb_substr( $table->sortBy, mb_strrpos( $table->sortBy, ',' ) + 1 ) ) : $table->sortBy )}}ipsTable_sortableActive ipsTable_sortable{{if $table->sortDirection == 'asc'}}Asc{{else}}Desc{{endif}} {{else}}ipsTable_sortableAsc{{endif}}{{endif}} {{if array_key_exists( $header, $table->classes )}}{$table->classes[ $header ]}{{endif}}' data-key="{$header}" {{if !in_array( $header, $table->noSort )}}data-action="tableSort" {{if $header == ( mb_strrpos( $table->sortBy, ',' ) !== FALSE ? trim( mb_substr( $table->sortBy, mb_strrpos( $table->sortBy, ',' ) + 1 ) ) : $table->sortBy )}}aria-sort="{{if $table->sortDirection == 'asc'}}ascending{{else}}descending{{endif}}"{{endif}}{{endif}} {{if isset( $table->widths[ $header ] )}}style="width: {$table->widths[ $header ]}%"{{endif}}>
+									{{if !in_array( $header, $table->noSort )}}
+										{{if $header == $table->sortBy and $table->sortDirection == 'desc'}}
+											<a href='{$table->baseUrl->setQueryString( array( 'filter' => $table->filter, 'sortby' => $header, 'sortdirection' => 'asc' ) )}'>
+										{{else}}
+											<a href='{$table->baseUrl->setQueryString( array( 'filter' => $table->filter, 'sortby' => $header, 'sortdirection' => 'desc' ) )}'>
+										{{endif}}
+										{lang="{$table->langPrefix}{$header}"}
+										<span class='ipsTable_sortIcon'></span>
+										</a>
+									{{else}}
+										{lang="{$table->langPrefix}{$header}"}
+									{{endif}}
+									</th>
+								{{else}}
+									<th>&nbsp;</th>
+								{{endif}}
+							{{endif}}
+						{{endforeach}}
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody data-role="tableRows" id="elFileResults" data-controller='ips.admin.files.multimod'>
+					{template="$table->rowsTemplate[1]" params="$table, $headers, $rows" object="$table->rowsTemplate[0]"}
+				</tbody>
+				<tfoot class="ipsClearfix ipsAreaBackground ipsJS_hide" data-role="pageActionOptions">
+					<tr>
+						<td colspan="8">
+							<div class="ipsPos_right">
+								<select name="modaction" data-role="moderationAction">
+									{{if \IPS\Member::loggedIn()->hasAcpRestriction( 'core', 'overview', 'files_delete')}}
+										<option value="delete" data-icon="trash">{lang="delete"}</option>
+									{{endif}}
+								</select>
+								<button type="submit" class="ipsButton ipsButton_alternate ipsButton_verySmall">{lang="submit"}</button>
+							</div>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+	<div data-role="tablePagination" class='ipsSpacer_top'>
+		{template="pagination" group="global" app="core" location="global" params="$table->baseUrl, $table->pages, $table->page, $table->limit"}
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<ips:template parameters="$theme" />
+{{if $theme->customized}}
+	<span class="ipsBadge ipsBadge_neutral">{lang="theme_has_been_customized"}</span>
+{{endif}}
+{{if ! $theme->author_name or mb_strtolower( $theme->author_name ) != 'invision power services'}}
+	{{if $theme->version}}
+		{lang="theme_version" sprintf="$theme->version"}
+	{{endif}}
+	{{if $theme->author_name}}
+		{{if $theme->author_url}}
+			{lang="theme_by_with_url" sprintf="$theme->author_url, $theme->author_name"}
+		{{else}}
+			{lang="theme_by" sprintf="$theme->author_name"}
+		{{endif}}
+	{{endif}}
+{{endif}}

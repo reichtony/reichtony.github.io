@@ -1,0 +1,66 @@
+<ips:template parameters=" " />
+<div id="slider" class="{{if !theme.volpe_slider_fullwidth}}ipsLayout_container {{endif}}{{if !theme.volpe_slider_mobile_show}}ipsResponsive_hidePhone{{endif}}">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+		{{if theme.volpe_slider_global_ws_turn == '1'}}
+			{{if theme.volpe_slider_global_ws == '*' }}
+				{{if request.module == 'forums' or request.module == 'blogs' or request.module == 'calendar' or request.module == 'downloads' or request.module == 'gallery' or request.module == 'pages' or request.module == 'store' and request.controller == 'store' or request.module == 'discover' and request.controller == 'streams' or request.module == 'clubs' and request.controller == 'directory' or request.module == 'members' and request.controller == 'profile'}}
+					{template="volpe_slider_checkglobal" app="core" group="volpe" params=""}
+				{{endif}}
+			{{else}}
+				{{foreach explode(',', theme.volpe_slider_global_ws) as $value}}
+					{{if $value == 'forums' and request.module == 'forums' or $value == 'forumsindex' and request.module == 'forums' and request.controller == 'index' or $value == 'blogs' and request.module == 'blogs' or $value == 'calendar' and request.module == 'calendar' or $value == 'downloads' and request.module == 'downloads' or $value == 'gallery' and request.module == 'gallery' or $value == 'pages' and request.module == 'pages' or $value == 'store' and	request.module == 'store' and request.controller == 'store' or $value == 'activiy' and request.module == 'discover' and request.controller == 'streams' or $value == 'clubs' and request.module == 'clubs' and request.controller == 'directory' or $value == 'profile' and request.module == 'members' and request.controller 	== 'profile'}}
+						{template="volpe_slider_checkglobal" app="core" group="volpe" params=""}
+					{{endif}}
+				{{endforeach}}
+			{{endif}}
+		{{else}}
+			{template="volpe_slider_checkspecific" app="core" group="volpe" params=""}
+		{{endif}}
+	</div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-next"></div>
+	<div class="swiper-prev"></div>
+</div>
+<script src='{resource="swiper.min.js" app="core" location="front"}'></script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+    	{{if theme.volpe_slider_pagination}}
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		{{endif}}
+		{{if theme.volpe_slider_loop}}
+		loop: true,
+		{{endif}}
+		{{if theme.volpe_slider_navigation_buttons}}
+		nextButton: '.swiper-next',
+		prevButton: '.swiper-prev',
+		{{endif}}
+		{{if theme.volpe_slider_autoplay}}
+   		autoplay: {theme="volpe_slider_autoplay_delay"},
+		autoplayDisableOnInteraction: true,
+		{{endif}}
+		{{if theme.volpe_slider_direction == 'vertical'}}
+		direction: 'vertical',
+		{{else}}
+		direction: 'horizontal',
+		{{endif}}
+		{{if theme.volpe_slider_transition_effect == 'fade'}}
+		effect: 'fade',
+		{{elseif theme.volpe_slider_transition_effect == 'cube'}}
+		effect: 'cube',
+		{{elseif theme.volpe_slider_transition_effect == 'coverflow'}}
+		effect: 'coverflow',
+		{{elseif theme.volpe_slider_transition_effect == 'flip'}}
+		effect: 'flip',
+		{{else}}
+		effect: 'slide',
+		{{endif}}
+		preloadImages: false,
+		lazyLoading: true,
+		lazyLoadingInPrevNext: true,
+		centeredSlides: true,
+    	grabCursor: true
+	});
+</script>
+</div>

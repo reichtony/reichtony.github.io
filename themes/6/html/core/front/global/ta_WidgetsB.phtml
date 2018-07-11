@@ -1,0 +1,35 @@
+<ips:template parameters="" />
+{{if theme.g_whocansee_bottom =='*' or \IPS\Member::loggedIn()->inGroup( explode( ',', theme.g_whocansee_bottom ) )}}
+	{{if theme.g_widget_position_bottom}}
+		{{foreach explode(',', theme.g_widget_position_bottom) as $val}}
+			{{if $val == 'forums' and request.module == 'forums' or $val == 'store' and request.module == 'store' or $val == 'pages' and request.module == 'pages' or $val == 'downloads' and request.module == 'downloads' or $val == 'popular' and request.module == 'discover' and request.controller == 'popular' or $val == 'gallery' and request.module == 'gallery' or $val == 'blogs' and request.module == 'blogs' or $val == 'calendar' and request.module == 'calendar' or $val == 'activity' and request.module == 'discover' or $val == 'staffdirectory' and request.module == 'staffdirectory' or $val == 'search' and request.module == 'search' or $val == 'support' and request.module == 'support' or $val == 'members' and request.module == 'members' or $val == 'online' and request.module == 'online'}}
+				<div class="ta-customBlock">
+                  	<div class="ta-blockContainer">
+						{{if theme.g_widget_title_bottom}}
+							<h3 class="ipsType_reset ipsWidget_title">
+								{theme="g_widget_title_bottom"}
+							</h3>
+						{{endif}}
+						<div class="ipsWidget_inner ipsPad_half ipsType_normal ipsType_richText" data-controller="core.front.core.lightboxedImages">
+							{theme="g_widget_content_bottom"}
+						</div>
+                	</div>
+				</div>
+			{{endif}}
+			{{if $val == 'all'}}
+				<div class="ta-customBlock">
+                  	<div class="ta-blockContainer">
+						{{if theme.g_widget_title_bottom}}
+							<h3 class="ipsType_reset ipsWidget_title">
+								{theme="g_widget_title_bottom"}
+							</h3>
+						{{endif}}
+						<div class="ipsWidget_inner ipsPad_half ipsType_normal ipsType_richText" data-controller="core.front.core.lightboxedImages">
+							{theme="g_widget_content_bottom"}
+						</div>
+                	</div>
+				</div>
+			{{endif}}
+		{{endforeach}}
+	{{endif}}
+{{endif}}

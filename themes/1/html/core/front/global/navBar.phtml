@@ -1,0 +1,28 @@
+<ips:template parameters="$preview=FALSE" />
+{{if !in_array('ipsLayout_minimal', \IPS\Output::i()->bodyClasses )}}
+	<nav data-controller='core.front.core.navBar' class='{{if !count( \IPS\core\FrontNavigation::i()->subBars( $preview ) )}}ipsNavBar_noSubBars{{endif}}'>
+		<div class='ipsNavBar_primary ipsLayout_container {{if !count( \IPS\core\FrontNavigation::i()->subBars( $preview ) )}}ipsNavBar_noSubBars{{endif}} ipsClearfix'>
+			{template="quickSearch" group="global" app="core" params="$preview"}
+			<ul data-role="primaryNavBar" class='{{if !$preview}}ipsResponsive_showDesktop ipsResponsive_block{{endif}}'>
+				{template="navBarItems" app="core" group="global" location="front" params="\IPS\core\FrontNavigation::i()->roots( $preview ), \IPS\core\FrontNavigation::i()->subBars( $preview ), 0, $preview"}
+				<li class='ipsHide' id='elNavigationMore' data-role='navMore'>
+					<a href='#' data-ipsMenu data-ipsMenu-appendTo='#elNavigationMore' id='elNavigationMore_dropdown'>{lang="more"}</a>
+					<ul class='ipsNavBar_secondary ipsHide' data-role='secondaryNavBar'>
+						<li class='ipsHide' id='elNavigationMore_more' data-role='navMore'>
+							<a href='#' data-ipsMenu data-ipsMenu-appendTo='#elNavigationMore_more' id='elNavigationMore_more_dropdown'>{lang="more"} <i class='fa fa-caret-down'></i></a>
+							<ul class='ipsHide ipsMenu ipsMenu_auto' id='elNavigationMore_more_dropdown_menu' data-role='moreDropdown'></ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+{{elseif member.group['g_view_board']}}
+	<nav>
+		<div class='ipsLayout_container'>
+			<div class='ipsNavBar_primary ipsNavBar_noSubBars ipsClearfix'>
+				<a id='elBackHome' href='{setting="base_url"}' title='{lang="go_community_home"}'><i class='fa fa-angle-left'></i> {lang="community_home"}</a>
+			</div>
+		</div>
+	</nav>
+{{endif}}

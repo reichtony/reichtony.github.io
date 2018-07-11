@@ -1,0 +1,9 @@
+<ips:template parameters="" />
+{{if ( \IPS\Settings::i()->site_online || \IPS\Member::loggedIn()->group['g_access_offline'] ) and ( \IPS\Dispatcher::i()->application instanceof \IPS\Application AND \IPS\Dispatcher::i()->application->canAccess() )}}
+{{if theme.footer_turn}}
+<div id="footerup">
+    <div class='ipsLayout_container'>
+    </div>
+</div>
+{{endif}}
+{{endif}}

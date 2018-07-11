@@ -1,0 +1,40 @@
+<ips:template parameters="$users, $format, $orientation='vertical'" />
+{{if !empty( $users ) }}
+	<h3 class='ipsWidget_title ipsType_reset'>{lang="total_time_online"}</h3>
+
+	{{if $orientation == 'vertical'}}
+		<div class='ipsPad_half ipsWidget_inner'>
+			<ul class='ipsDataList ipsDataList_reducedSpacing'>
+				{{foreach $users as $user}}
+					<li class='ipsDataItem'>
+						<div class='ipsDataItem_icon ipsPos_top'>
+							{template="userPhoto" group="global" app="core" params="$user, 'tiny'"}
+						</div>
+						<div class='ipsDataItem_main'>
+							<a href="{$user->url()}" class='ipsDataItem_title ipsType_break'>{{if $format}}{template="userLinkFromData" group="global" app="core" params="$user->member_id, $user->name, $user->members_seo_name, $user->member_group_id"}{{else}}{$user->link()|raw}{{endif}}</a><br>
+							{{$totalTime = \IPS\Member::loggedIn()->getTotalTimeSpentOnline( $user, $user->time_spent, TRUE );}}
+							<span class='ipsType_light ipsType_small'>{$totalTime}</span>
+						</div>
+					</li>
+				{{endforeach}}
+			</ul>
+		</div>
+	{{else}}
+		<div class='ipsWidget_inner'>
+			<ul class='ipsDataList'>
+				{{foreach $users as $user}}
+					<li class='ipsDataItem'>
+						<div class='ipsDataItem_icon ipsPos_top'>
+							{template="userPhoto" group="global" app="core" params="$user, 'tiny'"}
+						</div>
+						<div class='ipsDataItem_main'>
+							<a href="{$user->url()}" class='ipsDataItem_title ipsType_break'>{{if $format}}{template="userLinkFromData" group="global" app="core" params="$user->member_id, $user->name, $user->members_seo_name, $user->member_group_id"}{{else}}{$user->link()|raw}{{endif}}</a><br>
+							{{$totalTime = \IPS\Member::loggedIn()->getTotalTimeSpentOnline( $user, $user->time_spent, TRUE );}}
+							<span class='ipsType_light ipsType_small'>{$totalTime}</span>
+						</div>
+					</li>
+				{{endforeach}}
+			</ul>
+		</div>
+	{{endif}}
+{{endif}}

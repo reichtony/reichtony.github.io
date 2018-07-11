@@ -1,0 +1,17 @@
+<ips:template parameters="$leftColumnBlocks, $mainColumnBlocks" />
+<div class='ipsColumns ipsColumns_collapsePhone'>
+	<div class='ipsColumn ipsColumn_veryWide'>
+		<div class='ipsPad'>
+			{{foreach $leftColumnBlocks as $block}}
+				{$block->output()|raw}
+			{{endforeach}}
+		</div>
+	</div>
+	<div class='ipsColumn ipsColumn_fluid'>
+		<div class='ipsPad'>
+			{{foreach $mainColumnBlocks as $block}}
+				{$block->output()|raw}
+			{{endforeach}}
+		</div>
+	</div>
+</div>

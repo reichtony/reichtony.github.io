@@ -1,0 +1,22 @@
+<ips:template parameters="" />
+<script src='{resource="scrolldir.js" app="core" location="front"}'></script>
+{{if theme.volpe_newsticker_turn == '1'}}
+<script>
+	var newstickerslider = new Swiper('.swiper-newsticker', {
+		loop: true,
+   		autoplay: {theme="volpe_newsticker_autoplay_delay"},
+		autoplayDisableOnInteraction: false,
+		{{if theme.volpe_newsticker_direction == 'horizontal'}}
+		direction: 'horizontal',
+		{{else}}
+		direction: 'vertical',
+		{{endif}}
+		{{if theme.volpe_newsticker_transition_effect == 'fade'}}
+		effect: 'fade',
+		{{else}}
+		effect: 'slide',
+		{{endif}}
+		centeredSlides: true
+	});
+</script>
+{{endif}}

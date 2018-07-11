@@ -1,0 +1,9 @@
+<ips:template parameters="$method, $login, $error, $blurb" />
+<div class='ipsClearfix'>
+	<div>
+		<h2 class='ipsType_sectionHead'>{$method->_title}</h2>
+	</div>
+</div>
+<hr class="ipsHr">
+<p class="ipsType_normal ipsSpacer_bottom ipsSpacer_double">{lang="$blurb" sprintf="$method->_title"}</p>
+{template="settingsLoginConnect" group="system" params="$method, $login, $error, $blurb"}

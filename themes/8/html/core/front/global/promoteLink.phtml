@@ -1,0 +1,24 @@
+<ips:template parameters="$object, $promote=NULL, $withIcons=FALSE" />
+{{$class = get_class($object);}}
+{{$column = $class::$databaseColumnId;}}
+{{$id = $object->$column;}}
+{{if $promote and $promote->id}}
+	<a href='{url="app=core&module=promote&controller=promote&class={$class}&id={$id}&promote_id={$promote->id}&repromote=1" seoTemplate="promote"}' data-ipsDialog-flashMessage="{lang="promote_flash_msg"}" data-ipsDialog-fixed data-ipsDialog-size='large' data-ipsDialog-flashMessageTimeout="5" data-ipsDialog-flashMessageEscape="false" data-ipsDialog data-ipsDialog-remoteSubmit="true" data-ipsDialog-title="{lang="promote_social_button"}" class="ipsType_blendLinks ipsType_noUnderline">
+{{else}}
+	<a href='{url="app=core&module=promote&controller=promote&class={$class}&id={$id}" seoTemplate="promote"}' data-ipsDialog-flashMessage="{lang="promote_flash_msg"}" data-ipsDialog-flashMessageTimeout="5" data-ipsDialog-flashMessageEscape="false" data-ipsDialog-fixed data-ipsDialog-size='large' data-ipsDialog data-ipsDialog-remoteSubmit="true" data-ipsDialog-title="{lang="promote_social_button"}" class="ipsType_blendLinks ipsType_noUnderline">
+{{endif}}
+{{if $withIcons}}
+	<div class="ipsPromote ipsButton {{if $promote and $promote->id}}ipsButton_light{{else}}ipsButton_veryLight{{endif}} ipsButton_verySmall ipsButton_link">
+		{{foreach \IPS\core\Promote::promoteServices() as $service}}
+		<div class="ipsPromote_icon ipsSocial_{$service->_key}">
+			<i class="fa fa-{$service::$icon}"></i>
+		</div>
+		{{endforeach}}
+		{lang="promote_social_button"}
+	</div>
+{{else}}
+	<span class="ipsPromoteText">
+		{{if $promote and $promote->id}}{lang="promote_social_button_repromote"}{{else}}{lang="promote_social_button"}{{endif}}
+	</span>
+{{endif}}
+	</a>
